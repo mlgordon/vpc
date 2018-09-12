@@ -326,7 +326,8 @@ For further instructions to fix this problem, refer to the [API documentation](a
 ## 4080000
 **Message**: Timeout exceeded.
 
-For instructions to fix this problem, see  TBD [Need a good link here, of the form shown](https://www.{DomainName}/docs/troubleshoot/ts_accessing.html#ts_err){: new_window} troubleshooting topic.
+For instructions to fix this problem, see TBD 
+[Need a good link here, of the form shown](https://www.{DomainName}/docs/troubleshoot/ts_accessing.html#ts_err){: new_window} troubleshooting topic.
 
 ## 5000100
 **Message**: An internal error occurred.
@@ -345,14 +346,16 @@ Try again later. If this problem persists, contact support.
 
 RIAS command `ibmcloud is in-reboot Instance_uuid` can return the message code "invalid_state"
 
-In one situation, the message is thrown when a reboot operation is attempted while the VSI is already being rebooted. This message also can be received in a situation where multiple reboots are not happening at the same time.
+In one situation, the message is thrown when a reboot operation is attempted while the VSI is already being rebooted. 
+This message also can be received in a situation where multiple reboots are not happening at the same time.
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## iam_failure
 **Message**: None
 
-This message can be displayed when there's been a failure to convert an IAM token to an IMS token.  Ie may mean that the token you provided is not supported, or there is an invalid key ID. If this problem persists, contact support.
+This message can be displayed when there's been a failure to convert an IAM token to an IMS token.  
+It may mean that the token you provided is not supported, or there is an invalid key ID. If this problem persists, contact support.
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
 
@@ -393,62 +396,73 @@ All resources must be removed from a VPC before it can be deleted.
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## service_manager_service_failure
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## client_failed_body_creation
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## http_request_size_exceeded
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## subnet_conflict
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## subnet_unknown_state
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## staticroute_invalid_CIDR
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## staticroute_invalid_NextHop
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## staticroute_conflict
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## staticroute_unknown_state
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## gateway_too_many
 **Message**: None
 
 Only one PGW is allowed per subnet at this time.
-
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## missing_ims_account_id
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## security_group_vpc_default
 **Message**: None
@@ -460,7 +474,9 @@ For further instructions to fix this problem, refer to the [API documentation](a
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
+
 ## password_not_ready
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
