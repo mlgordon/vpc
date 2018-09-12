@@ -22,5 +22,5 @@ lastupdated: "2018-09-10"
 
 ## Beta
 
-Support for Virtual Private Cloud is handled by {{site.data.keyword.cloud}} representatives.
+Support for Virtual Private Cloud is handled by {{site.data.keyword.cloud}} representatives. If you need help, please contact the IBM Cloud account representative who helped you set up your VPC account.
 

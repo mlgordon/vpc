@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-10"
+lastupdated: "2018-09-12"
 
 ---
 
@@ -50,7 +50,7 @@ Agree to the following [Beta agreement ![External link icon](../../icons/launch-
 
 ## Beta Support
 
-Support is provided through the [IBM Cloud support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/support/index.html#contacting-support){: new_window} team.
+Support for Virtual Private Cloud is handled by {{site.data.keyword.cloud}} representatives. If you need help, please contact the IBM Cloud account representative who helped you set up your VPC account.
 
 ## Ready?
 

@@ -18,7 +18,7 @@ lastupdated: "2018-08-03"
 
 ## Access Control List
 
-An Access Control List (ACL) can manage (that is, it can allow or deny) ingress and egress traffic for a subnet. An ACL is stateless. Each ACL consists of rules, based upon a _source IP_, _source port_, _destination IP_, _destination port_, and _protocol_.
+An Access Control List (ACL) can manage (that is, it can allow or deny) inbound and outbound traffic for a subnet. An ACL is stateless. Each ACL consists of rules, based upon a _source IP_, _source port_, _destination IP_, _destination port_, and _protocol_.
 
 In {{site.data.keyword.cloud}} VPC, every subnet is created with a default ACL, which allows inbound and outbound traffic, but customers can create custom ACLs. Only one ACL is attached to a subnet at any time, but one ACL can be attached to multiple subnets.
 
@@ -46,6 +46,10 @@ A security group acts as a virtual firewall that controls the traffic for one 
 
 ## Subnet
 A subnet is an IP address range, bound to a single Zone, which cannot span multiple Zones or Regions. A subnet can span the entirety of the Zone in the IBM Cloud VPC.
+
+For the purposes of IBM Cloud VPC, the important characteristic for a [subnet] is the fact that subnets can be isolated from one another, as well as being interconnected in the usual way. Subnet isolation can be accomplished by Network Access Control Lists (ACLs) that act as firewalls to control the flow of data packets among subnets. Similarly, security groups act as virtual firewalls to control the flow of data packets to and from individual virtual server instances (VSIs).
+
+It is the isolation of subnets that allows you to create a private space within the public cloud.
 
 ## VPN
 
