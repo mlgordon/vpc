@@ -4,7 +4,7 @@ copyright:
 
   years: 2018
 
-lastupdated: "2018-08-16"
+lastupdated: "2018-09-12"
 
 ---
 
@@ -78,7 +78,7 @@ You may need to check your permissions and contact your administrator, or see th
 ## not_found                                     
 **Message**: Please check whether the resource you are requesting exists.
 
-For instructions to fix this problem, see TBD
+This error may occur when you've tried to provision your VSI using a profile that is not supported, or tried to allocate another resource that is unavailable. For a list of available profiles, you can use the command `ibmcloud is instance-profiles`. For further instructions to fix this problem, see TBD
 
 ## over_quota                                    
 **Message**: The request would exceed the quota.
