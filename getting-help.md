@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-09-10"
 
 
 ---
@@ -22,4 +22,5 @@ lastupdated: "2018-06-01"
 
 ## Beta
 
-For information about opening an IBM support tcket, or about support levels and ticket severities, see [Contacting support](https://console.bluemix.net/docs/support/index.html#contacting-support).
+Support for Virtual Private Cloud is handled by {{site.data.keyword.cloud}} representatives. If you need help, please contact the IBM Cloud account representative who helped you set up your VPC account.
+

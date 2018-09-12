@@ -4,7 +4,7 @@ copyright:
 
   years: 2018
 
-lastupdated: "2018-08-06"
+lastupdated: "2018-09-12"
 
 ---
 
@@ -14,47 +14,47 @@ lastupdated: "2018-08-06"
 {:tip: .tip}
 {:new_window: target="_blank"}
 
-# IBM Cloud Regional Infrastructure API Service (RIAS) API error messages
+# IBM Cloud Virtual Private Cloud API error messages
 {: #rias-error-messages}
 
-When you receive an error message from the RIAS APIs, you can use the message ID to find more information about how to resolve the problem.
+When you receive an error message from the {{site.data.keyword.cloud}} Virtual Private Cloud APIs, you can use the message ID to find more information about how to resolve the problem.
 {:shortdesc}
-		
+
 ## bad_request                                   
 **Message**: The information given was invalid, malformed, or missing a required field.
 
-To fix this problem, be sure the content of your request conforms to the [RIAS API documentation](apis.html){: new_window} for the endpoint you are calling.
-		
+To fix this problem, be sure the content of your request conforms to the [VPC API documentation](apis.html){: new_window} for the endpoint you are calling.
+
 ## bad_request_solution                         
 **Message**: Please double-check the data you supplied.
 
 To fix this problem, be sure the content of your request conforms to the [RIAS API documentation](apis.html){: new_window} for the endpoint you are calling.
-		
+
 ## client_failed_body_read                      
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## client_failed_request                         
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## client_failed_request_creation                
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## client_failed_to_get                          
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## database_failure                              
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## http_request_size_exceeded                    
 **Message**: The HTTP request is too large.
 
@@ -64,7 +64,7 @@ This problem occurs when the payload you have sent in your request is too large.
 **Message**: The image template you supplied was invalid.
 
 Try again, providing a valid image file. Consult the [RIAS API documentation](apis.html){: new_window} for the endpoint you are calling.
-		
+
 ## internal_solution                             
 **Message**: Please contact your administrator.
 
@@ -78,38 +78,38 @@ You may need to check your permissions and contact your administrator, or see th
 ## not_found                                     
 **Message**: Please check whether the resource you are requesting exists.
 
-For instructions to fix this problem, see TBD
-		
+This error may occur when you've tried to provision your VSI using a profile that is not supported, or tried to allocate another resource that is unavailable. For a list of available profiles, you can use the command `ibmcloud is instance-profiles`. For further instructions to fix this problem, see TBD
+
 ## over_quota                                    
 **Message**: The request would exceed the quota.
 
 The quota is given in [Getting Started](getting-started.html){: new_window}.
-		
+
 ## rest_response_failed_error_unmarshal          
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## rest_response_failed_success_unmarshal      
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## rest_response_parse_failed                    
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## subnet_not_empty
 **Message**: The subnet is not empty, please contact your administrator.
 
 You may need help in deleting a subnet, or you may be trying to delete the wrong subnet. Be sure the content of your request conforms to the [RIAS API documentation](apis.html){: new_window} for the endpoint you are calling.
-		
+
 ## timeout_solution                             
 **Message**: Timeout, please try again later.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## validation_enum
 **Message**: The value supplied was not a valid option.
 
@@ -123,13 +123,13 @@ To fix this problem, be sure the content of your request is valid JSON and that 
 ## validation_invalid_cidr                       
 **Message**: The value is not a valid CIDR.
 
-Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](regions-and-subnets.html){: new_window}. For further instructions to fix this problem, you can look at TBD.
+Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](vpc-regions-and-subnets.html){: new_window}. For further instructions to fix this problem, you can look at TBD.
 
 ## validation_invalid_ipv4_cidr        
 **Message**: The value is not a valid IPv4 CIDR.
 
-Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](regions-and-subnets.html){: new_window}. For further instructions to fix this problem, see TBD.
-		
+Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](vpc-regions-and-subnets.html){: new_window}. For further instructions to fix this problem, see TBD.
+
 ## validation_invalid_ipv6_cidr
 **Message**: The value is not a valid IPv6 CIDR.
 
@@ -138,7 +138,7 @@ For VPC Beta release, IPv6 is not supported. For further instructions to fix thi
 ## validation_invalid_address
 **Message**: The value is not a valid address.
 
-A list of individually reserved IP addresses is given in the [About](about.html) document. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](regions-and-subnets.html){: new_window}. For further instructions to fix this problem, see TBD.
+A list of individually reserved IP addresses is given in the [About](about.html) document. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](vpc-regions-and-subnets.html){: new_window}. For further instructions to fix this problem, see TBD.
 
 ## validation_invalid_ipv4_address
 **Message**: The value is not a valid IPv4 address.
@@ -326,13 +326,14 @@ For further instructions to fix this problem, refer to the [API documentation](a
 ## 4080000
 **Message**: Timeout exceeded.
 
-For instructions to fix this problem, see  TBD [Need a good link here, of the form shown](https://www.{DomainName}/docs/troubleshoot/ts_accessing.html#ts_err){: new_window} troubleshooting topic.
+For instructions to fix this problem, see TBD 
+[Need a good link here, of the form shown](https://www.{DomainName}/docs/troubleshoot/ts_accessing.html#ts_err){: new_window} troubleshooting topic.
 
 ## 5000100
 **Message**: An internal error occurred.
 
 Try again later. If this problem persists, contact support.
-		
+
 ## 5000101                                       
 **Message**: An internal error occurred.
 
@@ -343,114 +344,139 @@ Try again later. If this problem persists, contact support.
 ## invalid_state
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+RIAS command `ibmcloud is in-reboot Instance_uuid` can return the message code "invalid_state"
+
+In one situation, the message is thrown when a reboot operation is attempted while the VSI is already being rebooted. 
+This message also can be received in a situation where multiple reboots are not happening at the same time.
+
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## iam_failure
 **Message**: None
+
+This message can be displayed when there's been a failure to convert an IAM token to an IMS token.  
+It may mean that the token you provided is not supported, or there is an invalid key ID. If this problem persists, contact support.
 
 For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
 
 ## validation_internal_error
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## internal_server_error
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## validation_non_empty_uuid
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## image_conversion_failure
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## region_conflict_duplicate_res
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## zone_conflict_duplicate_res
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## vpc_not_empty
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+All resources must be removed from a VPC before it can be deleted.
+
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## service_manager_service_failure
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## client_failed_body_creation
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## http_request_size_exceeded
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## subnet_conflict
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## subnet_unknown_state
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## staticroute_invalid_CIDR
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## staticroute_invalid_NextHop
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## staticroute_conflict
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## staticroute_unknown_state
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## gateway_too_many
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+Only one PGW is allowed per subnet at this time.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## missing_ims_account_id
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## security_group_vpc_default
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
 
 ## security_group_not_in_vpc
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+
 
 ## password_not_ready
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](apis.html){: new_window}. If this problem persists, contact support.
+

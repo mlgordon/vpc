@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-11"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -14,52 +14,35 @@ lastupdated: "2018-07-11"
 {:tip: .tip}
 {:download: .download}
 
-# Getting Started with IBM Cloud Virtual Private Cloud (VPC) Beta release
+# Getting started with IBM Cloud Virtual Private Cloud Beta release
 
-Get early access to the [IBM Cloud VPC experience](about-vpc-beta.html) by participating in our Beta trial. To request access, send email to [vpc@us.ibm.com](mailto:vpc@us.ibm.com) with your use case and include your IBM Cloud Account ID and linked Infrastructure Account ID. Follow [these instructions](how-to-get-account.html) to get your account information. 
+Create an {{site.data.keyword.cloud}} Virtual Private Cloud through the [IBM Console ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://console.bluemix.net/is), the [IBM Cloud command line interface](cli-reference.html), or via [VPC REST APIs](apis.html).
 
-## Conditions
+Whichever interface method you may choose, here's the minimum required steps to get going:
 
-By participating in this Beta release, you agree to these conditions:
+1. Create a Virtual Private Cloud.
+2. Create one or more subnets in the Virtual Private Cloud in one or more zones.
+4. Select the profiles of virtual server instances (VSIs) you'd like to run, and instantiate them.
+6. Reserve a Floating IP address, and associate it with a virtual server instance.
+7. Create a public gateway (PGW) if you want public internet traffic to your subnet.
+9. Deploy your service or applications across the virtual server instances.
 
-* Limit use to functionality testing: no scale, performance, load, or pressure testing.
-* Provide feedback so we can improve the offering. Send feedback to [vpc@us.ibm.com](mailto:vpc@us.ibm.com). 
-* Abide by the quotas below. 
-* Agree to the current limitations. There is no Service Level Agreement during the Beta trial and any resources created are not guaranteed to be available when the offering becomes generally available.
+## Pre-requisites:
 
-### Quotas
+ * **Account Access**: Access to IBM Cloud Virtual Private Cloud currently is limited and requires approval. Agree to the conditions and see [How to Participate in the IBM Cloud Virtual Private Cloud Beta Release](how-to-participate.html).
 
-Limited resources are available in the Beta environment. Therefore, accounts have the following quotas: 
+ * **User Permissions**: Be sure that your user has sufficient permissions to create and manage resources in your VPC. For a list of required permissions, see [Granting permissions needed for VPC users](vpc-user-permissions.html).
 
-|   Resource     | Maximum Number |
-| ------- | :------: |
-| Virtual Private Clouds | 5 per account|
-| Subnets | 5 per Virtual Private Cloud |
-| Virtual Server Instances (VSIs) | 25 per account |
-| Floating IP addresses | 1 per VSI |
+ * **Have your SSH key ready**: You will use an SSH key to connect to your virtual server instance(s).
 
-### Service Level Agreement (SLA)
+   * Look for a file called `id_rsa.pub` under an `.ssh` directory under your home directory, for example, `/Users/<USERNAME>/.ssh/id_rsa.pub`. The file starts with `ssh-rsa` and ends with your email address.
 
-The VPC Beta release does not have a Service Level Agreement. All issues are handled as **minor severity** with next business day response. 
+   * Or Generate an SSH Key: If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen` command and following the prompts. For example, you can generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file.
 
-### IBM Cloud VPC Beta agreement document
+* **Download the IBM Cloud CLI and install the infrastructure plugin to use the CLI**: If you plan to use the `ibmcloud` CLI, you need to [download it and install the infrastructure plugin](cli-reference.html).
 
-You can view the entire [Beta agreement](https://public.dhe.ibm.com/cloud/bluemix/network/vpc/beta_agreement_for_use.pdf){: new_window}.
+* **API endpoint**: For REST API access, the account owner should have received the API endpoint during on-boarding. Check out our [example commands](example-code.html) to get you started.
 
-**We will inform you _one week before_ the IBM Cloud VPC Beta program closes. When the Beta program is over, your configuration and data within the VPC Beta environment will be deleted.**
+## What's next?
 
-## Beta Support
-
-Support is provided through the [IBM Cloud support](https://console.bluemix.net/docs/support/index.html#contacting-support)  team. 
-
-## Ready?
-
-Once you've been notified that your participation is approved, follow these instructions to verify your permissions and access:
-
-* [Instructions](how-to-verify-access.html) to verify access to the user interface, command line interface and APIs for the IBM Cloud Virtual Private Cloud Beta.
-* [Instructions](vpc-user-permissions.html) to verify or obtain the correct permissions, which must be granted by the master or primary user of your account.
-
-
-## General Overview of Steps
-
-For a "big picture" overview of how you'll set up your VPC and get it going, please refer to our [Quick Overview Document](quick-overview.html).
+Start creating your VPC and its resources! Follow our [step-by-step guides](step-by-step-pages.html) to help you along.

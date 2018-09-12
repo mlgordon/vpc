@@ -17,16 +17,17 @@ lastupdated: "2018-08-03"
 # VPC Glossary
 
 ## Access Control List
-An Access Control List (ACL) can manage (that is, it can allow or deny) ingress and egress traffic for a subnet. An ACL is stateless. Each ACL consists of rules, based upon a _source IP_, _source port_, _destination IP_, _destination port_, and _protocol_.
 
-In IBM Cloud VPC, every subnet is created with a default ACL, which allows inbound and outbound traffic, but customers can create custom ACLs. Only one ACL is attached to a subnet at any time, but one ACL can be attached to multiple subnets.
+An Access Control List (ACL) can manage (that is, it can allow or deny) inbound and outbound traffic for a subnet. An ACL is stateless. Each ACL consists of rules, based upon a _source IP_, _source port_, _destination IP_, _destination port_, and _protocol_.
+
+In {{site.data.keyword.cloud}} VPC, every subnet is created with a default ACL, which allows inbound and outbound traffic, but customers can create custom ACLs. Only one ACL is attached to a subnet at any time, but one ACL can be attached to multiple subnets.
 
 ## Floating IP addresses
-Floating IP addresses are public IP addresses that are provided by the system from a pool. You cannot bring your own public IP addresses. Floating IP addresses are reachable from the internet, and they can be associated to an instance (for example, a VSI, a load balancer, or a VPN gateway) by means of a vNIC. You can reserve a Floating IP address from the pool of available Floating IP addresses provided by IBM, and you can associate or unassociate it to (or from) any instance in the same Virtual Private Cloud. Floating IP makes use of 1-to-1 NAT (see following definition) to allow a server to communicate with the public internet and also with a private subnet within your cloud environment.
+Floating IP addresses are public IP addresses that are provided by the system from a pool. You cannot bring your own public IP addresses. Floating IP addresses are reachable from the internet, and they can be associated to an instance (for example, a VSI, a load balancer, or a VPN gateway) by means of a vNIC. You can reserve a Floating IP address from the pool of available Floating IP addresses provided by IBM, and you can associate or disassociate it to (or from) any instance in the same Virtual Private Cloud. Floating IP makes use of 1-to-1 NAT (see following definition) to allow a server to communicate with the public internet and also with a private subnet within your cloud environment.
 
 ## NAT
 
-Network Address Translation (NAT) is an addressing method described in [Internet RFC 1631](https://tools.ietf.org/html/rfc1631) so that one IP address can be used to communicate with several other IP addresses, such as those on a private subnet, essentially by means of a lookup table. NAT has two main types: 1-to-1 NAT and Many-to-1 NAT. NAT was originally intended as a way to extend the useful life of IPv4 IP addresses, but now it is commonly used in cloud environments as a way of creating communication with private subnets.
+Network Address Translation (NAT) is an addressing method described in [Internet RFC 1631 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://tools.ietf.org/html/rfc1631){: new_window} so that one IP address can be used to communicate with several other IP addresses, such as those on a private subnet, essentially by means of a lookup table. NAT has two main types: 1-to-1 NAT and Many-to-1 NAT. NAT was originally intended as a way to extend the useful life of IPv4 IP addresses, but now it is commonly used in cloud environments as a way of creating communication with private subnets.
 
 ## Profile
 A Profile is a popular combination of vCPU and RAM that can be instantiated quickly to start up a virtual server instance (VSI). Three families of profiles are supported: Balanced, Compute, and Memory.
@@ -46,16 +47,20 @@ A security group acts as a virtual firewall that controls the traffic for one 
 ## Subnet
 A subnet is an IP address range, bound to a single Zone, which cannot span multiple Zones or Regions. A subnet can span the entirety of the Zone in the IBM Cloud VPC.
 
+For the purposes of IBM Cloud VPC, the important characteristic for a [subnet] is the fact that subnets can be isolated from one another, as well as being interconnected in the usual way. Subnet isolation can be accomplished by Network Access Control Lists (ACLs) that act as firewalls to control the flow of data packets among subnets. Similarly, security groups act as virtual firewalls to control the flow of data packets to and from individual virtual server instances (VSIs).
+
+It is the isolation of subnets that allows you to create a private space within the public cloud.
+
 ## VPN
 
 A Virtual Private Network (VPN) allows for a private connection between two endpoints, even when the data is transferred across a public network. Customers can share data as if they were connected to a private network. Usually, a VPN is used in combination with security methods such as authentication and encryption to provide maximum data security and privacy.
 
 ## Zone
 An independent fault domain. A Zone is an abstraction designed to assist with improved fault tolerance and decreased latency. A Zone guarantees the following properties:
-		
+
  * Each Zone is an independent fault domain and it is extremely unlikely for two Zones in a region to fail simultaneously
  * Traffic between Zones in a region will be < 2 ms latency
-    
+
 ## External Links
 For more general information, here are some external links you can follow:
- * [What is many-to-one NAT?](https://en.wikipedia.org/wiki/Network_address_translation)
+ * [What is many-to-one NAT? ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Network_address_translation){: new_window}
