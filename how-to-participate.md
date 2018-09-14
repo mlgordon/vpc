@@ -14,7 +14,7 @@ lastupdated: "2018-09-14"
 {:tip: .tip}
 {:download: .download}
 
-# How to Participate in the IBM Cloud Virtual Private Cloud (VPC) Beta release
+# The IBM Cloud Virtual Private Cloud (VPC) Beta release has closed
 
 **The Beta release has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product updates coming soon.**
 
