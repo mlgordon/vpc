@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-14"
+lastupdated: "2018-09-18"
 
 ---
 
@@ -39,6 +39,8 @@ Limited resources are available in the Beta environment. Therefore, accounts hav
 | Subnets | 5 per Virtual Private Cloud |
 | Virtual Server Instances (VSIs) | 25 per account |
 | Floating IP addresses | 1 per VSI |
+
+**Certain quotas going forward arter Beta are being updated, as shown in the [Quotas document](vpc-quotas.html).**
 
 ### Service Level Agreement (SLA)
 
