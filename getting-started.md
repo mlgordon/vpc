@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-010-03"
 
 ---
 
@@ -14,7 +14,9 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-# Getting started with IBM Cloud Virtual Private Cloud Beta release
+# Getting started with IBM Cloud Virtual Private Cloud
+
+**The Beta release has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product updates coming soon.**
 
 Create an {{site.data.keyword.cloud}} Virtual Private Cloud through the [IBM Console ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://console.bluemix.net/is), the [IBM Cloud command line interface](cli-reference.html), or via [VPC REST APIs](apis.html).
 
