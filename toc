@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc" audience="service" href="/docs/infrastructure/vpc/getting-started.html"}
-Virtual Private Cloud (VPC)
+{: .toc subcollection="vpc" audience="service" href="/docs/infrastructure/vpc/getting-started.html" path="infrastructure/vpc}
+Virtual Private Cloud (VPC) Infrastructure
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -34,10 +34,9 @@ Virtual Private Cloud (VPC)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    api-summary.md
     vpc-glossary.md
-    apis.md
-    cli-reference.md
+    [API Reference for VPC](../../apidocs/rias)
+    [CLI Reference for VPC](https://console.cloud.ibm.com/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html)
     related-links.md
     external-resources.md
     {: .navgroup-end}
