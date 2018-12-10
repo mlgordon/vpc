@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc" audience="service" href="/docs/infrastructure/vpc/getting-started.html" path="infrastructure/vpc}
+{: .toc subcollection="vpc" audience="service" href="/docs/infrastructure/vpc/getting-started.html" path="infrastructure/vpc"}
 Virtual Private Cloud (VPC) Infrastructure
 
     {: .navgroup id="learn"}
