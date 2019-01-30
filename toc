@@ -1,51 +1,55 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc" audience="service" href="/docs/infrastructure/vpc/getting-started.html" path="infrastructure/vpc"}
+{: .toc subcollection="vpc" audience="service" arm="4135753" href="/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure" path="infrastructure/vpc"}
 Virtual Private Cloud (VPC) Infrastructure
 
     {: .navgroup id="learn"}
     getting-started.md
-    how-to-participate.md
-    about-vpc-beta.md
-    about.md
-    whats-new.md
-    vpc-connectivity.md
-    vpc-security.md
+    about-vpc-is.md
+    vpc-quotas.md
+
+    {: .topicgroup}
+    Pricing
+        pricing.md
+        vpc-vsi-pricing.md
+
+    related-links.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    step-by-step-pages.md
-    vpc-user-permissions.md
-    vpc-regions-and-subnets.md
-    security-groups.md
-    using-acls.md
-    using-vpn.md
-    sl-2-factor-auth.md
+    console-tutorial.md
+    hello-world-vpc.md
+    example-code.md
 
     {: .topicgroup}
-    All Step-By-Step Guides
-        console-tutorial.md
-        example-code.md
-        how-to-verify-access.md
-    
-    
-    [Linking IaaS and PaaS Accounts](https://www.ibm.com/blogs/bluemix/2018/03/follow-steps-link-iaas-paas-accounts/)
+    Administrative tasks
+        about-resources.md
+        vpc-user-permissions.md
+        vpc-admin-guide.md
+        vpc-vsi-permissions.md
+        api-auth-correlation.md
+
+    {: .topicgroup}
+    Creating and managing resources
+        create-manage-vsi.md
+        create-manage-network.md
+        create-manage-storage.md
+
+    connect-to-cos.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     vpc-glossary.md
-    [API Reference for VPC](../../apidocs/rias)
-    [CLI Reference for VPC](https://console.cloud.ibm.com/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html)
-    related-links.md
-    external-resources.md
+    api-doc-wrapper.md
+    [CLI Reference for VPC](https://cloud.ibm.com/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html#vpc-reference)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    beta-faq.md
+    faq.md
     known-limitations.md
     troubleshooting.md
+    quick-guide-to-resources.md
     errors.md
-    error-handling.md
     getting-help.md
     {: .navgroup-end}

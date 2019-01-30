@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-06-27"
+  years: 2017, 2018, 2019
+lastupdated: "2019-01-10"
 
 ---
 
@@ -16,6 +16,12 @@ lastupdated: "2018-06-27"
 
 # Related Links
 
-* For more informations about planning your deployment of instances, please refer to this [Planning for Instances document ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/vsi-is/vsi_best_practices.html#planning-for-instances){: new_window}.
+Learn more about the IBM® Cloud Platform and VPC Infrastructure with these links below.
 
-* See this document for step by step instructions on [How to Create your Compute Instances ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/vsi-is/vsi_is_create_instance.html#creating-virtual-servers){: new_window}.
+## Blogs 
+
+*  [Where's My Kill Switch? Migrating Network Services to the Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/w3-techblog/wcp/2018/09/migrating-network-services/){: new_window}, by Chris Dotson. A general overview about datacenter security and SDN.
+
+## Scripts
+
+Coming soon.

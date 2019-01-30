@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-18"
 
 ---
 
@@ -14,13 +14,13 @@ lastupdated: "2018-08-07"
 {:tip: .tip}
 {:download: .download}
 
-# Troubleshooting your IBM Cloud VPC in the Beta release
+# Troubleshooting your IBM Cloud VPC
 
 This document covers common difficulties you might encounter, and offers some helpful tips.
 
 ## Turning on `TRACE` mode
 
-You can use the IBM Cloud `TRACE` options to turn on `TRACE` mode, by entering any of the following commands:
+You can use the {{site.data.keyword.cloud}} `TRACE` options to turn on `TRACE` mode, by entering any of the following commands:
 
  * `IBMCLOUD_TRACE=true`
  * `IS_TRACE=true`
@@ -100,3 +100,46 @@ You can't create certain instance actions if the status of your instance is in c
 | Not running | reboot     | yes      |
 | Not paused  | resume     | yes      |
 | Paused      | not resume | yes      |
+
+
+## Instance not responding to `instance-reboot` request
+
+If your instance is not responding to an `instance-reboot` request, you can try an `instance-reset` request. You can think of `instance-reboot` as a soft request and `instance-reset` as a hard request. The `instance-reboot` request sends an OS-reboot request to the instance, but an `instance-reset` request performs a hard reset of the VSI instance. You could think of the difference as typing "ctrl-alt-delete" on your computer's keyboard versus hitting the reset or power button. It is good to remember that the `instance-reset` request takes longer to complete than the `instance-reboot` request.
+
+## Need for Bearer tokens in the API calls
+
+When using the API with a cURL command, you may need to include "Bearer" in the Authorization header, depending on what is in the `$iam_token`. If it includes the word "Bearer" you don't include it again in the header. Most of our examples assume that "Bearer" is included in the header.
+
+## Asynchronous API operations and cleanup
+
+Certain operations -- creating and deleting VSIs, and creating and deleting subnets, for example -- are completed asynchronously through the API. Because of this fact, it is recommended to do polling on the resources you're deleting, to check for deletion before proceeding. Here's some example pseudocode for how to do that polling for VSIs:
+
+```
+do { sleep 10; get list of vsi } while (count(vsi in subnet) > 0))
+```
+Or to combine deletions, here is the repeated pattern for deletion and cleanup:
+
+```
+for (get all vsi) { delete vsi }
+do { sleep 10; get list of vsi } while (count(vsi in subnet) > 0))
+for (get all subnet) { delete subnet }
+do { sleep 10; get list of subnet } while (count(subnets) > 0)
+delete vpc
+```
+
+It can take several minutes for resources to be deleted from the system, due to these asynchronous operations. To facilitate deletion, the best practice is to do things in this order:
+
+1. Delete your instances
+2. Delete your public gateways
+3. Delete your subnets
+4. Delete your VPCs
+
+## Can't delete my VPC, VSI, or other resource
+
+You can use a script to determine whether all of your VPC's asynchronously-deleted resources are deleted so you can delete your VPC--for example, subnets:
+
+```
+do { list subnets } while (num subnets > 0)
+```
+
+You can use the same logic for all deletion of resources, including VSIs.
