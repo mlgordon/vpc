@@ -21,7 +21,7 @@ lastupdated: "2018-12-12"
 
 The table summarizes the pricing for internet data transfer with {{site.data.keyword.cloud}} Virtual Private Cloud. Remember that there is no charge for traffic between VPC and Classic IBM Cloud services. Also, for PayGo services, the service tiers are bound to your account, not to any specific VPC instance. Amounts are shown in U.S. dollars.
 
-Separate pricing applies for [virtual server instances](vpc-vsi-pricing.md) used within your IBM Cloud VPC.
+Separate pricing applies for [virtual server instances](vpc-vsi-pricing.html) used within your IBM Cloud VPC.
 
 ## Free allowances for internet data transfer
 
