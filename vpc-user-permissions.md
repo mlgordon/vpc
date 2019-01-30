@@ -43,7 +43,7 @@ Invite an IBM Cloud user to your account and give them access to `Infrastructure
 
 Here are the basic steps in IAM needed to invite users to VPC services and resources:
 
-1. Navigate to the [IAM Users UI](https://{DomainName}/iam#/users) in the IBM Cloud Console.
+1. Navigate to the [IAM Users UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/users){: new_window} in the IBM Cloud Console.
 2. On the **Users** page, click **Invite users**.
 3. On the **Invite users** page, in the **Users** section, enter the email addresses of the users that you want to invite in the **Email address** field.
 4. In the **Access** section, expand **Services**, and then complete the following tasks:
