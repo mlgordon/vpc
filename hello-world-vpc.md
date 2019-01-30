@@ -23,7 +23,7 @@ This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private C
 
 ## Pre-requisites:
 
-1. Install the [IBM Cloud CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/get_started.html){: new_window}.
+1. Install the [IBM Cloud CLI](/docs/cli/reference/bluemix_cli/get_started.html).
 
 2. Install or update the `infrastructure-service` plugin to the IBM Cloud CLI.
 
