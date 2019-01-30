@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -34,7 +34,7 @@ A known bug exists so that the metering server will not report usage for a VPC
 
 ### APIs not supported
 
-For details about what's supported, see the [API Spec](https://{DomainName}/apidocs/rias).
+For details about what's supported, see the [API Spec](https://{DomainName}/docs/infrastructure/vpc/api-doc-wrapper.html).
 
 The following APIs are not supported in this release.
 
