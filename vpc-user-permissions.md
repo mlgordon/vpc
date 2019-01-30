@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-24"
+lastupdated: "2019-01-30"
 
 
 ---
@@ -22,9 +22,9 @@ lastupdated: "2019-01-24"
 
 {{site.data.keyword.cloud}} Virtual Private Cloud uses role-based access control that enables account administrators to control their users' access to VPC and other infrastructure service resources.
 
-For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/infrastructure/vpc?topic=vpc-assigning-role-based-access-to-vpc-resources).
+For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/infrastructure/vpc/vpc-user-permissions.html).
 
-This document shows you how the administrator of the account can add additional users to the account and give them the correct permissions to manage [VPC infrastructure resources](docs/infrastructure/vpc?topic=vpc-about-vpc-infrastructure-resources). It covers two common scenarios for a VPC administrator:
+This document shows you how the administrator of the account can add additional users to the account and give them the correct permissions to manage [VPC infrastructure resources](docs/infrastructure/vpc/pc-admin-guide.html). It covers two common scenarios for a VPC administrator:
 
 * **Simple access scenario:** Shows how to assign an access policy to a user, so the user can create and use infrastructure service resources (including Virtual Private Clouds).
 
@@ -103,7 +103,7 @@ Imagine you're setting up two different project teams to use two separate Virtua
 * Your first team is a test team. You've decided to assign that team access to VPCs in a resource group named `test_vpcs`.
 * The second team is your production team. They'll be assigned access to VPCs in a resource group named `production_vpcs`.
 
-This strategy can be used to assign separate VPC resources to any number of teams. However all resources share the same VPC quotas for the account. For more information about quotas and limits, see [VPC quotas](/docs/infrastructure/vpc?topic=vpc-quotas#quotas).
+This strategy can be used to assign separate VPC resources to any number of teams. However all resources share the same VPC quotas for the account. For more information about quotas and limits, see [VPC quotas](/docs/infrastructure/vpc/vpc-quotas.html).
 {: tip}
 
 ### Step 1: Create resource groups
