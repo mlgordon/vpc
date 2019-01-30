@@ -19,7 +19,7 @@ lastupdated: "2019-01-15"
 # Getting started with IBM Cloud Virtual Private Cloud Infrastructure
 
 
-The Beta program has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product availability announcements.
+**The Beta program has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product availability announcements.**
 {: important}
 
 To get started with {{site.data.keyword.cloud}} Virtual Private Cloud Infrastructure:
