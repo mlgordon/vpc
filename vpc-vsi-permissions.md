@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-01-24"
+lastupdated: "2018-01-30"
 
 ---
 
@@ -124,4 +124,4 @@ Virtual Servers:
 </table>
 
 ## Next steps
-For more information on how to change a user's permissions, see [Granting Permissions Needed for IBM Cloud VPC Users](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
+For more information on how to change a user's permissions, see [Granting Permissions Needed for IBM Cloud VPC Users](/docs/infrastructure/vpc/vpc-user-permissions.html).
