@@ -54,6 +54,6 @@ If you're new to IBM Cloud Virtual Private Cloud, choose any of the links below,
 ## Next steps
 If you're ready to dig in, go directly to the detailed documentation about **VPC Networking** and **VSIs for VPC**:
 
-* [**IBM Virtual Private Cloud Networking**](https://{DomainName}/docs/infrastructure/vpc-network/getting-started.html)
+* [**IBM Virtual Private Cloud Networking**](https://{DomainName}/docs/infrastructure/vpc-network/about-network.html)
 * [**IBM Virtual Servers for Virtual Private Cloud**](https://{DomainName}/docs/vsi-is/getting-started.html)
 
