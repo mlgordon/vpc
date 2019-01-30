@@ -123,7 +123,7 @@ For a full list of known limitations and features not currently supported, pleas
 
 ## Learn more
   
-* [**IBM VPC terminology**](/docs/infrastructure/vpc/glossary.html)
+* [**IBM VPC terminology**](/docs/infrastructure/vpc/vpc-glossary.html)
 * [**IBM VPC security**](/docs/infrastructure/vpc-network/vpc-security.html)
 * [**IBM VPC regions and subnets available**](/docs/infrastructure/vpc-network/vpc-regions-and-subnets.html)
 * [**Creating and managing network resources in VPC**](/docs/infrastructure/vpc/create-manage-network.html)
