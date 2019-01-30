@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-14"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -34,7 +34,7 @@ For more information about creating users, user access groups, resource groups, 
 
 In general, the {{site.data.keyword.cloud}} Virtual Private Cloud authorization and resource management practices coordinate with the IBM Cloud Identity and Access Management (IAM) services. For more information about IAM, resource groups, and access groups in general, please refer to these IBM Cloud documents:
 
-* [IBM Cloud IAM](/docs/developing/get-coding/policy_examples.html#iam_policy_examples)
+* [IBM Cloud IAM](https://cloud.ibm.com/docs/iam/quickstart.html#getstarted)
 * [Resource Groups](/docs/overview/resource-groups.html#whatis)
 * [Access Groups](/docs/overview/manageaccess.html#cloudaccess)
 
