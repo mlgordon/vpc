@@ -4,7 +4,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-01-22"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -812,7 +812,7 @@ For further instructions to fix this problem, refer to the [API documentation](h
 If this problem persists, [contact support](getting-help.html).
 
 ## vpc_not_empty
-**Message**: None
+**Message**: The VPC cannot be deleted becuase it is not empty.
 
 All resources must be removed from a VPC before it can be deleted.
 
