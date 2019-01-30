@@ -124,4 +124,4 @@ Virtual Servers:
 </table>
 
 ## Next steps
-For more information on how to change a user's permissions, see [Granting Permissions Needed for IBM Cloud VPC Users](/docs/infrastructure/vpc/vpc-user-permissions.html).
+For more information on how to change a user's permissions, see [Managing user permissions for VPC resources](/docs/infrastructure/vpc/vpc-user-permissions.html).
