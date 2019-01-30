@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -452,4 +452,4 @@ A vNIC cannot be deleted from a VSI, so there is no need to make a step for dele
 
 You've successfully provisioned a Virtual Private Cloud instance using the REST APIs. To try out more API commands, explore the full reference:
 
-* [API Reference for VPC](https://{DomainName}/apidocs/rias)
+* [API Reference for VPC](api-doc-wrapper.html)
