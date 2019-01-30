@@ -119,7 +119,7 @@ You must use the API or the CLI to use BYOIP. This advanced capability is not av
 
 ## Known Limitations
  
-For a full list of known limitations and features not currently supported, please refer to [the Known Limitations](known-limitations.html) document.
+For a full list of known limitations and features not currently supported, please refer to the [Known Limitations](known-limitations.html) document.
 
 ## Learn more
   
