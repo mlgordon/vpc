@@ -10,6 +10,7 @@ lastupdated: "2018-08-28"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Connecting to IBM Cloud Object Storage from a VPC
 
@@ -31,7 +32,7 @@ Endpoints are URLs that applications use to issue COS commands and exchange data
 Servers provisioned within IBM Cloud use private API endpoints for services, including COS. Private endpoints provide customers' IBM Cloud servers with high-speed, direct connections to services with no added bandwidth costs.
  
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
- 1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/cloud-object-storage){: new_window}.
+ 1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.
  2. Create a COS bucket in one of the Regions listed in the following section.
  3. Use the Private Endpoint for VPC to create an interface with your COS bucket.
  
