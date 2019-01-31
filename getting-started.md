@@ -12,7 +12,7 @@ lastupdated: "2019-01-15"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
-{:important .important}
+{:important: .important}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
