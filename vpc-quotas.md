@@ -63,7 +63,7 @@ Here are the current load balancer resource quotas:
 
 |Resource|Quota|
 |--------|-----|
-| Load Balancer | 3 per account |
+| Load Balancer | 50 per account |
 | Listener | 10 per Load Balancer |
 | Pool | 10 per Load Balancer |
 | Member | 50 per Pool |
