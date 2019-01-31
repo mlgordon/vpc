@@ -22,7 +22,7 @@ lastupdated: "2019-01-30"
 
 {{site.data.keyword.cloud}} Virtual Private Cloud uses role-based access control that enables account administrators to control their users' access to VPC and other infrastructure service resources.
 
-For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/infrastructure/vpc/vpc-user-permissions.html).
+For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/infrastructure/vpc/vpc-admin-guide.html).
 
 This document shows you how the administrator of the account can add additional users to the account and give them the correct permissions to manage [VPC infrastructure resources](/docs/infrastructure/vpc/vpc-admin-guide.html). It covers two common scenarios for a VPC administrator:
 
