@@ -193,7 +193,8 @@ The two example teams are now set up to use VPCs. At this point, members of the 
 
 ## Related links
 
+* [What is IAM](/docs/iam/index.html)
 * [Managing identity and access](/docs/iam/quickstart.html)
 * [Managing users and access](/docs/iam/iamusermanage.html)
-* [What is IAM](/docs/iam/index.html)
+
 
