@@ -24,8 +24,8 @@ If you have problems or questions when using {{site.data.keyword.cloud}} Virtual
 
 When using the forums to ask a question, tag your question so that it is seen by the IBM Cloud development teams.
 
-* If you have technical questions about the IBM Virtual Private Cloud, post your question on [Stack Overflow ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/search?q=vpc+ibm-cloud){: new_window} and tag your question with "vpc" and "ibm-cloud".
-* For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/vpc.html?smartspace=ibm-cloud){: new_window} forum. Include the "vpc" and "ibm-cloud" tags.
+* If you have technical questions about the IBM Virtual Private Cloud, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/search?q=vpc+ibm-cloud){: new_window} and tag your question with "vpc" and "ibm-cloud".
+* For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/vpc.html?smartspace=ibm-cloud){: new_window} forum. Include the "vpc" and "ibm-cloud" tags.
 
 See [Getting help](/docs/support/index.html#getting-help) for more details about using the forums.
 
