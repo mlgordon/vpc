@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -42,7 +42,7 @@ The following APIs are not supported in this release.
 |------|------|--------|
 | **Compute:** |   |   |
 | Images | Create/Delete not supported | Ubuntu 16.04, CentOS 7.X, Windows 08, Debian|
-| Network_Interfaces | Get (no create, delete, update) | Only one network interface per VSI supported |
+| Network_Interfaces | Get (no create, delete, update) |  |
 | Volume_Interfaces | Not supported |   |
 | Port_Speed | | Only 100,1000 |
 | **Storage:** |   |   |
