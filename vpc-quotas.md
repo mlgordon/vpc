@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-05"
 
 ---
 # Quotas
@@ -19,6 +19,7 @@ Accounts have the following quotas:
 | Subnets | 15 per Virtual Private Cloud |
 | Virtual Server Instances (VSIs) | 100 per account by default |
 | Floating IP addresses | 1 per VSI |
+| vNics per VSI | 5 per VSI |
 
 
 ## Security groups quotas
