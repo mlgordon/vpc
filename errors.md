@@ -4,7 +4,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-01-30"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -136,6 +136,9 @@ You might get this error if you attempt to create a subnet and the subnet cannot
 You might receive this error if the system is unable to provision your VSI, storage volume, or other resources. Try again in a few minutes. 
 
 For further instructions to fix this problem, refer to the [API documentation](api-doc-wrapper.html){: new_window}. If this problem persists, [contact support](getting-help.html).
+
+## internal_solution
+**Message**: Please contact your administrator.
 
 ## invalid_state
 **Message**: None
@@ -674,7 +677,7 @@ Enum:
 [ inbound, outbound ]
 ```
 
-For example, the following value would be invalid because `northbound` is not a valid option in the enmeration `[ inbound, outbound ]`.
+For example, the following value would be invalid because `northbound` is not a valid option in the enumeration `[ inbound, outbound ]`.
 
 ```json
 {
@@ -812,7 +815,7 @@ For further instructions to fix this problem, refer to the [API documentation](a
 If this problem persists, [contact support](getting-help.html).
 
 ## vpc_not_empty
-**Message**: The VPC cannot be deleted becuase it is not empty.
+**Message**: The VPC cannot be deleted because it is not empty.
 
 All resources must be removed from a VPC before it can be deleted.
 
