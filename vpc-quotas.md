@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-07"
 
 ---
 # Quotas
@@ -69,6 +69,6 @@ Here are the current load balancer resource quotas:
 | Pool | 10 per Load Balancer |
 | Member | 50 per Pool |
 
-## Key pair quotas
+## SSH key quotas
 
-A maximum of 100 key pairs across all regions is allowed.
+A maximum of 100 uploaded SSH keys across all regions is allowed per account.
