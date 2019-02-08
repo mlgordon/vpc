@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -67,8 +67,6 @@ This section gives a detailed list of unsupported features and use cases. You mi
 * You won't be able to set up custom routes in the IBM Cloud VPC. All the subnets in Virtual Private Cloud can communicate with each other by default.
 
 * IBM Cloud VPC won't support multicast or broadcast domains.
-
-* IBM Cloud VPC has nothing to do with the fast provisioning of the VSIs. It's handled by a different work stream.
 
 * IBM Cloud VPC does not provide end-to-end encryption, but it supports it.
 
