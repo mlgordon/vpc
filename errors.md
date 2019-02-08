@@ -3,7 +3,6 @@
 copyright:
 
   years: 2018, 2019
-
 lastupdated: "2019-02-05"
 
 ---
@@ -136,6 +135,14 @@ You might get this error if you attempt to create a subnet and the subnet cannot
 You might receive this error if the system is unable to provision your VSI, storage volume, or other resources. Try again in a few minutes. 
 
 For further instructions to fix this problem, refer to the [API documentation](api-doc-wrapper.html){: new_window}. If this problem persists, [contact support](getting-help.html).
+
+## invalid_id_format
+**Message**: Bad ID format. Ensure format is correct.
+
+Make sure that the ID you provided does not contain any malformed data.
+
+You may get this error message if a malformed start query is used when making a pagination request. For example, 
+`GET /v1/network_acls?start=23fbba08-ceb3-4cbe-a951-84ff20a06069?version=2019-01-01` contains two `?`s. Fix the query and try again.
 
 ## internal_solution
 **Message**: Please contact your administrator.
