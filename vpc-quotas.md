@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-07"
 
 ---
 # Quotas
@@ -19,6 +19,7 @@ Accounts have the following quotas:
 | Subnets | 15 per Virtual Private Cloud |
 | Virtual Server Instances (VSIs) | 100 per account by default |
 | Floating IP addresses | 1 per VSI |
+| vNics per VSI | 5 per VSI |
 
 
 ## Security groups quotas
@@ -68,6 +69,6 @@ Here are the current load balancer resource quotas:
 | Pool | 10 per Load Balancer |
 | Member | 50 per Pool |
 
-## Key pair quotas
+## SSH key quotas
 
-A maximum of 100 key pairs across all regions is allowed.
+A maximum of 100 uploaded SSH keys across all regions is allowed per account.

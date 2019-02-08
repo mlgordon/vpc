@@ -3,8 +3,7 @@
 copyright:
 
   years: 2018, 2019
-
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -138,12 +137,15 @@ You might receive this error if the system is unable to provision your VSI, stor
 For further instructions to fix this problem, refer to the [API documentation](api-doc-wrapper.html){: new_window}. If this problem persists, [contact support](getting-help.html).
 
 ## invalid_id_format
-+**Message**: Bad ID format. Ensure format is correct.
-+
-+Make sure that the ID you provided does not contain any malformed data.
-+
-+You may get this error message if a malformed start query is used when making a pagination request. For example, 
-+`GET /v1/network_acls?start=23fbba08-ceb3-4cbe-a951-84ff20a06069?version=2019-01-01` contains two `?`s. Fix the query and try again.
+**Message**: Bad ID format. Ensure format is correct.
+
+Make sure that the ID you provided does not contain any malformed data.
+
+You may get this error message if a malformed start query is used when making a pagination request. For example, 
+`GET /v1/network_acls?start=23fbba08-ceb3-4cbe-a951-84ff20a06069?version=2019-01-01` contains two `?`s. Fix the query and try again.
+
+## internal_solution
+**Message**: Please contact your administrator.
 
 ## invalid_state
 **Message**: None
@@ -682,7 +684,7 @@ Enum:
 [ inbound, outbound ]
 ```
 
-For example, the following value would be invalid because `northbound` is not a valid option in the enmeration `[ inbound, outbound ]`.
+For example, the following value would be invalid because `northbound` is not a valid option in the enumeration `[ inbound, outbound ]`.
 
 ```json
 {
@@ -820,7 +822,7 @@ For further instructions to fix this problem, refer to the [API documentation](a
 If this problem persists, [contact support](getting-help.html).
 
 ## vpc_not_empty
-**Message**: The VPC cannot be deleted becuase it is not empty.
+**Message**: The VPC cannot be deleted because it is not empty.
 
 All resources must be removed from a VPC before it can be deleted.
 
