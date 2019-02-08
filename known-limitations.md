@@ -103,8 +103,8 @@ This section gives a detailed list of unsupported features and use cases. You mi
 
 * ACL is stateless, so return traffic must be allowed explicitly in ACL rules.
 
-### Beta test notification
+### Available Beta services 
 
-* VPN for IBM Cloud VPC is available only as an external Beta offering.
+* VPN for IBM Cloud VPC is available only as a Beta service.
 
-* LBaaS for IBM CLoud VPC is available only as an external Beta offering.
+* LBaaS for IBM CLoud VPC is available only as a Beta service.
