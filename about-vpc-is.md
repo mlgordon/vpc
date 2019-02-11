@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-11"
 ---
 
 {:shortdesc: .shortdesc}
@@ -43,11 +43,12 @@ IBM Cloud VPC offers comprehensive networking capabilities, including IP address
 
  * You can configure your virtual topology automatically, using suggested prefix ranges and pre-configured network policies.
  * You can customize your IBM Cloud VPC and adapt it to your changing requirements, seamlessly.
- * You can bring your own private IP and assign floating IP.
+ * You can bring your own private IP range.
+ * You can assign floating IP from a pre-existing pool.
  * Load balancing and VPN have multi-region control planes, which means that each region where the control plane is deployed can support all regions for a customer's virtual server instances. A failure in a single region will not impact the service in any other region.
 
 ### Global connectivity
-You can scope your applications and available resources locally or globally, without bounds, to span across multiple regions. Using VPN, you can create private connections to other projects and other portions of your hybrid cloud deployments.
+You can scope your applications and available resources to span across multiple regions. Using VPN, you can create private connections to other projects and other portions of your hybrid cloud deployments.
 
 ### Network security
 Security is integrated into your IBM Cloud VPC, with security groups that act as virtual firewalls for instance-level protection, and with network access control lists (ACLs) for subnet-level protection.
