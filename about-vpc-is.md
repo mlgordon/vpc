@@ -43,7 +43,7 @@ IBM Cloud VPC offers comprehensive networking capabilities, including IP address
 
  * You can configure your virtual topology automatically, using suggested prefix ranges and pre-configured network policies.
  * You can customize your IBM Cloud VPC and adapt it to your changing requirements, seamlessly.
- * You can bring your own private IP range.
+ * You can bring your own IP range.
  * You can assign floating IP from a pre-existing pool.
  * Load balancing and VPN have multi-region control planes, which means that each region where the control plane is deployed can support all regions for a customer's virtual server instances. A failure in a single region will not impact the service in any other region.
 
@@ -98,10 +98,10 @@ Here are some ways that VPC supports your hybrid, cloud-tolerant, and cloud-nati
 
 ## Summary of features
 
-  * Create subnets, and bring your own private IP (BYOIP)
+  * Create subnets, and bring your own IP range
   * Create and manage Virtual Server Instances (VSIs) using Ubuntu 16.04, CentOS 7.x, Windows, or Debian
   * Reserve and associate a Floating IPv4
-  * Get Internet access to subnets by creating a public gateway (PGW), one per Zone
+  * Get Internet access to subnets by creating a public gateway (PGW), one per zone
   * Create and assign security groups to your VSIs
   * Use network access control lists (ACLs) to provide security for your subnets
   * Single-homed VSIs, using one virtual network interface card (vNIC)
