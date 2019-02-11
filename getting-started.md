@@ -18,8 +18,7 @@ lastupdated: "2019-01-15"
 
 # Getting started with IBM Cloud Virtual Private Cloud Infrastructure
 
-
-The Beta program has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product availability announcements.
+IBM will be accepting a limited number of customers to participate in an Early Access program to VPC starting in early April, 2019 with expanded usage being opened in the following months. If your organization would like to gain access to IBM Virtual Private Cloud, please complete this [nomination form]((https://{DomainName}/vpc){: new_window}) and an IBM representative will be in contact with you regarding next steps.
 {: important}
 
 To get started with {{site.data.keyword.cloud}} Virtual Private Cloud Infrastructure:
