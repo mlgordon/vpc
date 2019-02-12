@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-12-13"
+lastupdated: "2019-02-12"
 
 
 ---
@@ -14,6 +14,7 @@ lastupdated: "2018-12-13"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:download: .download}
 
 # Creating and managing storage in VPC
@@ -30,4 +31,6 @@ When you delete the instance, the boot volume is deleted.
 * Ensure that you are naming ALL of your volume attachments at attachment time
 * Each volume must have a distinct name within a region within an account. 
 
+You can re-use the name of a volume after that volume has been deleted. However, be aware that re-using a volume name could cause confusion for billing purposes.
+{:note}
 
