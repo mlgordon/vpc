@@ -40,7 +40,7 @@ To get started with {{site.data.keyword.cloud}} Virtual Private Cloud Infrastruc
 
    * Or Generate an SSH Key: If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen` command and following the prompts. For example, you can generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file.
    
-### Use the UI, CLI, or REST API
+## Use the UI, CLI, or REST API
 
 You can provision and manage all of your VPC resources through the UI, CLI, or REST API.
 
