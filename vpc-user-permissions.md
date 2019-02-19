@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-24"
 
 
 ---
@@ -22,9 +22,9 @@ lastupdated: "2019-01-30"
 
 {{site.data.keyword.cloud}} Virtual Private Cloud uses role-based access control that enables account administrators to control their users' access to VPC and other infrastructure service resources.
 
-For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/infrastructure/vpc/vpc-admin-guide.html).
+For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/infrastructure/vpc?topic=vpc-assigning-role-based-access-to-vpc-resources).
 
-This document shows you how the administrator of the account can add additional users to the account and give them the correct permissions to manage [VPC infrastructure resources](/docs/infrastructure/vpc/about-resources.html). It covers two common scenarios for a VPC administrator:
+This document shows you how the administrator of the account can add additional users to the account and give them the correct permissions to manage [VPC infrastructure resources](/docs/infrastructure/vpc?topic=vpc-about-vpc-infrastructure-resources). It covers two common scenarios for a VPC administrator:
 
 * **Simple access scenario:** Shows how to assign an access policy to a user, so the user can create and use infrastructure service resources (including Virtual Private Clouds).
 
@@ -43,7 +43,7 @@ Invite an IBM Cloud user to your account and give them access to `Infrastructure
 
 Here are the basic steps in IAM needed to invite users to VPC services and resources:
 
-1. Navigate to the [IAM Users UI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/users){: new_window} in the IBM Cloud Console.
+1. Navigate to the [IAM Users UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/users){: new_window} in the IBM Cloud Console.
 2. On the **Users** page, click **Invite users**.
 3. On the **Invite users** page, in the **Users** section, enter the email addresses of the users that you want to invite in the **Email address** field.
 4. In the **Access** section, expand **Services**, and then complete the following tasks:
@@ -58,7 +58,7 @@ This scenario covers the basic steps needed to give an existing user in your acc
 
 In the steps that follow, you'll create two IAM policies. Both policies are needed before your user can create and use infrastructure service resources. All of the resources must reside within the account's default resource group.
 
-1. Navigate to the [IAM Users UI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/users){: new_window} in the IBM Cloud Console.
+1. Navigate to the [IAM Users UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/users){: new_window} in the IBM Cloud Console.
 2. Select the user whose authorization you're enabling.
 3. Under the **Access policies** tab, select **Assign access**.
 4. Select **Assign access within a resource group**.
@@ -103,7 +103,7 @@ Imagine you're setting up two different project teams to use two separate Virtua
 * Your first team is a test team. You've decided to assign that team access to VPCs in a resource group named `test_vpcs`.
 * The second team is your production team. They'll be assigned access to VPCs in a resource group named `production_vpcs`.
 
-This strategy can be used to assign separate VPC resources to any number of teams. However all resources share the same VPC quotas for the account. For more information about quotas and limits, see [VPC quotas](/docs/infrastructure/vpc/vpc-quotas.html).
+This strategy can be used to assign separate VPC resources to any number of teams. However all resources share the same VPC quotas for the account. For more information about quotas and limits, see [VPC quotas](/docs/infrastructure/vpc?topic=vpc-quotas#quotas).
 {: tip}
 
 ### Step 1: Create resource groups
@@ -123,13 +123,13 @@ Resource access can be assigned to individual users, or to groups of users. Grou
 
 **Task:** Create four access groups with the following names: `test_team_manage_vpcs`, `test_team_view_vpcs`, `production_team_manage_vpcs`, `production_team_view_vpcs`.
 
-For help creating access groups, see [Create access groups](/docs/iam/quickstart.html#step-2-create-access-groups).
+For help creating access groups, see [Create access groups](/docs/iam?topic=iam-groups#create_ag).
 
 ### Step 3: Add IAM policies to the access groups you just created
 
 Add the necessary VPC access policies so that the `test_team` access group can manage (create, update and delete) VPC resources.  
 
-1. Navigate to the [IAM Group UI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/groups){: new_window} in the IBM Cloud Console.
+1. Navigate to the [IAM Group UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/groups){: new_window} in the IBM Cloud Console.
 2. Select the desired access group (start with: `test_team_manage_vpcs`).
 3. Under the **Access policies** tab, click **Assign access**.
 4. Select **Assign access within a resource group**.
@@ -158,7 +158,7 @@ Infrastructure service `Floating IP` resources are created in the account's defa
 
 Here's how to create that **Viewer** access:
 
-1. Navigate to the [IAM Group UI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/groups){: new_window} in the IBM Cloud Console.
+1. Navigate to the [IAM Group UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/groups){: new_window} in the IBM Cloud Console.
 2. Select the desired access group (start with `test_team_manage_vpcs`).
 3. Under the **Access policies** tab, click **Assign access**.
 4. Select **Assign access to account management services**.
@@ -172,7 +172,7 @@ Repeat the previous steps to assign the `production_team_manage_vpcs` access gro
 
 Now you can assign team members (users) to the appropriate access groups. Follow these steps to add each member of the test team to the access group that allows test team VPC management:
 
-1. Navigate to the [IAM Group UI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/groups){: new_window} in the IBM Cloud Console.
+1. Navigate to the [IAM Group UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/groups){: new_window} in the IBM Cloud Console.
 2. Select the desired access group (start with: `test_team_manage_vpcs`).
 3. Under the **Users** tab, click **Add users**.
 4. Select each user you wish to add to the access group.
@@ -193,8 +193,7 @@ The two example teams are now set up to use VPCs. At this point, members of the 
 
 ## Related links
 
-* [What is IAM](/docs/iam/index.html)
 * [Managing identity and access](/docs/iam/quickstart.html)
 * [Managing users and access](/docs/iam/iamusermanage.html)
-
+* [What is IAM](/docs/iam/index.html)
 

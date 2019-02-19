@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -24,7 +24,7 @@ This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private C
 
 ## Pre-requisites:
 
-1. Install the [IBM Cloud CLI](/docs/cli/reference/bluemix_cli/get_started.html).
+1. Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html#overview).
 
 ## Step 1: Log in to IBM Cloud to get an IAM token to use in the API calls.
 
@@ -80,7 +80,7 @@ To verify that this variable was saved, run `echo $rias_endpoint` and make sure 
 
 ## Step 4: Run the GET Regions API
 
-If you run into unexpected results, add the `--verbose` (debug) flag after the `curl` command to obtain detailed logging information. You also can check out the commonly encountered errors in our [troubleshooting page](troubleshooting.html).
+If you run into unexpected results, add the `--verbose` (debug) flag after the `curl` command to obtain detailed logging information. You also can check out the commonly encountered errors in our [troubleshooting page](/docs/infrastructure/vpc?topic=vpc-troubleshooting-your-ibm-cloud-vpc).
 {: tip}
 
 The following command returns the regions available for VPC, in JSON format. At least one object should return.
@@ -150,7 +150,6 @@ Create an IBM Cloud VPC called `my-vpc`.
 curl -X POST $rias_endpoint/v1/vpcs?version=2019-01-01 \
   -H "Authorization: $iam_token" \
   -d '{
-      	"is_default": true,
       	"name": "my-vpc"
       }'
 ```
@@ -190,7 +189,7 @@ subnet="<YOUR_SUBNET_ID>"
 
 ## Step 11: Check the Status of your Subnet
 
-To provision resources in your subnet, the subnet must be in `available` status. Query the subnet resource and make sure the status is `available` before you continue. If the status is `failed`, contact [support](getting-help.html) with the details. You can attempt to continue by trying to provision another subnet.
+To provision resources in your subnet, the subnet must be in `available` status. Query the subnet resource and make sure the status is `available` before you continue. If the status is `failed`, contact [support](/docs/infrastructure/vpc?topic=vpc-gettinghelp) with the details. You can attempt to continue by trying to provision another subnet.
 
 ```bash
 curl $rias_endpoint/v1/subnets/$subnet?version=2019-01-01 -H "Authorization: $iam_token"
@@ -386,7 +385,7 @@ Use the `address` of the Floating IP to connect to the virtual server instance w
 ssh -i <private_key_file> root@<floating ip address>```
 {: pre}
 
-SSH access into the virtual server may be prevented by security groups. If SSH access is required, you must use an [appropriate security group](/docs/infrastructure/vpc-network/security-groups.html).
+SSH access into the virtual server may be prevented by security groups. If SSH access is required, you must use an [appropriate security group](/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups).
 {: note}
 
 See [Connecting to your instance using Linux](/docs/vsi-is/vsi_is_connecting_linux_gc.html) for more information on how to connect to your instance.
@@ -452,4 +451,4 @@ A vNIC cannot be deleted from a VSI, so there is no need to make a step for dele
 
 You've successfully provisioned a Virtual Private Cloud instance using the REST APIs. To try out more API commands, explore the full reference:
 
-* [API Reference for VPC](api-doc-wrapper.html)
+* [API Reference for VPC](https://{DomainName}/apidocs/rias)

@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2018, 2019
 
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-01"
 
 
 ---
@@ -33,4 +33,3 @@ When you delete the instance, the boot volume is deleted.
 
 You can re-use the name of a volume after that volume has been deleted. However, be aware that re-using a volume name could cause confusion for billing purposes.
 {:note}
-

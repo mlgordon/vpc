@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-11"
 
 ---
 # Quotas
@@ -16,10 +16,24 @@ Accounts have the following quotas:
 |   Resource     | Maximum Number |
 | ------- | :------: |
 | Virtual Private Clouds | 5 per account|
+| VPCs with Classic Access | 1 per region, per account |
+| Public Gateways (PGWs) | 1 per zone |
+| Address prefixes | 5 per VPC per zone |
+
+## Subnet quotas
+
+|   Resource     | Maximum Number |
+| ------- | :------: |
 | Subnets | 15 per Virtual Private Cloud |
+
+
+## VSI quotas
+|   Resource     | Maximum Number |
+| ------- | :------: |
 | Virtual Server Instances (VSIs) | 100 per account by default |
+| vNICs per VSI | 5 per VSI |
 | Floating IP addresses | 1 per VSI |
-| vNics per VSI | 5 per VSI |
+| SSH Keys | 100 per account |
 
 
 ## Security groups quotas
@@ -28,20 +42,20 @@ Some account-based quotas (limits) exist for security groups and their associate
 
 |Resource|Quota|
 |--------|-----|
-|Security groups per network interface|5|
-|Security groups per account|500|
-|Rules per security group|50|
-|Remote rules per security group|5|
-|Network interfaces per security group|100|
+|Security groups|5 per network interface|
+|Security groups|500 per account|
+|Rules|50 per security group|
+|Remote rules |5 per security group|
+|Network interfaces|100 per security group|
 
 ## ACL quotas
 
 |Resource|Quota|
 |--------|-----|
-|ACLs per account | 30 |
-|ACLs per region |200|
-|Ingress rules per ACL |20|
-|Egress rules per ACL |20|
+|ACLs| 30 per account|
+|ACLs |200 per region |
+|Ingress rules|20 per ACL |
+|Egress rules |20 per ACL |
 
 ## VPN quotas
 
@@ -49,14 +63,16 @@ Here are the current VPN resource limitations per account:
 
 |Resource|Quota|
 |--------|-----|
-| VPN gateways | Maximum 7 |
-| VPN connections per VPN gateway | Maximum 10 |
-| peer subnets across VPN connections on a given VPN gateway | Maximum 50 |
-| peer subnets on a given VPN connection | Maximum 15 |
-| local subnets across VPN connections on a given VPN gateway | Maximum 50 |
-| local subnets on a given VPN connection |  Maximum 15 |
-| IKE policies | Maximum 20  |
-| IPSec policies | *Maximum 20 |
+| VPN gateways| 7 per account |
+| VPN gateways | 3 per zone |
+| VPN connections | 10 per VPN gateway |
+| IKE policies | 20 per account |
+| IPSec policies | 20 per account |
+| Peer subnets on any single VPN gateway | 50 across all VPN connections|
+| Peer subnets  | 15 on any single VPN connection|
+| Local subnets on any single VPN gateway | 50 across all VPN connections|
+| Local subnets |  15 on any single VPN connection |
+
 
 ## Load Balancer quotas
 
@@ -68,7 +84,3 @@ Here are the current load balancer resource quotas:
 | Listener | 10 per Load Balancer |
 | Pool | 10 per Load Balancer |
 | Member | 50 per Pool |
-
-## SSH key quotas
-
-A maximum of 100 uploaded SSH keys across all regions is allowed per account.

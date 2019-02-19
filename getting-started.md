@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-01-29"
 
 ---
 
@@ -32,7 +32,7 @@ To get started with {{site.data.keyword.cloud}} Virtual Private Cloud Infrastruc
 
 ## Prerequisites
 
- * **User Permissions**: Be sure that your user has sufficient permissions to create and manage resources in your VPC. For a list of required permissions, see [Granting permissions needed for VPC users](vpc-user-permissions.html).
+ * **User Permissions**: Be sure that your user has sufficient permissions to create and manage resources in your VPC. For a list of required permissions, see [Granting permissions needed for VPC users](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
 
  * **Have your SSH key ready**: You will use an SSH key to connect to your virtual server instance(s).
 
@@ -46,13 +46,13 @@ You can provision and manage all of your VPC resources through the UI, CLI, or R
 
 If you're new to IBM Cloud Virtual Private Cloud, choose any of the links below, which lead you through the process of creating your IBM Cloud VPC and its resources, from start to finish. You can choose whether to get started from the Console UI, the command line (CLI), or the regional infrastructure services (RIAS) API.
 
-* For access through the user interface, log into the [IBM Cloud Console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/vpc){: new_window}. Follow the [UI guide](console-tutorial.html) if you need help.
-* To use the command line interface, use the [infrastructure-service](/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html) plugin of the [IBM Cloud CLI](/docs/cli/reference/bluemix_cli/get_started.html#getting-started) and follow the [Hello World](hello-world-vpc.html) example.
-* For more advanced users, you can call the [REST APIs](https://{DomainName}/apidocs/rias) directly. Follow the [example code](example-code.html) tutorial to get started with the REST APIs.
+* For access through the user interface, log into the [IBM Cloud Console ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://{DomainName}/vpc){: new_window}. Follow the [UI guide](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) if you need help.
+* To use the command line interface, use the [infrastructure-service](/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html) plugin of the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#overview) and follow the [Hello World](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli) example.
+* For more advanced users, you can call the [REST APIs](https://{DomainName}/apidocs/rias) directly. Follow the [example code](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis) tutorial to get started with the REST APIs.
 
 ## Next steps
 If you're ready to dig in, go directly to the detailed documentation about **VPC Networking** and **VSIs for VPC**:
 
-* [**IBM Virtual Private Cloud Networking**](https://{DomainName}/docs/infrastructure/vpc-network/about-network.html)
-* [**IBM Virtual Servers for Virtual Private Cloud**](https://{DomainName}/docs/vsi-is/getting-started.html)
+* [**IBM Virtual Private Cloud Networking**](/docs/infrastructure/vpc-network?topic=vpc-network-getting-started-with-networking-for-virtual-private-cloud)
+* [**IBM Virtual Servers for Virtual Private Cloud**](/docs/vsi-is?topic=virtual-servers-is-gettingstartedvsigen)
 

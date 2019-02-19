@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-15"
 
 
 ---
@@ -31,11 +31,11 @@ To create and configure your virtual private cloud (VPC) and other attached reso
 
 ## Before you begin
 {: #before}
-Make sure you have sufficient permissions to create and manage resources in your VPC. For more information, see [Managing user permissions for VPC resources](vpc-user-permissions.html).
+Make sure you have sufficient permissions to create and manage resources in your VPC. For more information, see [Managing user permissions for VPC resources](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
 
 Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file.
 
-If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../../catalog/services/certificate-manager){: new_window}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../../iam/#/authorizations){: new_window}. For the source, select **Infrastructure Service** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](https://{DomainName}/docs/infrastructure/vpc-network/using-lbaas.html).
+If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/certificate-manager){: new_window}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam/#/authorizations){: new_window}. For the source, select **Infrastructure Service** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-load-balancers-in-ibm-cloud-vpc).
 
 ## Creating a VPC and subnet
 
@@ -44,8 +44,8 @@ To create a VPC and subnet:
 1. Open [{{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.cloud.ibm.com){: new_window}
 1. Click **Menu icon ![Menu icon](../../icons/icon_hamburger.svg) > VPC Infrastructure > Network > VPC and subnets** and click **New virtual private cloud**.
 1. Enter a name for the VPC, such as `my-vpc`.
-1. Select a resource group for the VPC and all its attached resources. Resource groups enable you to organize your account resources for access control and billing purposes. For more information, see [Best practices for organizing resources in a resource group](/docs/resources/bestpractice_rgs.html).
-1. _Optional:_ Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources/tagging_resources.html).
+1. Select a resource group for the VPC and all its attached resources. Resource groups enable you to organize your account resources for access control and billing purposes. For more information, see [Best practices for organizing resources in a resource group](/docs/resources?topic=resources-bp_resourcegroups).
+1. _Optional:_ Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
 1. Select or create the default ACL for new subnets in this VPC. In this tutorial, let's create a new default ACL. We'll configure rules for the ACL later.
 1. Select whether the default security group allows inbound SSH and ping traffic to virtual server instances in this VPC. We'll configure more rules for the default security group later.
 1. Enter a name for the new subnet in your VPC, such as `my-subnet`. 
@@ -109,7 +109,7 @@ To create a virtual server instance in the newly created subnet:
 1. Select an image (that is, operating system and version) such as Ubuntu Linux 16.04.
 1. To set the instance size, select one of the popular profiles or click **All profiles** to choose a different core and RAM combination that's most appropriate for your workload.
 1. Select an existing SSH key or add a new SSH key that will be used to access the virtual server instance. To add an SSH key, click **New key** and name the key. After you enter your previously generated public key value, click **Add SSH key**.
-1. _Optional:_ Enter user data to run common configuration tasks when your instance starts. For example, you can specify cloud-init directives or shell scripts for Linux images. For more information, see [User Data](/docs/vsi-is/vsi_is_provisioning_scripts.html).
+1. _Optional:_ Enter user data to run common configuration tasks when your instance starts. For example, you can specify cloud-init directives or shell scripts for Linux images. For more information, see [User Data](/docs/vsi-is?topic=virtual-servers-is-user-data).
 1. Note the boot volume. In the current release, 100 GB is allotted for the boot volume. *Auto Delete* is enabled for the volume; it will be deleted automatically if the instance is deleted.
 1. In the **Network interfaces** area, you can edit the network interface and change its name and port speed. If you have more than one subnet in the selected zone and VPC, you can attach a different subnet to the interface. If you want the instance to exist in multiple subnets, you can create more interfaces.
 
@@ -180,18 +180,22 @@ ssh -i <path-to-private-key-file> root@<public-ip-address>
 ```
 {:pre}
 
-See [Connecting to your instance using Linux](/docs/vsi-is/vsi_is_connecting_linux_gc.html) for more information on how to connect to your instance.
+See [Connecting to your instance using Linux](/docs/vsi-is?topic=virtual-servers-is-connecting-to-your-linux-instance) for more information on how to connect to your instance.
 
 ### Connecting to Windows images
 To connect to a Windows image, log in using its decrypted password. To get the decrypted password, copy the encrypted password from the instance's details page and run the following command:
 
 ```
-openssl enc -d -nosalt -in <input_file.txt> -aes-256-cbc -pass pass:mySecretPass
+# Decode the encrypted password
+cat ~/testpwd | base64 --decode > ~/testpwd64
+# Decrypt the decoded password using the RSA private key
+openssl pkeyutl -in testpwd64 -decrypt -inkey private.pem -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
+-pkeyopt rsa_mgf1_md:sha256
 ```
-{:pre}
+{:codeblock}
 
 
-See [Connecting to your Windows instance](/docs/vsi-is/vsi_is_connecting_windows_gc.html) for more information on how to connect to your instance.
+See [Connecting to your Windows instance](/docs/vsi-is?topic=virtual-servers-is-connecting-to-your-windows-instance) for more information on how to connect to your instance.
 
 
 
@@ -253,7 +257,7 @@ To create a load balancer:
 ## Creating a VPN
 You can create a virtual private network (VPN) so your VPC can connect securely to another private network, such as an on-premises network or another VPC. 
 
-To view a code example, see [Using VPN with your VPC](https://{DomainName}/docs/infrastructure/vpc-network/using-vpn.html#vpn-demo-examples).
+To view a code example, see [Using VPN with your VPC](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-vpn-with-your-vpc).
 {: tip}
 
 To create a VPN:

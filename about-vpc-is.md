@@ -118,14 +118,12 @@ You can bring your own public IPv4 address range (BYOIP) to your IBM Cloud VPC a
 You must use the API or the CLI to use BYOIP. This advanced capability is not available through the IBM Cloud console UI.
 {: note}
 
-## Known Limitations
- 
-For a full list of known limitations and features not currently supported, please refer to the [Known Limitations](known-limitations.html) document.
+For a full list of known limitations and features not currently supported, please refer to the [Known Limitations](/docs/infrastructure/vpc?topic=vpc-known-limitations) document.
 
 ## Learn more
-  
-* [**IBM VPC terminology**](/docs/infrastructure/vpc/vpc-glossary.html)
-* [**IBM VPC security**](/docs/infrastructure/vpc-network/vpc-security.html)
-* [**IBM VPC regions and subnets available**](/docs/infrastructure/vpc-network/vpc-regions-and-subnets.html)
-* [**Creating and managing network resources in VPC**](/docs/infrastructure/vpc/create-manage-network.html)
-* [**Creating and managing virtual server instances**](/docs/infrastructure/vpc/create-manage-vsi.html)
+
+* [**IBM VPC terminology**](/docs/infrastructure/vpc?topic=vpc-vpc-glossary)
+* [**IBM VPC security**](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-security-in-your-ibm-cloud-vpc#security-in-your-ibm-cloud-vpc)
+* [**IBM VPC regions and subnets available**](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets)
+* [**Creating and managing network resources in VPC**](/docs/infrastructure/vpc?topic=vpc-creating-and-managing-network-resources-in-vpc)
+* [**Creating and managing virtual server instances**](/docs/infrastructure/vpc?topic=vpc-creating-and-managing-virtual-server-instances)

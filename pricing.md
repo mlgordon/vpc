@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2018, 2019
 
-lastupdated: "2018-12-12"
+lastupdated: "2019-02-13"
 
 
 ---
@@ -14,6 +14,7 @@ lastupdated: "2018-12-12"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:download: .download}
 
 
@@ -21,7 +22,7 @@ lastupdated: "2018-12-12"
 
 The table summarizes the pricing for internet data transfer with {{site.data.keyword.cloud}} Virtual Private Cloud. Remember that there is no charge for traffic between VPC and Classic IBM Cloud services. Also, for PayGo services, the service tiers are bound to your account, not to any specific VPC instance. Amounts are shown in U.S. dollars.
 
-Separate pricing applies for [virtual server instances](vpc-vsi-pricing.html) used within your IBM Cloud VPC.
+Separate pricing applies for [virtual server instances](/docs/infrastructure/vpc?topic=vpc-pricing-for-virtual-servers-for-vpc) used within your IBM Cloud VPC.
 
 ## Free allowances for internet data transfer
 
@@ -42,10 +43,15 @@ A floating IP is charged at the rate of $1 (U.S.) per month, starting when it is
 |-----------|-----------|------------------|
 | Egress to Internet |  0 to 5 GB | Free |
 |  | 6 to 10,000 GB | $0.087 per GB |
-|  | 10,001 to 50,000 GB | $0.83 per GB |
+|  | 10,001 to 50,000 GB | $0.083 per GB |
 |  | 50,001 to 150,000 GB | $0.07 per GB |
 |  | 150,001 GB and over | $0.05 per GB |
 
 
 When you create a new VPC, it may take up to an hour for initial billing charges to appear in the Console UI or API.
 {: tip}
+
+If you have a public gateway or Floating IP, you may still see some minimal egress charges, even if you have not sent out any egress traffic during that time. These charges are for ARP traffic, which is necessary to operate your account.
+{: important}
+
+

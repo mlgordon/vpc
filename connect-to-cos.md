@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-02-05"
+  years: 2018-2019
+lastupdated: "2019-02-04"
 ---
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -29,22 +29,23 @@ IBM COS is available in three configurations: **Cross-Region**, **Regional** and
 ### COS Direct Endpoints for use with VPC
 
 Endpoints are URLs that applications use to issue COS commands and exchange data with COS. Every endpoint uses the same Application Programming Interface (API) to interact with COS.
-Servers provisioned within IBM Cloud use API endpoints for services, including COS. Direct endpoints provide customers' IBM Cloud servers with high-speed, direct connections to services with no added bandwidth costs.
+Servers provisioned within IBM Cloud use 
+API endpoints for services, including COS. Direct endpoints provide customers' IBM Cloud servers with high-speed, direct connections to services with no added bandwidth costs.
  
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
- 1. Provision COS from the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.
+ 1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.
  2. Create a COS bucket in one of the Regions listed in the following section.
  3. Use the Direct Endpoint for VPC to create an interface with your COS bucket.
  
 ## U.S. Cross-region Endpoints
  
-| **U.S. Cross Region** | **Direct Endpoint for VPC** |
+| **US Cross Region** | **Direct Endpoint for VPC** |
 |------------|-------------------------------|
 | US Cross Region | `s3.direct.us.cloud-object-storage.appdomain.cloud` |
 | Dallas Access Point | `s3.direct.dal.us.cloud-object-storage.appdomain.cloud`
 | San Jose Access Point | `s3.direct.sjc.us.cloud-object-storage.appdomain.cloud`
 | Washington, DC Access Point | `s3.direct.wdc.us.cloud-object-storage.appdomain.cloud` |
-  
+
  ## U.S. Regional Endpoints
  
 | **Region** | **Direct Endpoint for VPC** |
@@ -54,7 +55,7 @@ Servers provisioned within IBM Cloud use API endpoints for services, including C
 
  ## Single Datacenter Endpoints
  
-| **Region** | **Private Endpoint for VPC** |
+| **Region** | **Direct Endpoint for VPC** |
 |------------|-------------------------------|
 | Toronto, Canada | `s3.direct.tor01.cloud-object-storage.appdomain.cloud` |
 | Montreal, Canada | `s3.direct.mon01.cloud-object-storage.appdomain.cloud` |

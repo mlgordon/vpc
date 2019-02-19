@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -29,7 +29,7 @@ Currently, the limit is 100. If this limit is exceeded, you might receive an "in
 
 No, although the name can contain numbers, it must begin with a letter.
 
-## Are there restrictions on what characters I can use in a VPC name?
+## Are there restrictions on what characters I can use in a name?
 {:faq}
 
 Yes, the UI blocks consecutive double dashes, underscores, and periods from being part of a VSI name.
@@ -77,13 +77,12 @@ No.
 
 No.
 
-## During the VPC PGW creation, do I need to reserve the FIP, or does the system automatically reserve the FIP? Will I see that Floating IP when I query all of the Floating IPs?
-{:faq}
+## During the PGW creation, do I need to reserve the FIP, or does the system automatically reserve the FIP? Will I see that Floating IP when I query all of the Floating IPs?
 
 As the spec is currently defined, RIAS automatically creates a floating IP along with the public gateway if an existing floating IP is not specified. And yes, that floating IP will show up in the list.
 
 ## Who enforces that there must be only 1 Public Gateway per zone for a VPC?
-{:faq}
+{: faq}
 
 The Regional Infrastructure API Service (RIAS) enforces this limit.
 

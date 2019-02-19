@@ -3,8 +3,8 @@
 
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-01-30"
+  years: 2018
+lastupdated: "2018-01-19"
 
 
 ---
@@ -19,7 +19,8 @@ lastupdated: "2019-01-30"
 
 # Pricing for {{site.data.keyword.vsi_is_short}} 
 
-{{site.data.keyword.vsi_is_full}} is offered in select regions with up to 62 vCPU and 496 GB RAM to fit any workload need. You're billed at an hourly rate only, with discounts applied the longer your instance is running. Virtual server usage times are calculated per second, for both the in use time and suspended time of your instance. For example, if your instance runs for 45 minutes and 32 seconds, you're billed for 45 minutes and 32 seconds.
+{: #vsi-for-vpc-pricing}
+{{site.data.keyword.vsi_is_full}} is offered in select regions with up to 62 vCPU and 248 GB RAM to fit any workload need. You're billed at an hourly rate only, with discounts applied the longer your instance is running. Virtual server usage times are calculated per second, for both the in use time and suspended time of your instance. For example, if your instance runs for 45 minutes and 32 seconds, you're billed for 45 minutes and 32 seconds.
 {:shortdesc}
 
 ## Sustained usage
@@ -64,6 +65,11 @@ The following operating systems are included free of charge:
 * Debian 8.latest, 9.latest (minimal)
 
 There are premium operating systems and other add-ons available. You'll see pricing reflected in your Cost Summary.
+
+## Billing delay
+{: #billing-delay}
+
+After {{site.data.keyword.vsi_is_short}} are provisioned, it might take up to six hours for billing information to be available. In general, billing information for virtual server instances has a six hour lag time.
 
 ## Suspend billing
 

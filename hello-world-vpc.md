@@ -2,20 +2,21 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-02-05"
 
 ---
 
 {:shortdesc: .shortdesc}
-{:pre: .pre}
 {:screen: .screen}
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:pre: .pre}
 {:tip: .tip}
+{:important: .important}
+{:note: .note}
 {:table: .aria-labeledby="caption"}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Creating a VPC using the IBM Cloud CLI
 
@@ -23,7 +24,7 @@ This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private C
 
 ## Pre-requisites:
 
-1. Install the [IBM Cloud CLI](/docs/cli/reference/bluemix_cli/get_started.html).
+1. Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html#overview).
 
 2. Install or update the `infrastructure-service` plugin to the IBM Cloud CLI.
 
@@ -48,11 +49,17 @@ This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private C
   ```
   {: pre}
 
+
 3. Generate a public SSH key to provision Virtual Server Instances (VSIs).
 
 You may have a public SSH key already. Look for a file called ``id_rsa.pub`` under an ``.ssh`` directory under your home directory, for example, ``/Users/<USERNAME>/.ssh/id_rsa.pub``. The file starts with ``ssh-rsa`` and ends with your email address.
 
 If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the ``ssh-keygen`` command and following the prompts.
+
+
+To learn how to create a Virtual Private Cloud in different IBM Cloud regions, see our [Regions](/docs/infrastructure/vpc/vpc-regions.html) topic.
+{: tip}
+
 
 ## Step 1: Log in to IBM Cloud.
 
@@ -401,4 +408,4 @@ helloworld-vsi says Hello, World!
 
 You've successfully provisioned and connected to your Virtual Private Cloud instance using the IBM Cloud CLI. To try out more CLI commands, explore the full reference:
 
-* [CLI Reference for VPC](/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html)
+* [CLI Reference for VPC](/docs/cli/reference/ibmcloud?topic=infrastructure-service-cli-vpc-reference#vpc-reference)

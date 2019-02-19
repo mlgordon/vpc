@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc" audience="service" arm="4135753" href="/docs/infrastructure/vpc/getting-started.html" path="infrastructure/vpc"}
+{: .toc subcollection="vpc" audience="service" arm="4135753" href="/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure" path="infrastructure/vpc"}
 Virtual Private Cloud (VPC) Infrastructure
 
     {: .navgroup id="learn"}
@@ -21,6 +21,8 @@ Virtual Private Cloud (VPC) Infrastructure
     console-tutorial.md
     hello-world-vpc.md
     example-code.md
+    classic-access.md
+    vpc-regions.md
 
     {: .topicgroup}
     Administrative tasks
@@ -42,7 +44,9 @@ Virtual Private Cloud (VPC) Infrastructure
     {: .navgroup id="reference"}
     vpc-glossary.md
     api-doc-wrapper.md
-    [CLI Reference for VPC](https://cloud.ibm.com/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html#vpc-reference)
+    [CLI Reference for VPC](https://cloud.ibm.com/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-plugin-vpc-cli-reference)
+    step-by-step-pages.md
+    vpc-endpoints.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

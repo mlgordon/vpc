@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-01-30"
+lastupdated: "2018-01-24"
 
 ---
 
@@ -124,4 +124,4 @@ Virtual Servers:
 </table>
 
 ## Next steps
-For more information on how to change a user's permissions, see [Managing user permissions for VPC resources](/docs/infrastructure/vpc/vpc-user-permissions.html).
+For more information on how to change a user's permissions, see [Managing user permissions for VPC resources](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).

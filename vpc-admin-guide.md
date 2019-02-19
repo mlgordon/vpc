@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -28,17 +28,17 @@ Account Administrators can utilize authorization _policies_, which control acces
 
 The authorizations for resources and the authorizations for users can be assigned independently of each other.
 
-For more information about creating users, user access groups, resource groups, and policies, please refer to [About resources](about-resources.html).
+For more information about creating users, user access groups, resource groups, and policies, please refer to [About resources](/docs/infrastructure/vpc?topic=vpc-about-vpc-infrastructure-resources).
 
 ## IAM-based access control
 
 In general, the {{site.data.keyword.cloud}} Virtual Private Cloud authorization and resource management practices coordinate with the IBM Cloud Identity and Access Management (IAM) services. For more information about IAM, resource groups, and access groups in general, please refer to these IBM Cloud documents:
 
-* [IBM Cloud IAM](https://cloud.ibm.com/docs/iam/quickstart.html#getstarted)
-* [Resource Groups](/docs/overview/resource-groups.html#whatis)
-* [Access Groups](/docs/overview/manageaccess.html#cloudaccess)
+* [IBM Cloud IAM](https://{DomainName}/docs/iam/quickstart.html#getstarted)
+* [Resource Groups](https://{DomainName}/docs/overview/resource-groups.html#whatis)
+* [Access Groups](https://{DomainName}/docs/overview/manageaccess.html#cloudaccess)
 
-Certain features of the IBM Cloud IAM Service have been customized for use in IBM Cloud VPC. The [About resources](about-resources.html) document explains more about IAM authorization policies as they are applied in VPC.
+Certain features of the IBM Cloud IAM Service have been customized for use in IBM Cloud VPC. The [About resources](/docs/infrastructure/vpc?topic=vpc-about-vpc-infrastructure-resources) document explains more about IAM authorization policies as they are applied in VPC.
 
 To summarize, you can assign IAM-based authorizations based on:
 
@@ -68,4 +68,4 @@ Here's a table that shows the correspondence between each user role and the type
 
 ## Next steps
 
-For step by step instructions on granting role-based permissions to users for certain tasks, please refer to our [Managing User Permissions for VPC Resources](vpc-user-permissions.html) topic.
+For step by step instructions on granting role-based permissions to users for certain tasks, please refer to our [Managing User Permissions for VPC Resources](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources) topic.
