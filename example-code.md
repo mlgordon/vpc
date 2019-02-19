@@ -189,7 +189,7 @@ subnet="<YOUR_SUBNET_ID>"
 
 ## Step 11: Check the Status of your Subnet
 
-To provision resources in your subnet, the subnet must be in `available` status. Query the subnet resource and make sure the status is `available` before you continue. If the status is `failed`, contact [support](/docs/infrastructure/vpc?topic=vpc-gettinghelp) with the details. You can attempt to continue by trying to provision another subnet.
+To provision resources in your subnet, the subnet must be in `available` status. Query the subnet resource and make sure the status is `available` before you continue. If the status is `failed`, contact [support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) with the details. You can attempt to continue by trying to provision another subnet.
 
 ```bash
 curl $rias_endpoint/v1/subnets/$subnet?version=2019-01-01 -H "Authorization: $iam_token"
@@ -382,7 +382,8 @@ curl -X GET $rias_endpoint/v1/floating_ips/$floating_ip?version=2019-01-01 \
 Use the `address` of the Floating IP to connect to the virtual server instance with SSH:
 
 ```bash
-ssh -i <private_key_file> root@<floating ip address>```
+ssh -i <private_key_file> root@<floating ip address>
+```
 {: pre}
 
 SSH access into the virtual server may be prevented by security groups. If SSH access is required, you must use an [appropriate security group](/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups).
