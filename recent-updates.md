@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-10"
+lastupdated: "2019-02-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-01-10"
 
 Check this page to get information about changes and updates to the {{site.data.keyword.cloud}} VPC release.
 
-## January 2019
+## February 2019
 
 Market Launch for IBM Cloud VPC is announced.
 
