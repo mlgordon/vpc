@@ -509,7 +509,7 @@ If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-g
 ## security_group_limit_exceeded
 **Message**: Exceeded security group limit.
 
-You have attempted to create a new security group but are currently at your account quota. Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This will reduce the number of security groups, dropping you below your account quota.  In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp) to inquire if this is possible.
+You have attempted to create a new security group but are currently at your account quota. Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This will reduce the number of security groups, dropping you below your account quota.  In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) to inquire if this is possible.
 
 
 ## security_group_network_interface_not_active
@@ -917,7 +917,7 @@ To view the connection's CIDR blocks, use the `GET /vpn_gateways/<vpn_gateway_id
 ## vpn_connection_duplicate_name
 **Message**: The name `<vpn_connection_name>` is already in use by VPN connection `<vpn_connection_id>`.
 
-Supply a different connection name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Supply a different connection name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_connection_invalid_name
 **Message**: The name `<vpn_connection_name>` is not a valid VPN connection name.
