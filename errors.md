@@ -48,12 +48,12 @@ New volume name should be provided
 
 Try again, providing a valid UUID or volume in your request. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## bad_request                                   
 **Message**: The information given was invalid, malformed, or missing a required field.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## classic_access_vpc_conflict_duplicate_res
 **Message**: Only one Classic Access VPC can be created.
@@ -80,7 +80,7 @@ This floating IP is already associated with a network interface or public gatewa
 
 Be sure to disassociate the floating IP before you delete the server. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## gateway_too_many
 **Message**: Can only have one public gateway per zone in a VPC.
@@ -95,12 +95,12 @@ Use the public gateway's ID to attach it to a subnet, see an example in our [API
 
 This problem occurs when the payload you have sent in your request has too many characters. Please try again with a smaller payload. For example, instead of trying to do everything in a single request, try creating a minimal resource in one request, and then appending state to it incrementally in several subsequent requests. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## iam_failure
 **Message**: None
 
-This message can be displayed when there's been a failure to convert an IAM token to an IMS token.  It may mean that the token you provided is not supported, or there is an invalid key ID. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+This message can be displayed when there's been a failure to convert an IAM token to an IMS token.  It may mean that the token you provided is not supported, or there is an invalid key ID. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## ike_policies_quota_exceeded
 **Message**: The quota for IKE policies is exceeded for the account.
@@ -112,7 +112,7 @@ To view current IKE policies, use the `GET /ike_policies` API.
 ## ike_policy_duplicate_name
 **Message**: The name `<ike_policy_name>` is in use already by IKE policy `<ike_policy_id>`.
 
-Supply a different IKE policy name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Supply a different IKE policy name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## ike_policy_in_use
 **Message**: The IKE policy `<ike_policy_id>` is in use by one or more connections.
@@ -127,7 +127,7 @@ A valid IKE policy name starts with a letter, followed by letters, digits, under
 ## ike_policy_not_found
 **Message**: The IKE policy `<ike_policy_id>` could not be found.
 
-You referenced an IKE policy that does not exist. Please review your request to ensure that you specified the proper IKE policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+You referenced an IKE policy that does not exist. Please review your request to ensure that you specified the proper IKE policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## insufficient_space_for_subnet
 **Message**: Insufficient space for subnet in address prefix
@@ -144,7 +144,7 @@ Please try again. If this error persists, contact support.
 
 You might receive this error if the system is unable to provision your VSI, storage volume, or other resources. Try again in a few minutes. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## internal_solution
 **Message**: Please contact your administrator.
@@ -165,7 +165,7 @@ RIAS command `ibmcloud is in-reboot Instance_uuid` can return the message code "
 
 In one situation, the message is thrown when a reboot operation is attempted while the VSI is already being rebooted. This message also can be received in a situation where multiple reboots are not happening at the same time.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## invalid_version
 **Message**: The `version` parameter is invalid, it must be of the form `YYYY-MM-DD`.
@@ -192,7 +192,7 @@ To view current IPsec policies, use the `GET /ipsec_policies` API.
 ## ipsec_policy_duplicate_name
 **Message**: The name `<ipsec_policy_name>` is in use already by IPsec policy `<ipsec_policy_id>`.
 
-Supply a different IPsec policy name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Supply a different IPsec policy name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## ipsec_policy_in_use
 **Message**: The IPsec policy `<ipsec_policy_id>` is in use by one or more connections.
@@ -207,12 +207,12 @@ A valid IPsec policy name starts with a letter, followed by letters, digits, und
 ## ipsec_policy_not_found
 **Message**: The IPsec policy `<ipsec_policy_id>` could not be found.
 
-You referenced an IPsec policy that does not exist. Please review your request and be sure that you've specified the proper IPsec policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+You referenced an IPsec policy that does not exist. Please review your request and be sure that you've specified the proper IPsec policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## key_exists
 **Message**: The same key content already exists.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## listener_certificate_not_found
 **Message**: Certificate instance with CRN `<listener_certificate_crn>` cannot be found or no permission to access the certificate instance.
@@ -364,7 +364,7 @@ The quotas per resource are given in [Quotas and limits for VPC](https://{Domain
 ## missing_ims_account_id
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## missing_version
 **Message**: The `version` parameter is required, and it must be of the form `YYYY-MM-DD`.
@@ -381,7 +381,7 @@ You might see this message if you supply a network CIDR that conflicts with an e
 
 A common reason you may see this error is if your IAM token is missing or expired. If so, you may need to check your permissions and contact your administrator. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## not_found
 **Message**: Please check whether the resource you are requesting exists.
@@ -390,7 +390,7 @@ You referenced a resource that does not exist or one to which you do not have ac
 
 This error may occur when you've tried to provision your VSI using a profile that is not supported, or tried to allocate another resource that is unavailable. For a list of available profiles, you can use the command `ibmcloud is instance-profiles`. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## not_implemented
 **Message**: None
@@ -469,42 +469,42 @@ This error message is returned if too many requests are received within a specif
 
 Please try again once the instance becomes Active. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_already_attached
 **Message**: The interface is attached already.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_exists
 **Message**: The security group already exists.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_interfaces_attached
 **Message**: Cannot delete the security group while interfaces are attached.
 
 Be sure all interfaces are deleted. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_interfaces_per_sg_exceeded
 **Message**: Exceeded limit of interfaces per security group.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_last_security_group_is_default
 **Message**: The default security group cannot be removed when it is the only security group attached.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_limit_exceeded
 **Message**: Exceeded security group limit.
@@ -517,42 +517,42 @@ You have attempted to create a new security group but are currently at your acco
 
 To apply security groups, the network interface must be active. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_not_attached
 **Message**: The interface is not attached.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_not_in_vpc
 **Message**: None
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_not_supported
 **Message**: Security groups are not supported in the target datacenter.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_order_bindings
 **Message**: Cannot delete the security group, it has pending orders.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_perm_denied
 **Message**: Incorrect permissions to change the security group.
 
 You may need to check your permissions and contact your administrator. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_port_max_less_than_port_min
 **Message**: TCP/UDP max port cannot be less than min port.
@@ -564,63 +564,63 @@ The maximum port value cannot be less than the minimum port value. Specify a max
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_port_range_invalid_protocol
 **Message**: A port range was specified with a protocol of 'icmp'. A port range is only valid for a protocol of 'tcp' or 'udp'.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_remote_group_not_in_vpc
 **Message**: The remote group is not in the same VPC as this security group
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_remoting_rules
 **Message**: Cannot delete the security group while remoting rules are attached.
 
 Be sure to remove all remoting rules. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_remoting_rules_per_sg_exceeded
 **Message**: Exceeded limit of remoting rules per security group.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_rules_per_sg_exceeded
 **Message**: Exceeded limit of rules per security group.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_sgs_per_interface_exceeded
 **Message**: Exceeded limit of security groups per interface.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_type_code_invalid_protocol
 **Message**: An 'icmp' type/code was given, but the requested protocol was not 'icmp'. Set the protocol to 'icmp' or specify a port range.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_vpc_default
 **Message**: Cannot delete the security group, it is the VPC default.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## service_manager_service_failure
 **Message**: None
@@ -630,7 +630,7 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## subnet_acl_conflict
 **Message**: Cannot delete the network ACL, it is attached to a subnet.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_conflict
 **Message**: CIDR conflicts with existing Subnet in VPC.
@@ -639,7 +639,7 @@ Run the GET /subnets API to retrieve all subnets in VPC. Make sure that the CIDR
 
 If using the CLI, you can run `ibmcloud is subnets` and look at "Subnet CIDR" value for conflicts.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_not_empty
 **Message**: The subnet is not empty, please contact your administrator.
@@ -648,7 +648,7 @@ There was a request to delete a subnet, but the subnet still has resources in it
 
 In some situations, this error can occur even when the console shows 0 VSIs and 0 load balancers, because deletion is asynchronous and it may take a few minutes for the internal status to change. Try your subnet deletion again in a few minutes.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_not_empty_pgway_exists
 **Message**: Cannot delete the subnet while it is attached to a public gateway. Please detach the public gateway and retry.
@@ -657,7 +657,7 @@ There was a request to delete a subnet, but the subnet still has a public gatewa
 
 If using the CLI, you can run `ibmcloud is public-gateways` to list the public gateways and `ibmcloud is subnet-public-gateway-detach` to detach a public gateway from a subnet. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_not_empty_ipaddr_exists
 **Message**: Cannot delete the subnet while it contains IP addresses. Please delete any server instance associated with the IP address and retry.
@@ -668,7 +668,7 @@ If using the CLI, you can run `ibmcloud is instances` to list the server instanc
 
 In some situations, this error can occur even when the console shows 0 VSIs, because deletion is asynchronous and it may take a few minutes for the internal status to change. Try your subnet deletion again in a few minutes.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_not_empty_loadbalancer_exists
 **Message**: Cannot delete the subnet while it contains a load balancer. Please delete the load balancer and retry.
@@ -679,7 +679,7 @@ If using the CLI, you can run `ibmcloud is load-balancers` to list the load bala
 
 In some situations, this error can occur even when the console shows 0 load balancers, because deletion is asynchronous and it may take a few minutes for the internal status to change. Try your subnet deletion again in a few minutes.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_not_empty_vpn_gway_exists
 **Message**: Cannot delete the subnet while it contains a VPN gateway. Please delete the VPN gateway and retry.
@@ -690,12 +690,12 @@ If using the CLI, you can run `ibmcloud is vpn-gateways` to list the load balanc
 
 In some situations, this error can occur even when the console shows 0 VPN gateways, because deletion is asynchronous and it may take a few minutes for the internal status to change. Try your subnet deletion again in a few minutes.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_unknown_state
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## system_limit_exceeded
 **Message**: This operation would exceed a system limit
@@ -708,7 +708,7 @@ One possible scenario for receiving this error message is if you try to create a
 ## token_invalid
 **Message**: The service token was expired or invalid.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## token_missing
 **Message**: The service token was empty or did not exist in the request.
@@ -828,12 +828,12 @@ The protocol is `icmp`, and _port_min_ is a `tcp` field, so you'll get an error.
 1. validation_discriminator_required for missing `icmp` rules
 2. validation_discriminator_forbidden for `tcp` fields with `icmp` specified
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## validation_internal_error
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## validation_invalid_name
 **Message**: The value is not a valid name.
@@ -846,17 +846,17 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## validation_non_empty_uuid
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## validation_required_field
 **Message**: Missing a required field.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## validation_unique_failed
 **Message**: The field supplied must be unique.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 You might have specified a name that is already in use. Please try a different value.
 
@@ -865,7 +865,7 @@ You might have specified a name that is already in use. Please try a different v
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Network ACLs document](/docs/infrastructure/vpc-network?topic=vpc-network-setting-up-network-acls-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpc_not_empty
 **Message**: The VPC cannot be deleted because it is not empty.
@@ -874,7 +874,7 @@ All resources must be removed from a VPC before it can be deleted.
 
 You could receive this error if you still have a gateway in your VPC, even when all subnets are deleted, because the gateway can exist in the VPC without a subnet. It may be necessary to use the CLI to check for orphaned resources.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpc_resource_separation
 **Message**: The resources are in different VPCs
@@ -884,7 +884,7 @@ For further instructions to fix this problem, refer to the [API documentation](h
 
 Supply a valid CIDR that meets the requirements given by the specification. 
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_connection_cidr_not_deleted
 **Message**: A CIDR block could not be deleted from the VPN connection `<vpn_connection_id>`.
@@ -917,7 +917,7 @@ To view the connection's CIDR blocks, use the `GET /vpn_gateways/<vpn_gateway_id
 ## vpn_connection_duplicate_name
 **Message**: The name `<vpn_connection_name>` is already in use by VPN connection `<vpn_connection_id>`.
 
-Supply a different connection name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Supply a different connection name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_connection_invalid_name
 **Message**: The name `<vpn_connection_name>` is not a valid VPN connection name.
@@ -986,12 +986,12 @@ To view the current VPN connections for a VPN gateway, use the `GET /vpn_gateway
 ## vpn_connection_static_route_not_created
 **Message**: Failed to add a static route for the CIDR block `<peer_cidr>`.
 
-Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_connection_static_route_not_deleted
 **Message**: Failed to remove a static route for the CIDR block `<peer_cidr>`.
 
-Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_connection_update_cidrs_not_permitted
 **Message**: CIDR blocks cannot be changed when updating a connection. Please use the correct API when creating or deleting CIDRs.
@@ -1003,12 +1003,12 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## vpn_gateway_duplicate_name
 **Message**: The name `<vpn_gateway_name>` is already in use by VPN gateway `<vpn_gateway_id>`.
 
-Supply a different VPN gateway name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Supply a different VPN gateway name. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateway_initialization_error
 **Message**: The VPN gateway could not be initialized.
 
-Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateway_invalid_name
 **Message**: The name `<vpn_gateway_name>` is not a valid VPN gateway name.
@@ -1018,27 +1018,27 @@ A valid VPN gateway name starts with a letter, followed by letters, digits, unde
 ## vpn_gateway_invalid_state
 **Message**: The VPN gateway `<vpn_gateway_id>` is in an invalid state for the requested operation.
 
-VPN Gateway must be in `available` status before you can operate it. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+VPN Gateway must be in `available` status before you can operate it. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateway_ip_create_error
 **Message**: Unable to create an IP address for the VPN gateway.
 
-Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateway_not_found
 **Message**: The VPN gateway `<vpn_gateway_id>` could not be found.
 
-Check whether the VPN gateway ID is correct. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Check whether the VPN gateway ID is correct. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateway_subnet_not_found
 **Message**: Could not find the subnet `<subnet_id>` for the given VPN gateway.
 
-You've referenced a subnet that does not exist. Please review your request to ensure that you specified the proper subnet ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+You've referenced a subnet that does not exist. Please review your request to ensure that you specified the proper subnet ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateway_subnet_status_error
 **Message**: The VPN gateway could not be created due to subnet status.
 
-Supply a subnet that is in `available` status. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Supply a subnet that is in `available` status. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_gateways_quota_exceeded
 **Message**: Quota for VPN gateways exceeded for the account and/or the region.
