@@ -68,7 +68,7 @@ You may see this error message when the default address prefix is not found.
 ## duplicate_error
 **Message**: The input provided already exists.
 
-The resource you've specified already exists.
+The resource you've specified already exists. To address this issue, use a different name for the resource you want to create. For example, when creating a new VPC, you can review a list of names for the VPCs already created and choose a name that does not conflict, if you first call `get VPC` using ID, like this:`GET "/v1/vpcs/{id}” -H  "accept: application/json"`. 
 
 ## floating_ip_in_use
 **Message**: The floating IP is in use.
@@ -100,7 +100,7 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## iam_failure
 **Message**: None
 
-This message can be displayed when there's been a failure to convert an IAM token to an IMS token.  It may mean that the token you provided is not supported, or there is an invalid key ID. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+This message can be displayed when a failure has occurred in the IAM service, verifying authentication or authorization. This outage of the IAM service may be temporary. Retry the request after few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## ike_policies_quota_exceeded
 **Message**: The quota for IKE policies is exceeded for the account.
@@ -142,13 +142,14 @@ Please try again. If this error persists, contact support.
 ## internal_server_error
 **Message**: None
 
-You might receive this error if the system is unable to provision your VSI, storage volume, or other resources. Try again in a few minutes. 
+This error occurs when the service encounters an unexpected error. This problem may be temporary. Try the request again in a few minutes.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+If the problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## internal_solution
 **Message**: Please contact your administrator.
 
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## invalid_id_format
 **Message**: Bad ID format. Ensure format is correct.
@@ -170,12 +171,12 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## invalid_version
 **Message**: The `version` parameter is invalid, it must be of the form `YYYY-MM-DD`.
 
-The version must comply with the format `YYYY-MM-DD`. For single-digit months or dates, such as January 1st, the version should look like `2019-01-01`.
+The version must comply with the format _YYYY-MM-DD_. For single-digit months or dates, such as January 1st, the version should look like `2019-01-01`. The version parameter must be present in the URL. The date given in the version paameter must be after 2019-01-01 and before the current date. For example, to get a list of VPCs, append the version at the end of the request `GET "/v1/vpcs?version=2019-01-01”`.
 
 ## invalid_version_range
 **Message**: The `version` value cannot be set at a future date nor before `2019-01-01`.
 
-The date shown in the version parameter must be after `2019-01-01` and before the current date.
+The version must comply with the format _YYYY-MM-DD_. For single-digit months or dates, such as January 1st, the version should look like `2019-01-01`.The version parameter must be present in the URL. The date given in the version parameter must be after 2019-01-01 and before the current date. For example, to get a list of VPCs, append the version at the end of the request `GET "/v1/vpcs?version=2019-01-01”`.
 
 ## invalid_zone
 **Message**: Please check whether the resources you are requesting are in the same zone.
@@ -369,7 +370,7 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## missing_version
 **Message**: The `version` parameter is required, and it must be of the form `YYYY-MM-DD`.
 
-The version parameter must be given in the URL, please add it.
+The version must comply with the format _YYYY-MM-DD_. For single-digit months or dates, such as January 1st, the version should look like `2019-01-01`.The version parameter must be present in the URL. The date given in the version parameter must be after 2019-01-01 and before the current date. For example, to get a list of VPCs, append the version at the end of the request `GET "/v1/vpcs?version=2019-01-01”`.cs?version=2019-01-01”`
 
 ## network_conflict
 **Message**: CIDR conflicts with existing Address Prefix in VPC
@@ -379,16 +380,14 @@ You might see this message if you supply a network CIDR that conflicts with an e
 ## not_authorized                               
 **Message**: The request is not authorized.
 
-A common reason you may see this error is if your IAM token is missing or expired. If so, you may need to check your permissions and contact your administrator. 
+A common reason you may see this error is if your IAM token is missing or expired. For instructions on how to generate a token, refer to [Creating a VPC using the REST APIs](/docs/infrastructure/vpc/example-code.html#creating-a-vpc-using-the-rest-apis). If the token is not expired, you may need to check your permissions and contact your administrator. 
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## not_found
 **Message**: Please check whether the resource you are requesting exists.
 
-You referenced a resource that does not exist or one to which you do not have access.  Please review your request to ensure that you specified the proper IDs and references.
-
-This error may occur when you've tried to provision your VSI using a profile that is not supported, or tried to allocate another resource that is unavailable. For a list of available profiles, you can use the command `ibmcloud is instance-profiles`. 
+You referenced a resource that does not exist or one to which you do not have access. Please review your request to ensure that you specified the proper IDs and references.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
@@ -467,92 +466,90 @@ This error message is returned if too many requests are received within a specif
 ## security_group_active_transactions
 **Message**: The interface cannot be attached or detached until the instance appears in Active state.
 
-Please try again once the instance becomes Active. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+The instance must be active before its network interfaces can be attached to a security group. Use `GET /v1/instances/{id}?version=2019-01-01` or `ibmcloud is instance` to check on the status of the instance. Once the status is `running`, please try again. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_already_attached
-**Message**: The interface is attached already.
+**Message**: The interface is already attached to the security group.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+
+The interface is already attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-01-01` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
 
 ## security_group_exists
 **Message**: The security group already exists.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+
+Security group names must be unique. A security group with that name already exists. Use `GET /v1/security_groups?version=2019-01-01` or `ibmcloud is security-groups` to view current security groups.
+
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups){: new_window}.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
 
 ## security_group_interfaces_attached
 **Message**: Cannot delete the security group while interfaces are attached.
 
-Be sure all interfaces are deleted. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+
+Detach all interfaces before deleting the security group. Use `DELETE /v1/security_groups/{id}/network_interfaces/{id}?version=2019-01-01` or `ibmcloud is security-group-network-interface-remove` to detach an interface.
+
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the 
+[Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups){: new_window}.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
 
 ## security_group_interfaces_per_sg_exceeded
 **Message**: Exceeded limit of interfaces per security group.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+Attaching another interface to the security group would exceed the limit of interfaces per security group. The quotas per resource are given in [Quotas and limits for VPC](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-quotas#security-groups-quotas)){: new_window}. Evaluate your strategy and consider creating another security group with similar rules.
+
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) 
+or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups){: new_window}.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
 
 ## security_group_last_security_group_is_default
 **Message**: The default security group cannot be removed when it is the only security group attached.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+A network interface must be attached to at least one security group. 
+It will be attached to the VPC's default security group if one is not specified. 
+Attach the interface to a different security group, then try again to detach it from the default security group. 
+For information on the default security group, refer to the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups){: new_window}.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_limit_exceeded
 **Message**: Exceeded security group limit.
 
-You have attempted to create a new security group but are currently at your account quota. Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This will reduce the number of security groups, dropping you below your account quota.  In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) to inquire if this is possible.
-
+You have attempted to create a new security group, but you are currently at your account quota. The quotas per resource are given in [Quotas and limits for VPC](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-quotas#security-groups-quotas){: new_window}. Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This strategy will reduce the number of security groups, and drop you below your account quota. In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) to inquire if this is possible.
 
 ## security_group_network_interface_not_active
 **Message**: The interface cannot be attached because it is not active.
 
-To apply security groups, the network interface must be active. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+Network interfaces must be active before attaching to security groups. Use `GET /v1/instances/{id}/network_interfaces/{id}?version=2019-01-01` or `ibmcloud is instance-network-interface` to view the status of an interface. Once the status is 'available', please try again. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_not_attached
 **Message**: The interface is not attached.
 
+The interface is not attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-01-01` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
+
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
 
 ## security_group_not_in_vpc
-**Message**: None
+**Message**: The interface and security group are in different VPCs.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
-
-## security_group_not_supported
-**Message**: Security groups are not supported in the target datacenter.
-
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+To attach a network interface to a security group, the instance must be in the same VPC as the security group. Use `GET /v1/security_groups/{id}?version=2019-01-01` or `ibmcloud is security-group` to view the security groups details and VPC. Use `GET /v1/instances/{id}?version=2019-01-01` or `ibmcloud is instance` to view the instance details and VPC.
 
 ## security_group_order_bindings
-**Message**: Cannot delete the security group, it has pending orders.
+**Message**: Cannot delete the security group while it has pending instance orders.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
-
-## security_group_perm_denied
-**Message**: Incorrect permissions to change the security group.
-
-You may need to check your permissions and contact your administrator. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+If an instance was created with security group(s) specified on the network interfaces, the instance and network interfaces must be active before the security group can be deleted. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-01-01` or `ibmcloud is security-group-network-interfaces` to view attached network interfaces and their status. Once the status of the interfaces is 'available', please try again. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_port_max_less_than_port_min
 **Message**: TCP/UDP max port cannot be less than min port.
@@ -562,70 +559,65 @@ The maximum port value cannot be less than the minimum port value. Specify a max
 ## security_group_port_range_both_or_neither
 **Message**: Port range must be unset, or both a minimum and maximum port must be set for 'tcp' and 'udp'.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+Rules with a 'tcp' or 'udp' protocol may have an unset port range (to apply the rule to all traffic), or they may specify a port range. To restrict traffic to a single port, set both the minimum and maximum port to the port value. For example, the following command would create a rule to allow SSH on port 22: `ibmcloud is security-group-rule-add <id> inbound tcp --port-min 22 --port-max 22`.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/rias).
+
 
 ## security_group_port_range_invalid_protocol
 **Message**: A port range was specified with a protocol of 'icmp'. A port range is only valid for a protocol of 'tcp' or 'udp'.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+Rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'udp' protocols have a port range. For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/rias).
 
 ## security_group_remote_group_not_in_vpc
-**Message**: The remote group is not in the same VPC as this security group
+**Message**: The remote group is not in the same VPC as this security group.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+Security group rules may refer to a remote security group, allowing traffic between attached interfaces of the two groups. Remote security groups must be in the same VPC. Use `GET /v1/security_groups?2019-01-01` or `ibmcloud is security-groups` to view current security groups and their VPCs.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+For further instructions to fix this problem, refer to the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups){: new_window}.
+
 
 ## security_group_remoting_rules
 **Message**: Cannot delete the security group while remoting rules are attached.
 
-Be sure to remove all remoting rules. For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+The security group contains one or more rules referencing a remote security group. Use `GET /v1/security_groups/{id}/rules?version=2019-01-01` or `ibmcloud is security-group-rules` to view the rules. The 'remote' field will specify any remote security groups. Please try again after deleting or editing the remoting rule.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-using-security-groups){: new_window}.
+
 
 ## security_group_remoting_rules_per_sg_exceeded
 **Message**: Exceeded limit of remoting rules per security group.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+Adding another rule refering to a remote security group would exceed the limit of remoting rules per security group. The quotas per resource are given in [Quotas and limits for VPC](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-quotas#security-groups-quotas){: new_window}.
+
 
 ## security_group_rules_per_sg_exceeded
 **Message**: Exceeded limit of rules per security group.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+Adding a rule would exceed the limit of rules per security group. The quotas per resource are given in [Quotas and limits for VPC](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-quotas#security-groups-quotas){: new_window}. Evaulate your strategy and consider creating another security group.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_sgs_per_interface_exceeded
 **Message**: Exceeded limit of security groups per interface.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
+Attaching this interface to another security group would exceed the limit of security groups per interface. The quotas per resource are given in [Quotas and limits for VPC](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-quotas#security-groups-quotas){: new_window}. Evaulate your strategy and consider adding rules to an existing security group.
 
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## security_group_type_code_invalid_protocol
 **Message**: An 'icmp' type/code was given, but the requested protocol was not 'icmp'. Set the protocol to 'icmp' or specify a port range.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+Only rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'udp' protocols have a port range. For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/rias).
 
 ## security_group_vpc_default
-**Message**: Cannot delete the security group, it is the VPC default.
+**Message**: Cannot delete the default security group for a VPC.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias) or the [Using Security Groups document](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group-using-the-cli){: new_window}.
-
-If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+The default security group cannot be deleted. For information on the default security group, refer to the guide on [Updating the default security group](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group).
 
 ## service_manager_service_failure
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## subnet_acl_conflict
 **Message**: Cannot delete the network ACL, it is attached to a subnet.
@@ -953,7 +945,7 @@ To view the current local subnets for a VPN connection, use the `GET /vpn_gatewa
 ## vpn_connection_not_found
 **Message**: The VPN connection `<vpn_connection_id>` could not be found.
 
-Check whether the connection ID is correct. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-gettinghelp).
+Check whether the connection ID is correct. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## vpn_connection_peer_cidrs_required
 **Message**: At least one peer CIDR block is required when creating a VPN connection.
