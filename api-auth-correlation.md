@@ -13,6 +13,7 @@ lastupdated: "2019-01-21"
 {:screen: .screen}
 {:tip: .tip}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Resource authorizations required for API and CLI calls
 
@@ -20,9 +21,9 @@ The table below lists the authorizations required to interact with {{site.data.k
 
 The terms _attached_ or _unattached_ refer to whether the resource is associated with a VPC or VPCs (either directly or indirectly through the resource's subnets). An unattached floating IP or Network ACL has no subnets, and therefore it is not associated with any VPC, so authorization by VPC is not applicable.
 
-* View and list actions correspond to the Viewer or Operator roles.
-* Update related actions correspond to Editor or Administrator roles.
-* Resources are protected by authorization, resource reference objects (id, crn, etc..) are not.
+* **View** and **List** actions correspond to the **Viewer** or **Operator** roles.
+* **Update** and related actions correspond to **Editor** or **Administrator** roles.
+* Resources are protected by authorization, resource reference objects are not (ID, CRN, and so forth).
 
 
 | Resource | Operation | Required Authorization |
@@ -34,7 +35,7 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | VPC address prefixes |  Create, Update, Delete | Update authorization on VPC |
 | VPC address prefixes |  View, List | View authorization on VPC  |
 |—————|——————|———————|
-| Floating IP (unassociated) | Create, Update, Delete | Any Account user **Note: Associating and disassociating are part of the Floating IP Update operation**|
+| Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Click [here](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
 | Floating IP (unassociated) | View, List | Account user |
 | Floating IP (associated) | Update | Update authorization for the associated subnet and its VPC (you cannot Create or Delete a floating IP after it is associated) |
 | Floating IP (associated) | View, List | View authorization for the floating IP’s subnet | 
