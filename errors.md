@@ -4,7 +4,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -740,14 +740,14 @@ To fix this problem, be sure the content of your request is valid JSON and that 
 
 The value must be a valid internal CIDR block with a 0 host part.
 
-Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-available-ip-address-ranges-regions-and-subnets){: new_window}.
+Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets){: new_window}.
 
 ## validation_invalid_ipv4_cidr        
 **Message**: The value is not a valid IPv4 CIDR.
 
 Must be a IPv4 internal CIDR block with a 0 host part.
 
-Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#working-with-ip-address-ranges-address-prefixes-regions-and-subnets){: new_window}.
+Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets){: new_window}.
 
 ## validation_invalid_ipv6_cidr
 **Message**: The value is not a valid IPv6 CIDR.
@@ -759,7 +759,7 @@ Currently, IPv6 is not supported. Please use an IPv4 address.
 
 Must be a valid IP address
 
-A list of individually reserved IP addresses is given in the [Regions and Subnets](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#working-with-ip-address-ranges-address-prefixes-regions-and-subnets) document.
+A list of individually reserved IP addresses is given in the [Regions and Subnets](/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets) document.
 
 ## validation_invalid_ipv4_address
 **Message**: The value is not a valid IPv4 address.
