@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -16,6 +16,7 @@ lastupdated: "2018-01-24"
 {:table: .aria-labeledby="caption"}
 
 # Planning {{site.data.keyword.vsi_is_short}} Permissions
+{: #planning-virtual-servers-for-vpc-permissions}
 
 When you're planning to provision {{site.data.keyword.vsi_is_full}}, you must understand the virtual server access available based on your user role.
 {:shortdesc}

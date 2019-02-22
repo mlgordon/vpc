@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-21"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -16,6 +16,7 @@ lastupdated: "2019-01-21"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Resource authorizations required for API and CLI calls
+{: #resource-authorizations-required-for-api-and-cli-calls}
 
 The table below lists the authorizations required to interact with {{site.data.keyword.cloud}} Virtual Private Cloud Infrastructure objects. This information is particularly helpful to know when you're making API calls. Here's what you need to know to use this table:
 

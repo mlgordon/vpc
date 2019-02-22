@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2019-02-01"
 {:download: .download}
 
 # Creating and managing storage in VPC
+{: #creating-and-managing-storage-in-vpc}
 
 Currently, your {{site.data.keyword.cloud}} Virtual Private Cloud allows boot storage volumes only.
 

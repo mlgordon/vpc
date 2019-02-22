@@ -3,8 +3,8 @@
 
 
 copyright:
-  years: 2018
-lastupdated: "2018-01-19"
+  years: 2018, 2019
+lastupdated: "2019-02-20"
 
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2018-01-19"
 {:table: .aria-labeledby="caption"}
 
 # Pricing for {{site.data.keyword.vsi_is_short}} 
+{: #pricing-for-virtual-servers-for-vpc}
 
 {: #vsi-for-vpc-pricing}
 {{site.data.keyword.vsi_is_full}} is offered in select regions with up to 62 vCPU and 248 GB RAM to fit any workload need. You're billed at an hourly rate only, with discounts applied the longer your instance is running. Virtual server usage times are calculated per second, for both the in use time and suspended time of your instance. For example, if your instance runs for 45 minutes and 32 seconds, you're billed for 45 minutes and 32 seconds.

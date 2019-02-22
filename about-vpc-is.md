@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-20"
 ---
 
 {:shortdesc: .shortdesc}
@@ -17,6 +17,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # About IBM Cloud Virtual Private Cloud (VPC) Infrastructure
+{: #about-ibm-cloud-virtual-private-cloud-vpc-infrastructure}
 
 {{site.data.keyword.cloud}} VPC is part of the next generation of the IBM One Cloud platform, which redefines the traditional industry standards for performance, service growth, flexibility, and deployment freedom.
 

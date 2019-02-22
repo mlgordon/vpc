@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Creating and managing network resources in VPC
+{: #creating-and-managing-network-resources-in-vpc}
 
 After you've created your {{site.data.keyword.cloud}} VPC, including one or more subnets within your VPC to contain your virtual server instances (VSIs), you can optionally add security groups, network access control lists, peering to hardware firewall appliances, or other security options. Also, you can optionally add **Load Balancers for VPC** and connect to other cloud workloads using **VPN for VPC**.
 

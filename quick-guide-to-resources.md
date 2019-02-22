@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -16,6 +16,7 @@ lastupdated: "2019-01-14"
 {:download: .download}
 
 # Quick reference to CLI commands for resources
+{: #quick-reference-to-cli-commands-for-resources}
 
 This quick guide to CLI commands for resources is useful to get going with the {{site.data.keyword.cloud}} CLI for Virtual Private Cloud.
 

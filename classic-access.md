@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Setting up access to your Classic Infrastructure from VPC
+{: #setting-up-access-to-your-classic-infrastructure-from-vpc}
 
 You may set up access to your {{site.data.keyword.cloud}} Classic Infrastructure, including Direct Link connectivity, from one VPC in each region, for any account. These special "Classic Access VPCs" use the same implicit router as your {{site.data.keyword.cloud}} classic infrastructure.
 

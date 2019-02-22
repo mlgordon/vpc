@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -19,6 +19,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Managing user permissions for VPC resources
+{: #managing-user-permissions-for-vpc-resources}
 
 {{site.data.keyword.cloud}} Virtual Private Cloud uses role-based access control that enables account administrators to control their users' access to VPC and other infrastructure service resources.
 

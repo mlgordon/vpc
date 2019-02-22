@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2019-01-24"
 {:download: .download}
 
 # Creating and managing virtual server instances
+{: #creating-and-managing-virtual-server-instances}
 
 After you've created your {{site.data.keyword.vpc_full}}, you'll want to add some {{site.data.keyword.vsi_is_short}}. You can instantiate virtual server instances quickly by using instance profiles (combinations of vCPU and RAM) that match the workload of the instance that you're planning to create.
 

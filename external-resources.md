@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-30"
+  years: 2018, 2019
+lastupdated: "2019-02-20"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-10-30"
 {:download: .download}
 
 # Other Resources
+{: #other-resources}
 
 * [Blog by Faiyaz Shahpurwala, General Manager, IBM Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-computing/2018/06/10/ibm-expands-cloud-global-availability-zone/){: new_window}
 

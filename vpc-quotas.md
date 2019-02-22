@@ -2,10 +2,11 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-20"
 
 ---
 # Quotas
+{: #quotas}
 
 This document covers quotas and limits for your {{site.data.keyword.cloud}} Virtual Private Cloud and the resources available within it.
 

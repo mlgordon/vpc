@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2019-02-07"
 {:download: .download}
 
 # Troubleshooting your IBM Cloud VPC
+{: #troubleshooting-your-ibm-cloud-vpc}
 
 This document covers common difficulties you might encounter, and offers some helpful tips.
 

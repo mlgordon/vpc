@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -19,6 +19,7 @@ lastupdated: "2019-02-13"
 
 
 # Pricing for VPC
+{: #pricing-for-vpc}
 
 The table summarizes the pricing for internet data transfer with {{site.data.keyword.cloud}} Virtual Private Cloud. Remember that there is no charge for traffic between VPC and Classic IBM Cloud services. Also, for PayGo services, the service tiers are bound to your account, not to any specific VPC instance. Amounts are shown in U.S. dollars.
 

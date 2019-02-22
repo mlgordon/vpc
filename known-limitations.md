@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -16,6 +16,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Known limitations
+{: #known-limitations}
 
 This document contains short descriptions of known bugs in the current release, descriptions of features and APIs that are not supported, and indications of which features are now offered as Beta services only. Known limitations may be changing as we add capabilities to {{site.data.keyword.cloud}} Virtual Private Cloud, so feel free to check back with this document from time to time. 
 

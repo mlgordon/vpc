@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018-2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-20"
 ---
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -13,6 +13,7 @@ lastupdated: "2019-02-04"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Connecting to IBM Cloud Object Storage from a VPC
+{: #connecting-to-ibm-cloud-object-storage-from-a-vpc}
 
 This document tells how to connect to IBM® Cloud Object Storage from your Virtual Private Cloud.
 

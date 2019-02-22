@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2019-02-12"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Service endpoints available for IBM Cloud VPC
+{: #service-endpoints-available-for-ibm-cloud-vpc}
 
 When you're ready to run workloads, you can reach some IBM Cloud infrastructure services from a VSI inside your {{site.data.keyword.cloud}} VPC by using certain ADN endpoints. Several types of services are available through private endpoints, which are reachable by VPC customers. By using these internal endpoints, you can avoid the bandwidth charges that could be incurred if you reached the endpoints from the public Internet.
 
@@ -38,13 +39,3 @@ DNS and mirrors use the same 161.26/16 space everywhere. These specific IP endpo
 
 * `mirrors.adn.networklayer.com` (161.26.0.6)
 * DNS servers (161.26.0.10 and 161.26.0.11)
-
-## Other endpoint prefixes 
-
-You might see these prefixes in endpoints or need to change them if you wish to use other endpoints.
-
-* s3* = storage
-* ev-vault = backup service for storage
-* object-store
-* wsu
-* time = "Time" Servers providing NTP update services

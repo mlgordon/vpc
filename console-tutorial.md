@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-15"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -17,6 +17,8 @@ lastupdated: "2019-02-15"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Creating a VPC using the {{site.data.keyword.cloud_notm}} console
+{: #creating-a-vpc-using-the-ibm-cloud-console}
+
 This guide shows you how to create and configure an {{site.data.keyword.cloud}} Virtual Private Cloud using {{site.data.keyword.cloud_notm}} console.
 
 To create and configure your virtual private cloud (VPC) and other attached resources, perform the steps in the sections that follow, in this order:

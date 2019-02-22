@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -19,6 +19,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Creating a VPC using the REST APIs
+{: #creating-a-vpc-using-the-rest-apis}
 
 This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private Cloud resources using the IBM Cloud Regional APIs (RIAS).
 

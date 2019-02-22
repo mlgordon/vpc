@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Assigning role-based access to VPC resources
+{: #assigning-role-based-access-to-vpc-resources}
 
 Account Administrators can utilize authorization _policies_, which control access to _resources_ based on an individual user's _role_. Policies also can be applied for:
 

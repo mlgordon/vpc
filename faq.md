@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-02-11"
 
 
 # FAQs
+{: #faqs}
 
 ## What is the limit on the number of characters in a VPC name?
 {:faq}

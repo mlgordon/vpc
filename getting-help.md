@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -19,6 +19,7 @@ lastupdated: "2019-01-24"
 
 
 # Getting Help and Support
+{: #getting-help-and-support}
 
 If you have problems or questions when using {{site.data.keyword.cloud}} Virtual Private Cloud, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
 

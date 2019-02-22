@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-01-14"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # About VPC Infrastructure resources
+{: #about-vpc-infrastructure-resources}
 
 The term _resources_ refers to the component parts of a {{site.data.keyword.cloud}} Virtual Private Cloud deployment. Each VPC may contain resources of the following types, which can be grouped together as needed:
 
