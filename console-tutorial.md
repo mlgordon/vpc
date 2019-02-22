@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 
 ---
@@ -37,20 +37,20 @@ Make sure you have sufficient permissions to create and manage resources in your
 
 Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file.
 
-If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/certificate-manager){: new_window}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam/#/authorizations){: new_window}. For the source, select **Infrastructure Service** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-load-balancers-in-ibm-cloud-vpc).
+If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/certificate-manager){: new_window}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam/#/authorizations){: new_window}. For the source, select **Infrastructure Service** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](/docs/infrastructure/vpc-network?topic=vpc-network---beta-using-load-balancers-in-ibm-cloud-vpc).
 
 ## Creating a VPC and subnet
 
 To create a VPC and subnet:
 
-1. Open [{{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.cloud.ibm.com){: new_window}
+1. Open [{{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}
 1. Click **Menu icon ![Menu icon](../../icons/icon_hamburger.svg) > VPC Infrastructure > Network > VPC and subnets** and click **New virtual private cloud**.
 1. Enter a name for the VPC, such as `my-vpc`.
 1. Select a resource group for the VPC and all its attached resources. Resource groups enable you to organize your account resources for access control and billing purposes. For more information, see [Best practices for organizing resources in a resource group](/docs/resources?topic=resources-bp_resourcegroups).
 1. _Optional:_ Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
 1. Select or create the default ACL for new subnets in this VPC. In this tutorial, let's create a new default ACL. We'll configure rules for the ACL later.
 1. Select whether the default security group allows inbound SSH and ping traffic to virtual server instances in this VPC. We'll configure more rules for the default security group later.
-1. Enter a name for the new subnet in your VPC, such as `my-subnet`. 
+1. Enter a name for the new subnet in your VPC, such as `my-subnet`.
 1. Select a location for the subnet. The location consists of a region and a zone.
 
     The region you select is used as the region of the VPC. All additional resources you create in this VPC will be created in the selected region.
@@ -59,7 +59,7 @@ To create a VPC and subnet:
 1. Enter an IP range for the subnet in CIDR notation, for example: `10.240.0.0/22`. In most cases, you can use the default IP range. If you want to specify a custom IP range, you can use the IP range calculator to select a different address prefix or change the number of addresses.
 1. Select an ACL for the subnet. Select **Use VPC default** to use the default ACL that's created for this VPC.
 1. Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet.  
-    
+
     You can also attach the public gateway after you create the subnet.
     {: tip}
 
@@ -116,7 +116,7 @@ To create a virtual server instance in the newly created subnet:
 1. In the **Network interfaces** area, you can edit the network interface and change its name and port speed. If you have more than one subnet in the selected zone and VPC, you can attach a different subnet to the interface. If you want the instance to exist in multiple subnets, you can create more interfaces.
 
    You can also select which security groups to attach to each interface. By default, the VPC's default security group is attached. The default security group allows inbound SSH and ping traffic, all outbound traffic, and all traffic between instances in the group. All other traffic is blocked; you can configure rules to allow more traffic. If you later edit the rules of the default security group, those updated rules will apply to all current and future instances in the group.
-   
+
 1. Click **Create virtual server instance**. The status of the instance starts as *Pending*, changes to *Stopped*, and then *Powered On*. You might need to refresh the page to see the change in status.
 
 ## Configuring the security group for the instance
@@ -218,7 +218,7 @@ To create a load balancer:
     * **Subnets**: Select the subnets in which to create your load balancer. To maximize the availability of your application, select subnets in different zones.
 1. Click **New pool** and specify the following information to create a back-end pool. You can create one or more pools.
     * **Name**: Enter a name for the pool, such as `my-pool`.
-    * **Protocol**: Select the protocol for your back-end instances behind the load balancer. The protocol of the pool must match the protocol of its associated listener. For example, if an HTTPS or HTTP protocol is selected for the listener, the protocol of the pool must be HTTP. Similarly, if the listener protocol is TCP, the protocol of the back-end pool must be TCP. 
+    * **Protocol**: Select the protocol for your back-end instances behind the load balancer. The protocol of the pool must match the protocol of its associated listener. For example, if an HTTPS or HTTP protocol is selected for the listener, the protocol of the pool must be HTTP. Similarly, if the listener protocol is TCP, the protocol of the back-end pool must be TCP.
     * **Method**:  Select how you want the load balancer to distribute traffic across the back-end instances:
       * **Round robin:** Forward requests to each instance in turn. All instances receive approximately an equal number of client connections.
       * **Weighted Round robin:** Forward requests to each instance in proportion to its assigned weight. For example, if you have instances A, B, and C, and their weights are set to 60, 60 and 30, then instances A and B receive an equal number of connections, and instance C receives half as many connections.
@@ -235,7 +235,7 @@ To create a load balancer:
 
       If back-end instances are unhealthy and you believe your application is running fine, double check the health protocol and health path values. Also check any security groups attached to the instances to ensure the rules allow traffic between the load balancer and the instances.
       {: tip}
-    
+
 1. Click **Create**.
 1. Next to the entry for the new pool, click **Attach** in the **Instances** column to add an instance to the pool. Click **Add** to add more instances to the pool. Specify the following information for each instance:
    * Select one or more subnets from which to select an instance.
@@ -257,9 +257,9 @@ To create a load balancer:
 1. To view details of an existing load balancer, click the name of your load balancer on the **Load balancers** page.
 
 ## Creating a VPN
-You can create a virtual private network (VPN) so your VPC can connect securely to another private network, such as an on-premises network or another VPC. 
+You can create a virtual private network (VPN) so your VPC can connect securely to another private network, such as an on-premises network or another VPC.
 
-To view a code example, see [Using VPN with your VPC](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-vpn-with-your-vpc).
+To view a code example, see [Using VPN with your VPC](/docs/infrastructure/vpc-network?topic=vpc-network---beta-using-vpn-with-your-vpc).
 {: tip}
 
 To create a VPN:
