@@ -81,7 +81,7 @@ ibmcloud login
 ```
 {: pre}
 
-### Step 2: Create a VPC and save the VPC ID.
+## Step 2: Create a VPC and save the VPC ID.
 
 Use the following command to create a VPC named _helloworld-vpc_.
 
