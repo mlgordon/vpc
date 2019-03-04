@@ -66,3 +66,11 @@ Use the resource's ID to view specific details on the resource.
 * **To get information about zones** 
 
   * `ibmcloud is zones [region_name]`
+  
+* **To get information about all block storage volumes**
+
+  * `ibmcloud is volumes`
+  
+* **To view details about a block storage volume**
+
+  * `ibmcloud is volume [volume_id]`

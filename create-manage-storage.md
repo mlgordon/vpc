@@ -3,7 +3,11 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-03"
+
+keywords: resource, storage, boot, block, volume, name, naming, best practices
+
+subcollection: vpc
 
 
 ---
@@ -20,11 +24,18 @@ lastupdated: "2019-02-20"
 # Creating and managing storage in VPC
 {: #creating-and-managing-storage-in-vpc}
 
-Currently, your {{site.data.keyword.cloud}} Virtual Private Cloud allows boot storage volumes only.
+Currently, your {{site.data.keyword.cloud}} Virtual Private Cloud allows boot storage volumes and additional block storage volumes.
+
+## Boot volume
 
 When you provision a virtual server instance, a 100 GB block storage volume is created as a primary boot volume and attached to the instance, automatically. The boot volume provides 3 IOPS/GB performance and it exists during the VSI lifecycle. 
 
 When you delete the instance, the boot volume is deleted.
+
+## Block storage volumes
+
+For more information about working with block storage volumes, see our [Block Storage for VPC documentation](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-getting-started).
+
 
 ## Best practices for creating and naming your VPC storage volumes:
 
