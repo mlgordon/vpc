@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-08"
 
 keywords: create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
@@ -155,7 +155,7 @@ ibmcloud is subnet $subnet
 ```
 {: pre}
 
-## Step 4: Attach a public gateway
+## Step 4: Attach a public gateway.
 
 Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet. 
 
@@ -186,6 +186,9 @@ Only one public gateway per zone is allowed in a VPC, but that public gateway ca
 ## Step 5: Create an SSH Key in IBM Public Cloud.
 
 You'll use the key to provision a virtual server instance. You can use the same key to provision multiple virtual server instances.
+
+Keys only can be added initially as part of creating a VSI. No tooling exists to add keys later.
+{:tip}
 
 To see the available keys in your IBM Cloud account, run this command:
 
@@ -253,6 +256,9 @@ ibmcloud is instance-create helloworld-vsi $vpc us-south-2 b-2x8 $subnet 1000 --
 ```
 {: pre}
 
+Keys only can be added initially as part of creating the VSI. No tooling exists to add keys later.
+{:tip}
+
 You should see output like this:
 
 ```
@@ -276,20 +282,26 @@ Zone              us-south-2
 ```
 {:screen}
 
-Save the ID of the primary network interface `Primary Intf` in a variable so we can use it later, for example:
+Save the ID of the instance in a variable so we can use it later:
+
+```
+vsi=4562c5c0-9cf7-4406-bc90-ab4baea91057
+{: pre}
+```
+
+Also save the ID of the primary network interface `Primary Intf` in a variable so we can use it later:
 
 ```
 nic="2e850924-b5d7-4386-a778-03556d5850c1"
 ```
 {:pre}
 
-Note that the status of the instance is `pending` when it first is created. Before you can proceed, the instance needs to move to `running` status, which takes a few minutes. To check the status of all instances, run this command:
+Note that the status of the instance is `pending` when it first is created. Before you can proceed, the instance needs to move to `running` status, which takes a few minutes. To check the status of the instance, run this command:
 
 ```
-ibmcloud is instances
+ibmcloud is instance $vsi
 ```
 {: pre}
-
 
 ## Step 8: Create a Floating IP address.
 
@@ -324,7 +336,7 @@ address=169.61.181.53
 ```
 {: pre}
 
-## Step 9: Add a rule to the default security group for SSH
+## Step 9: Add a rule to the default security group for SSH.
 
 Find the security group for the VPC:
 
@@ -381,7 +393,71 @@ Remote      -
 ```
 {:screen}
 
-## Step 10: Log in to your virtual server instance using your private SSH key.
+## Step 10: Create a block storage data volume.
+
+Run this command to create a block storage data volume. Specify a name for your volume, volume profile, and the zone where you are creating the volume. To attach a block storage data volume to an instance, the instance and the block storage data volume must be created in the same zone.
+
+To see a list of volume profiles, run:
+
+```
+ibmcloud is volume-profiles
+```
+{: pre}
+
+Profiles can be general-purpose (3 IOPS/GB), 5iops-tier, 10-iops-tier, and custom.
+See [About Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about#capacity-performance)
+for information about volume capacity and IOPS ranges based on the volume profile you select.  
+
+```
+ibmcloud is volume-create helloworld-vol custom us-south-2 --iops 1000
+```
+{: pre}
+
+You will see output like this:
+
+```
+Creating volume helloworld-vol in resource group Default under account <Account Name> as user <User>...
+
+ID                                      933c8781-f7f5-4a8f-8a2d-3bfc711788ee
+Name                                    helloworld-vol
+Capacity                                100
+IOPS                                    1000
+Auto delete                             false
+Encryption                              provider managed
+Profile                                 custom
+Status                                  pending
+Created                                 2019-02-15 10:09:28
+Zone                                    us-south-2
+Volume Attachment Instance Reference    none
+```
+{:screen}
+
+Save the ID of the volume in a variable so we can use it later:
+
+```
+vol=933c8781-f7f5-4a8f-8a2d-3bfc711788ee
+```
+{: pre}
+
+Note that the status of the volume is `pending` when it first is created. Before you can proceed, the volume needs to move to `available` status, which takes a few minutes. 
+
+To check the status of the volume, run this command:
+
+```
+ibmcloud is volume $vol
+```
+{: pre}
+
+## Step 11: Attach a block storage data volume to an instance.
+
+Use the following command to attach the volume to the virtual server instance, using the variables we created:
+
+```
+ibmcloud is instance-volume-attachment-add helloworld-vol-attachment $vsi $vol --auto-delete true
+```
+{: pre}
+
+## Step 12: Log in to your virtual server instance using your private SSH key.
 
 For example, you can use a command of this form:
 
@@ -421,7 +497,7 @@ root@helloworld-vsi:~#
 ```
 {:screen}
 
-## Step 11: Hello, World!
+## Step 13: Hello, World!
 
 Run the following command in the terminal window:
 
@@ -436,6 +512,91 @@ You should see the following output:
 helloworld-vsi says Hello, World!
 ```
 {:screen}
+
+## Step 14: Start using your block storage data volume.
+
+To use your block storage volume as a filesystem, you'll need to partition, format the volume and then mount it as a filesystem.
+
+In Linux, you can run the following command to list all block storage volumes from your instance:
+
+```
+lsblk
+```
+{:pre}
+
+You should see output such as:
+
+```
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  100G  0 disk 
+├─xvda1 202:1    0  256M  0 part /boot
+└─xvda2 202:2    0 99.8G  0 part /
+xvdc    202:32   0  100G  0 disk 
+xvdp    202:240  0   64M  0 disk 
+```
+{:screen}
+
+Volume `xvdc` is your new block storage data volume. 
+
+You can run the following command to partition the volume. To start, use command `n` for new partition,
+
+```
+fdisk /dev/xvdc
+```
+{:pre}
+
+The following command will format the volume.
+
+```
+/sbin/mkfs -t ext3 /dev/xvdc
+```
+{:pre}
+
+The following command will label the volume to "hellovol".
+
+```
+/sbin/e2label /dev/xvdc /hellovol
+```
+{:pre}
+
+The following commands will make the directory and mount the volume as a filesystem.
+
+```
+mkdir /hellovol
+mount /dev/xvdc /hellovol
+```
+{: codeblock}
+
+To see your new filesystem, run the following command:
+
+```
+df -k
+```
+{:pre}
+
+You should see output such as:
+
+```
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev             4075344       0   4075344   0% /dev
+tmpfs             816936    8844    808092   2% /run
+/dev/xvda2     101330012 1261048 100052580   2% /
+tmpfs            4084664       0   4084664   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs            4084664       0   4084664   0% /sys/fs/cgroup
+/dev/xvda1        245679   64360    168212  28% /boot
+tmpfs             817040       0    817040   0% /run/user/0
+/dev/xvdc      103081248   61176  97777192   1% /hellovol
+```
+{:screen}
+
+To change directory into your new filesystem and create a file, do something like:
+
+```
+cd /hellovol
+touch hellovolume
+```
+{:codeblock}
 
 ## Congratulations!
 

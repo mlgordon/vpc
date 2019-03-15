@@ -22,7 +22,13 @@ Virtual Private Cloud (VPC) Infrastructure
     console-tutorial.md
     hello-world-vpc.md
     example-code.md
-    [Creating a VPC with Public and Private subnets](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-vpc-public-app-private-backend#vpc-public-app-private-backend)
+    
+    {: .topicgroup}
+    Advanced tutorials
+        [Create a VPC with public and private subnets](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-vpc-public-app-private-backend#vpc-public-app-private-backend)
+        [Secure access to remote instances through a bastion host](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server#vpc-secure-management-bastion-server)
+        [Deploy isolated workloads across multiple locations and zones](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-vpc-multi-region#vpc-multi-region)
+    
     classic-access.md
     vpc-regions.md
 
