@@ -1,0 +1,59 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="vpc" audience="service" arm="4135753" href="/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure" path="infrastructure/vpc"}
+Infrastructure Virtual Private Cloud (VPC) 
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-vpc-is.md
+    vpc-quotas.md
+
+    {: .topicgroup}
+    Tarification
+        pricing.md
+        vpc-vsi-pricing.md
+
+    related-links.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    console-tutorial.md
+    hello-world-vpc.md
+    example-code.md
+    classic-access.md
+    vpc-regions.md
+
+    {: .topicgroup}
+    Tâches d'administration
+        about-resources.md
+        vpc-user-permissions.md
+        vpc-admin-guide.md
+        vpc-vsi-permissions.md
+        api-auth-correlation.md
+
+    {: .topicgroup}
+    Création et gestion des ressources
+        create-manage-vsi.md
+        create-manage-network.md
+        create-manage-storage.md
+
+    connect-to-cos.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    vpc-glossary.md
+    api-doc-wrapper.md
+    [Référence d'interface de ligne de commande pour VPC](/infrastructure-service-cli-plugin/infrastructure-service-cli-vpc-reference#vpc-reference)
+    step-by-step-pages.md
+    vpc-endpoints.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    quick-guide-to-resources.md
+    errors.md
+    getting-help.md
+    {: .navgroup-end}
