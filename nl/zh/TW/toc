@@ -1,0 +1,59 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="vpc" audience="service" arm="4135753" href="/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure" path="infrastructure/vpc"}
+Virtual Private Cloud (VPC) 基礎架構
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-vpc-is.md
+    vpc-quotas.md
+
+    {: .topicgroup}
+    定價
+        pricing.md
+        vpc-vsi-pricing.md
+
+    related-links.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    console-tutorial.md
+    hello-world-vpc.md
+    example-code.md
+    classic-access.md
+    vpc-regions.md
+
+    {: .topicgroup}
+    管理作業
+        about-resources.md
+        vpc-user-permissions.md
+        vpc-admin-guide.md
+        vpc-vsi-permissions.md
+        api-auth-correlation.md
+
+    {: .topicgroup}
+    建立及管理資源
+        create-manage-vsi.md
+        create-manage-network.md
+        create-manage-storage.md
+
+    connect-to-cos.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    vpc-glossary.md
+    api-doc-wrapper.md
+    [VPC 的 CLI 參考資料](/infrastructure-service-cli-plugin/infrastructure-service-cli-vpc-reference#vpc-reference)
+    step-by-step-pages.md
+    vpc-endpoints.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    quick-guide-to-resources.md
+    errors.md
+    getting-help.md
+    {: .navgroup-end}
