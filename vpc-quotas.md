@@ -22,7 +22,7 @@ Accounts have the following quotas:
 | ------- | :------: |
 | Virtual Private Clouds | 5 per account|
 | VPCs with Classic Access | 1 per region, per account |
-| Public Gateways (PGWs) | 1 per zone |
+| Public Gateways (PGWs) | 1 per VPC per zone |
 | Address prefixes | 5 per VPC per zone |
 
 ## Subnet quotas

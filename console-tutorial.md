@@ -26,7 +26,7 @@ This guide shows you how to create and configure an {{site.data.keyword.cloud}} 
 
 To create and configure your virtual private cloud (VPC) and other attached resources, perform the steps in the sections that follow, in this order:
 
-1. Create a VPC and subnet to define the network.
+1. Create a VPC and subnet to define the network. When you create your subnet, attach a public gateway to allow all resources in the subnet to communicate with the public internet. 
 1. Configure an access control list (ACL) to limit the subnet's inbound and outbound traffic. By default, all traffic is allowed.
 1. Create a virtual server instance.
 1. Create a block storage volume and attach it to an instance.
@@ -60,7 +60,7 @@ To create a VPC and subnet:
     The region you select is used as the region of the VPC. All additional resources you create in this VPC will be created in the selected region.
     {: tip}
 
-1. Enter an IP range for the subnet in CIDR notation, for example: `10.240.0.0/22`. In most cases, you can use the default IP range. If you want to specify a custom IP range, you can use the IP range calculator to select a different address prefix or change the number of addresses.
+1. Enter an IP range for the subnet in CIDR notation, for example: `10.240.0.0/24`. In most cases, you can use the default IP range. If you want to specify a custom IP range, you can use the IP range calculator to select a different address prefix or change the number of addresses.
 1. Select an ACL for the subnet. Select **Use VPC default** to use the default ACL that's created for this VPC.
 1. Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet.  
 
@@ -242,6 +242,7 @@ To create a load balancer:
     * **Name**: Enter a name for the load balancer, such as `my-load-balancer`.
     * **Virtual private cloud**: Select your VPC.
     * **Resource group**: Select a resource group for the load balancer.
+    * **Type**: Select load balancer type, Public or Private.
     * **Region**: Indicates the region in which the  load balancer will be created; that is, the region selected for your VPC.
     * **Subnets**: Select the subnets in which to create your load balancer. To maximize the availability of your application, select subnets in different zones.
 1. Click **New pool** and specify the following information to create a back-end pool. You can create one or more pools.

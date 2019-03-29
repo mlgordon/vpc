@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-26"
 
 keywords: region, zone, deploy, datacenter, data, center, federated, CLI, API, account
 
@@ -25,7 +25,7 @@ subcollection: vpc
 
 A region is a specific geographical location where you can deploy apps, services, and other {{site.data.keyword.cloud}}} resources. Regions consist of one or more zones, which are physical data centers that host the compute, network, and storage resources and related cooling and power that host services and applications. Zones are isolated from each other, which ensures no shared single point of failure.
 
-Virtual Private Cloud is being rolled out to all of IBM Cloud regions in phases.
+Virtual Private Cloud is being deployed to all {{site.data.keyword.cloud}}} regions in phases.
 
 |   Location     | Region | API Endpoint | Status |
 | ------- | :------: | :------: |:------: |
@@ -139,7 +139,7 @@ ibmcloud is regions
 For example, to get the list of VPCs in the `us-south` region, run the following command:
 
 ```
-curl https://us-south.iaas.cloud.ibm.com/v1/vpcs?version=2019-01-01 -H "Authorization: $iam_token"
+curl "https://us-south.iaas.cloud.ibm.com/v1/vpcs?version=2019-01-01&generation=1" -H "Authorization: $iam_token"
 ```
 {: pre}
 

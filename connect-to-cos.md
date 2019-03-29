@@ -14,6 +14,7 @@ subcollection: vpc
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
@@ -37,6 +38,9 @@ IBM COS is available in three configurations: **Cross-Region**, **Regional** and
 Endpoints are URLs that applications use to issue COS commands and exchange data with COS. Every endpoint uses the same Application Programming Interface (API) to interact with COS.
 Servers provisioned within IBM Cloud use 
 API endpoints for services, including COS. Direct endpoints provide customers' IBM Cloud servers with high-speed, direct connections to services with no added bandwidth costs.
+
+There is no charge for traffic from VPCs to all COS Endpoints listed on this page.
+{: note}
  
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
  1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.

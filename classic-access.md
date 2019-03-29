@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-19"
 
 keywords: classic, access, API, CLI, limitations
 
@@ -15,7 +15,6 @@ subcollection: vpc
 {:new_window: target="_blank"}
 {:pre: .pre}
 {:tip: .tip}
-{:note: .note}
 {:important: .important}
 {:download: .download}
 {:table: .aria-labeledby="caption"}
@@ -26,7 +25,10 @@ subcollection: vpc
 
 You may set up access to your {{site.data.keyword.cloud}} Classic Infrastructure, including Direct Link connectivity, from one VPC in each region, for any account. These special "Classic Access VPCs" use the same routing capability (implicit router) as your {{site.data.keyword.cloud}} classic infrastructure. Readers are expected to be familiar with Classic Infrastructure networking.
 
-When you've set up a VPC for classic access, every compute host (VSI or Bare Metal) in your classic account can send and receive packets to and from the classic access VPC. However, remember that firewalls, gateways, Network ACLs, or security groups can filter this traffic. As a best practice, we recommend that you allow only the traffic that's required for your applications to function properly.
+When you've set up a VPC for classic access, every compute host (VSI or Bare Metal) without a public interface in your classic account can send and receive packets to and from the classic access VPC. However, remember that firewalls, gateways, Network ACLs, or security groups can filter this traffic. As a best practice, we recommend that you allow only the traffic that's required for your applications to function properly.
+
+In hosts with a public interface, you must add a route back to your Classic-enabled VPC.
+{: important}
 
 ## Pre-requisites:
 1. Your classic account must be linked to your IBM Cloud account. See [Linking IBMid accounts](/docs/account/softlayerlink.html) for instructions on how to do this.
@@ -64,7 +66,7 @@ ibmcloud is vpc-create my-access-vpc --classic-access
 Pass in the `classic_access` parameter when creating the VPC. For example,
 
 ```bash
-curl -X POST $rias_endpoint/v1/vpcs?version=2019-01-01 \
+curl -X POST "$rias_endpoint/v1/vpcs?version=2019-01-01&generation=1" \
   -H "Authorization: $iam_token" \
   -d '{
         "name": "my-access-vpc",
@@ -76,6 +78,6 @@ curl -X POST $rias_endpoint/v1/vpcs?version=2019-01-01 \
 
 ## Limitations
 
-* Only your private (back) networks will be connected to your account's private implicit router.
-* Only subnets allocated with classic APIs are connected to the classic side of your private implicit router. Subnets on classic VLANs are not routed by the implicit router.
+* Only your private (or "back" in old documentation) networks will be connected to your account's private implicit router.
+* Only subnets allocated with classic APIs are connected to the classic side of your private implicit router. The routing function of the implicit router does not work between subnets on classic VLANs.
 * Only one VPC per region, per account can be enabled for Classic Access.

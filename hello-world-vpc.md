@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-03-28"
 
 keywords: create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
@@ -182,6 +182,27 @@ ibmcloud is subnet-update $subnet --public-gateway-id $gateway
 
 Only one public gateway per zone is allowed in a VPC, but that public gateway can be attached to multiple subnets in the zone. To find the public gateway for a zone, run the 'ibmcloud is public-gateways` command and look for the particular VPC and Zone values.
 {: tip}
+
+You should see output like this:
+
+```
+Updating Subnet f174ca4d-cb44-4e4d-a0f3-afce151f4198 under account Account as user ...
+                    
+ID               f174ca4d-cb44-4e4d-a0f3-afce151f4198   
+Name             helloworld-subnet   
+IPv*             ipv4   
+IPv4 CIDR        10.240.64.0/29   
+IPv6 CIDR        -   
+Addr available   3   
+Addr Total       8   
+ACL              allow-all-network-acl-6dcd8188-f1e2-48ca-b872-d04cf54479c1(d589e5dc-3b95-4984-9191-174eed7d1f98)   
+Gateway          my-gateway(446c0c63-f0b1-4043-b30d-644f55fde391)   
+Created          41 minutes ago   
+Status           available   
+Zone             us-south-2   
+VPC              helloworld-vpc(6dcd8188-f1e2-48ca-b872-d04cf54479c1)
+```
+{: screen}
 
 ## Step 5: Create an SSH Key in IBM Public Cloud.
 
@@ -513,18 +534,18 @@ helloworld-vsi says Hello, World!
 ```
 {:screen}
 
-## Step 14: Start using your block storage data volume.
+## Step 14: (Optional) Start using your block storage data volume
 
-To use your block storage volume as a filesystem, you'll need to partition, format the volume and then mount it as a filesystem.
+To use your block storage volume as a filesystem, you'll need to partition the volume, format the volume, and then mount it as a filesystem.
 
-In Linux, you can run the following command to list all block storage volumes from your instance:
+On Linux, run the following command to list all block storage volumes from your instance:
 
 ```
 lsblk
 ```
 {:pre}
 
-You should see output such as:
+You should see output like this:
 
 ```
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -538,28 +559,28 @@ xvdp    202:240  0   64M  0 disk
 
 Volume `xvdc` is your new block storage data volume. 
 
-You can run the following command to partition the volume. To start, use command `n` for new partition,
+Run the following command to partition the volume. To begin, use command `n` for new partition.
 
 ```
 fdisk /dev/xvdc
 ```
 {:pre}
 
-The following command will format the volume.
+Format the volume.
 
 ```
 /sbin/mkfs -t ext3 /dev/xvdc
 ```
 {:pre}
 
-The following command will label the volume to "hellovol".
+Label the volume as "hellovol".
 
 ```
 /sbin/e2label /dev/xvdc /hellovol
 ```
 {:pre}
 
-The following commands will make the directory and mount the volume as a filesystem.
+Create the directory and mount the volume as a filesystem.
 
 ```
 mkdir /hellovol
@@ -574,7 +595,7 @@ df -k
 ```
 {:pre}
 
-You should see output such as:
+You should see output like this:
 
 ```
 Filesystem     1K-blocks    Used Available Use% Mounted on
@@ -590,7 +611,7 @@ tmpfs             817040       0    817040   0% /run/user/0
 ```
 {:screen}
 
-To change directory into your new filesystem and create a file, do something like:
+To change directory into your new filesystem and create a file, do something like this:
 
 ```
 cd /hellovol

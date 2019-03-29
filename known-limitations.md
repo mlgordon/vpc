@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-26"
 
 keywords: limitations, bugs, known, Beta, services, capabilities
 
@@ -33,6 +33,7 @@ This document contains short descriptions of known bugs in the current release, 
 * Direct Link access to Virtual Private Cloud is supported through [**Classic Access**](/docs/infrastructure/vpc/classic-access.html) only.
 * A subset of Private Services Endpoints are available to Virtual Private Cloud, not all endpoints are available. 
 * Saving and restoring of images is not supported.
+* VPCs are regional, therefore a VPC from one region cannot connect to a VPC in another region unless they are "classic access" enabled, or by means of a VPN connection.
 
 ## APIs not supported
 

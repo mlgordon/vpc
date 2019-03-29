@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-25"
 
 keywords: endpoint, service, DNS, resolver, mirror, object, storage, bandwidth, charges
 
@@ -24,22 +24,38 @@ subcollection: vpc
 # Service endpoints available for IBM Cloud VPC
 {: #service-endpoints-available-for-ibm-cloud-vpc}
 
-When you're ready to run workloads, you can reach some IBM Cloud infrastructure services from a VSI inside your {{site.data.keyword.cloud}} VPC by using certain ADN endpoints. Several types of services are available through private endpoints, which are reachable by VPC customers. By using these internal endpoints, you can avoid the bandwidth charges that could be incurred if you reached the endpoints from the public Internet.
+When you're ready to run workloads, there are two types of endpoints that you can reach: Infrastructure as a Service (IaaS) endpoints and Cloud Service Endpoints (CSE). The IaaS endpoints are pre-provisioned and ready to go; however, the CSEs must be provisioned separately before they can be used.
+
+Both types of endpoints for these services use routable addresses and look as if they are communicating through the public Internet, but traffic to and from these endpoints does not leave the cloud. Therefore, this traffic avoids the bandwidth charges associated with public Internet traffic that exits the cloud.
+
+## Infrastructure as a Service (IaaS) endpoints
+
+Infrastructure services are available by using certain DNS names from the `adn.networklayer.com` domain, and they resolve to `161.26.0.0/16` addresses.
 
 Services you can reach include:
 
 * DNS resolvers
-* Mirrors
+* APT Mirrors
 * Cloud Object Storage
 * NTP
 
-## Example endpoint for IBM Cloud Object Storage
+### DNS (Domain Name System) resolver endpoints
 
-For example, to reach a private endpoint for an object storage service on the IBM Cloud private network, replace the "domain" portion of the URL with `objectstorage.adn.networklayer.com`.
+DNS resolvers use IP address, rather than names. For shared cloud service endpoints, the DNS server addresses `161.26.0.10` and `161.26.0.11` should be used.
 
-## Endpoints for DNS and mirrors
+### Ubuntu APT (Advanced Packaging Tool) Mirrors
 
-DNS and mirrors use the same 161.26/16 space everywhere. These specific IP endpoints are available at each VPC-enabled site:
+APT mirrors for updating Ubuntu images are available from `mirrors.adn.networklayer.com`, which should resolve to `161.26.0.6`. 
 
-* `mirrors.adn.networklayer.com` (161.26.0.6)
-* DNS servers (161.26.0.10 and 161.26.0.11)
+### IBM Cloud Object Storage
+
+For example, to reach a private endpoint for an object storage service on the IBM Cloud private network, replace the "domain" portion of the URL with `cloud-object-storage.appdomain.cloud`. To reach a COS bucket created in another region,
+use the endpoint for the bucket, not the endpoint of the region in which the VSI has been created.
+
+### Network Time Protocol (NTP) servers
+
+An NTP server is available from `time.adn.networklayer.com`, which should resolve to `161.26.0.6`.
+
+## Cloud Service Endpoints
+
+Cloud service endpoints are services provided by other cloud users. They will be available soon through DNS names in the `cloud.ibm.com` domain. They resolve to `166.8.0.0/14` addresses.

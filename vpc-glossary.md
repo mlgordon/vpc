@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-25"
 
 keywords: glossary, terminology, definition, access, floating, geography, image, region, zone, instance, VSI, LBaaS, VPN, VPC, NAT, profile, resource, security group, shares, storage, VNPaaS, volume, subnet, SSH, key, gateway, ACL
 
@@ -42,6 +42,11 @@ In a VPC, the geography designation provides information about the region and zo
 
 ## Image
 The information required to launch a virtual server instance, or _instance_. Typically, it is a snapshot image of a commercially-available operating system, used for booting.
+
+## Implicit Router
+{: #implicit-router}
+
+The inherent network connectivity between all subnets created within a VPC.
 
 ## Instance
 A short name for a virtual server, or VSI, that runs within a VPC.
