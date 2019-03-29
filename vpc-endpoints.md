@@ -24,7 +24,7 @@ subcollection: vpc
 # Service endpoints available for IBM Cloud VPC
 {: #service-endpoints-available-for-ibm-cloud-vpc}
 
-When you're ready to run workloads, there are two types of endpoints that you can reach: Infrastructure as a Service (IaaS) endpoints and Cloud Service Endpoints (CSE). The IaaS endpoints are pre-provisioned and ready to go; however, the CSEs must be provisioned separately before they can be used.
+When you're ready to run workloads, you can reach two types of endpoints: Infrastructure as a Service (IaaS) endpoints and Cloud Service Endpoints (CSE). The IaaS endpoints are pre-provisioned and ready to go; however, the CSEs must be provisioned separately before they can be used.
 
 Both types of endpoints for these services use routable addresses and look as if they are communicating through the public Internet, but traffic to and from these endpoints does not leave the cloud. Therefore, this traffic avoids the bandwidth charges associated with public Internet traffic that exits the cloud.
 
