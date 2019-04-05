@@ -63,10 +63,15 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | Subnet ACL or PGW | Attach, Detach | Update authorization for the subnet’s VPC |
 | Subnet ACL or PGW | View, List | View authorization for the subnet’s VPC |
 |——————|—————————|————————|
-| Security group, SG Rules | Create, Update, Delete | Update authorization for the security group’s VPC |
-| Security group, SG Rules | View, List  | View authorization for the security group’s VPC |
-|Security group’s Network interface | Create, Update, Delete | Update authorization for the security group’s VPC (which also is the NIC’s VPC) |
-|Security group’s Network interface | View, List  | View authorization for the security group’s VPC (which also is the NIC’s VPC) |
+| Security group | Get     | View authorization on the security group.
+| Security group | List    | View authorization on the security group (or else the group is omitted from the response.)
+| Security group | Create  | Edit authorization on the security group that will be created (eg. Edit authorization on all security groups, or Edit authorization on the resource group in which the security group will be created.)<br />View authorization on the VPC in which the group will be created.
+| Security group | Update / Delete  | Edit authorization on the security group.
+| Security group rule | Get / List | View authorization on the security group.
+| Security group rule | Create / Update / Delete | Edit authorization on the security group.
+| Security group network interface | Get     | View authorization on the security group.<br />View authorization on the instance.
+| Security group network interface | List    | View authorization on the security group (or else a 404 response results.)<br />View authorization on the instance to which the network interface belongs (or else the interface is omitted from the response.)
+| Security group network interface | Attach / Detach | Operate authorization on the security group.<br />Edit authorization on the instance to which the network interface belongs.
 |—————————|—————————|—————————|
 | Images | Create, Update, Delete | Any Account user |
 | Images | View, List  | Any Account user |

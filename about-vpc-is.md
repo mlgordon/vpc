@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-03-04"
 
 keywords: features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP
 
@@ -63,14 +63,19 @@ Security is integrated into your IBM Cloud VPC, with security groups that act as
 Within your IBM Cloud VPC, use load balancing to distribute your network traffic across a set of targets to improve performance and HA. Load Balancers also monitor the health of your applications and services. You can set up a load balancer to distribute incoming application traffic across instances in a single zone or across multiple zones within a region.
 
 ### Internet access
+{: #internet-access}
+
 Two options are available for enabling communications from your virtual server instances (VSIs) to the public internet:
 * Use a public gateway (PGW) to enable communication for all virtual server instances on the attached subnet. There is no charge for using a PGW, except for the bandwidth used.
 * Use a Floating IP (FIP) to enable communication from a single virtual server instance (VSI).
 
-![IBM Cloud VPC](images/vpc-experience.png)
-**Figure: An example IBM Cloud VPC configuration**
+![IBM Cloud VPC Overview](images/vpc-experience.svg "IBM Cloud VPC Overview"){: caption="Figure: IBM Cloud VPC Overview" caption-side="top"}
+
+A third option for internet access is available as a Beta service only: VPN gateway. For more information, see our [(Beta)VPN for VPC documentation](/docs/infrastructure/vpc-network?topic=vpc-network---beta-using-vpn-with-your-vpc#--beta-using-vpn-with-your-vpc)
+{: note}
 
 ## Supporting cloud-native workloads
+{: #supporting-cloud-native-workloads}
 
 A Virtual Private Cloud is ideal for cloud-native workloads and for linking your existing infrastructure into IBM Cloud. You can create the best cloud for all of your important workloads such as cognitive, AI, and Machine Learning computations. Meanwhile, you can continue to utilize IBM Cloud Classic for traditional workloads, as desired.
 

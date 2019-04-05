@@ -71,11 +71,6 @@ The following operating systems are included free of charge:
 
 There are premium operating systems and other add-ons available. You'll see pricing reflected in your Cost Summary.
 
-## Billing delay
-{: #billing-delay}
-
-After {{site.data.keyword.vsi_is_short}} are provisioned, it might take up to six hours for billing information to be available. In general, billing information for virtual server instances has a six hour lag time.
-
 ## Suspend billing
 
 When you power off an instance, you don't accrue costs for certain compute resources. Billing stops automatically when you stop the instance. The suspend billing feature helps you reduce cost and prevents you from having to re-create an instance when you need its resources again.

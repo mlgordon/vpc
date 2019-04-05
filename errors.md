@@ -4,7 +4,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-03-25"
+lastupdated: "2019-04-03"
 
 keywords: error, message, API, limitations, rias, support
 
@@ -34,6 +34,9 @@ The network ACL cannot be deleted because it is attached to resources. Try check
 **Message**: The address prefix with this CIDR is in use.
 
 The CIDR for the requested address prefix conflicts with an existing address prefix.
+
+To view the list of address prefixes for a VPC, use the `GET /vpcs/{vpc-id}/address_prefixes` API and check that the requested CIDR address is not in use by the `cidr` field of another address prefix.
+Equivalent CLI command: `ibmcloud is vpc-address-prefix`
 
 ## address_prefix_in_use
 **Message**: Cannot delete an address prefix in use.
@@ -588,6 +591,8 @@ The quotas per resource are specified in [Quotas and limits for VPC](https://{Do
 
 The public gateway currently is attached to one or more subnets. You must detach the public gateway from all subnets before you can delete it.
 
+To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-01-01&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`. 
+
 ## rate_limit_exceeded
 **Message**: Too many requests within a short time.
 
@@ -822,12 +827,18 @@ If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-g
 ## system_limit_exceeded
 **Message**: This operation would exceed a system limit.
 
-One possible scenario for receiving this error message is if you try to create an address prefix, but the maximum number of address prefixes already exist.
+You might receive this error message if you try to create an address prefix, but the maximum number of address prefixes already exists.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## target_in_use
 **Message**: The target already has floating IP attached.
+
+There was a request to attach a floating IP address to a server’s network interface, but the network interface already has a floating IP attached to it. 
+
+To find the floating IP address currently attached to a network interface, run the API command `GET /v1/floating_ips?version=2019-01-01&generation=1` and look for the network interface ID in the `target.id` field.  
+
+If you are using the CLI, run the command `ibmcloud is floating-ips` and look at the `Target` value. Be aware that the CLI truncates the network interface ID at the first dash (“-“) character. For example, a server’s primary network interface with an ID of `abdfcb29-b3c5-4e4a-b7a0-cf0300154699` appears as `primary(abdfcb29-.)` in the CLI output. 
 
 ## token_invalid
 **Message**: The service token was expired or invalid.
