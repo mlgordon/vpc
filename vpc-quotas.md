@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-12"
 keywords: quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc
@@ -14,6 +14,7 @@ subcollection: vpc
 This document covers quotas and limits for your {{site.data.keyword.cloud}} Virtual Private Cloud and the resources available within it.
 
 ## VPC quotas
+{: #vpc-quotas}
 
 Accounts have the following quotas:
 
@@ -25,6 +26,7 @@ Accounts have the following quotas:
 | Address prefixes | 5 per VPC per zone |
 
 ## Subnet quotas
+{: #subnet-quotas}
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
@@ -32,6 +34,8 @@ Accounts have the following quotas:
 
 
 ## VSI quotas
+{: #vsi-quotas}
+
 |   Resource     | Maximum Number |
 | ------- | :------: |
 | Virtual Server Instances (VSIs) | 100 per account by default |
@@ -41,6 +45,7 @@ Accounts have the following quotas:
 
 
 ## Security groups quotas
+{: #security-groups-quotas}
 
 Some account-based quotas (limits) exist for security groups and their associated rules.
 
@@ -53,6 +58,7 @@ Some account-based quotas (limits) exist for security groups and their associate
 |Network interfaces|100 per security group|
 
 ## ACL quotas
+{: #acl-quotas}
 
 |Resource|Quota|
 |--------|-----|
@@ -62,6 +68,7 @@ Some account-based quotas (limits) exist for security groups and their associate
 |Egress rules |20 per ACL |
 
 ## VPN quotas
+{: #vpn-quotas}
 
 Here are the current VPN resource limitations per account:
 
@@ -78,6 +85,7 @@ Here are the current VPN resource limitations per account:
 | Local subnets |  15 on any single VPN connection |
 
 ## Load Balancer quotas
+{: #load-balancer-quotas}
 
 Here are the current load balancer resource quotas:
 
@@ -89,6 +97,7 @@ Here are the current load balancer resource quotas:
 | Members | 50 per Pool |
 
 ## Secondary volume quotas
+{: #seconday-volume-quotas}
 
 | Resource | Quota |
 |--------|----- |

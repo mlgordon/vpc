@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-12"
 
 keywords: resource, access, role, role-based, authorization, policy, access group, resource group, permission, assign, administrator, operator, editor, viewer, user, control
 
@@ -36,6 +36,7 @@ The authorizations for resources and the authorizations for users can be assigne
 For more information about creating users, user access groups, resource groups, and policies, please refer to [About resources](/docs/infrastructure/vpc?topic=vpc-about-vpc-infrastructure-resources).
 
 ## IAM-based access control
+{: #iam-based-access-control}
 
 In general, the {{site.data.keyword.cloud}} Virtual Private Cloud authorization and resource management practices coordinate with the IBM Cloud Identity and Access Management (IAM) services. For more information about IAM, resource groups, and access groups in general, please refer to these IBM Cloud documents:
 
@@ -53,6 +54,7 @@ To summarize, you can assign IAM-based authorizations based on:
 * resource groups
 
 ## Assigning user permissions
+{: #assigning-user-permissions}
 
 For users, access is controlled by assigning system-defined IAM roles:
 
@@ -72,5 +74,6 @@ Here's a table that shows the correspondence between each user role and the type
 
 
 ## Next steps
+{: #permissions-next-steps}
 
 For step by step instructions on granting role-based permissions to users for certain tasks, please refer to our [Managing User Permissions for VPC Resources](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources) topic.
