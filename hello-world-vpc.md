@@ -278,7 +278,7 @@ image=$(ibmcloud is images | grep "ubuntu-16.04-amd64" | cut -d" " -f1)
 {: pre}
 
 ## Step 7: Provision a Virtual Server Instance.
-{ #step-7-provision-a-viretual-server-instance}
+{: #step-7-provision-a-virtual-server-instance}
 
 ```
 ibmcloud is instance-create helloworld-vsi $vpc us-south-2 b-2x8 $subnet 1000 --image-id $image --key-ids $key
