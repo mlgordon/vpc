@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-03"
-
+lastupdated: "2019-04-02"
 keywords: quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc
@@ -78,14 +77,22 @@ Here are the current VPN resource limitations per account:
 | Local subnets on any single VPN gateway | 50 across all VPN connections|
 | Local subnets |  15 on any single VPN connection |
 
-
 ## Load Balancer quotas
 
 Here are the current load balancer resource quotas:
 
 |Resource|Quota|
 |--------|-----|
-| Load Balancer | 50 per account |
-| Listener | 10 per Load Balancer |
-| Pool | 10 per Load Balancer |
-| Member | 50 per Pool |
+| Load Balancers | 50 per account |
+| Listeners | 10 per Load Balancer |
+| Pools | 10 per Load Balancer |
+| Members | 50 per Pool |
+
+## Secondary volume quotas
+
+| Resource | Quota |
+|--------|----- |
+| Secondary volumes per instance, when creating an instance |  4 secondary volumes may be requested |
+| Secondary volumes per instance, for existing instances with fewer than 4 cores | 4 secondary volumes |
+| Secondary volumes per instance, for existing instances with 4 cores or more | up to 12 secondary volumes |
+

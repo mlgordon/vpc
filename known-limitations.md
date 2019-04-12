@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-04-10"
 
 keywords: limitations, bugs, known, Beta, services, capabilities
 
@@ -25,10 +25,12 @@ subcollection: vpc
 This document contains short descriptions of known bugs in the current release, descriptions of features and APIs that are not supported, and indications of which features are now offered as Beta services only. Known limitations may be changing as we add capabilities to {{site.data.keyword.cloud}} Virtual Private Cloud, so feel free to check back with this document from time to time. 
 
 ## Known bugs
+{: #known-bugs}
 
 * If you rename a subnet, it could take up to 1 hour to see the new name of your subnet in the server details page, due to cache timing. (#758)
 
 ## Summary of features not supported
+{: #summary-of-features-not-supported}
 
 * Direct Link access to Virtual Private Cloud is supported through [**Classic Access**](/docs/infrastructure/vpc/classic-access.html) only.
 * A subset of Private Services Endpoints are available to Virtual Private Cloud, not all endpoints are available. 
@@ -36,6 +38,7 @@ This document contains short descriptions of known bugs in the current release, 
 * VPCs are regional, therefore a VPC from one region cannot connect to a VPC in another region unless they are "classic access" enabled, or by means of a VPN connection.
 
 ## APIs not supported
+{: #apis-not-supported}
 
 For details about what's supported, see the [API Spec](https://{DomainName}/apidocs/rias).
 
@@ -53,6 +56,7 @@ The following APIs are not supported in this release.
 | Snapshots | Not supported |  |
 
 ## Features and Use Cases not yet supported
+{: #features-and-use-cases-not-yet-supported}
 
 This section gives a detailed list of unsupported features and use cases. 
 
@@ -81,6 +85,7 @@ This section gives a detailed list of unsupported features and use cases.
 * ACL is stateless, so return traffic must be allowed explicitly in ACL rules.
 
 ## Components or features available as Beta services
+{: #components-or-features-available-as-beta-services}
 
 * **VPN for IBM Cloud VPC** is available only as a Beta service.
 * **LBaaS for IBM Cloud VPC** is available only as a Beta service.

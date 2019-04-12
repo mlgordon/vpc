@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-11"
 
 
 keywords: create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
@@ -30,48 +30,46 @@ This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private C
 
 ## Prerequisites
 
-Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html#overview).
+1. Make sure you have a public SSH key, which will be used to connect to the virtual server instance.
 
-## Step 1: Log in to IBM Cloud 
+   You may have a public SSH key already. Look for a file called `id_rsa.pub` under an `.ssh` directory under your home directory, for example, `/Users/<USERNAME>/.ssh/id_rsa.pub`. The file starts with `ssh-rsa` and ends with your email address.
 
-If you have a federated account, run this command:
+   If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen` command and following the prompts.
+2.  Make sure you have an API key for your IBM Cloud account. If you don't have an API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key). You will need to store this API key in an environment variable in Step 1.
 
-```
-ibmcloud login -sso
-```
-{: pre}
+## Step 1: Store your API Key in an environment variable
 
-If you don't have a federated account, run this command:
+Run the following command to store your API key in an environment variable:
 
-```
-ibmcloud login
+```bash
+apikey="<YOUR_API_KEY>"
 ```
 {: pre}
 
-
-The `ibmcloud login` command returns a URL and prompts for a passcode. Paste the URL in your browser and log in. If successful, you receive a one-time passcode. Copy the passcode and paste it as a response on the prompt. After the authentication steps, you are prompted to choose an account. 
-
-Respond to any remaining prompts to finish logging in.
 
 ## Step 2: Get an IBM Identity and Access Management (IAM) token
 
-The following command calls the {{site.data.keyword.cloud_notm}} CLI, parses out the IAM token and the `Bearer` token identifier, and stores the value in a variable that you can use in later commands.
+Refer to the [Getting an IBM Cloud IAM token by using an API key](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) topic on how to get an IAM token or use the following example commands.
+
+Run the following command to get and parse an IAM token using the utility `jq`. You can modify the command to use another parsing tool, or you can remove the last part of the command if you prefer to parse the token yourself, manually.
 
 ```bash
-iam_token=$(ibmcloud iam oauth-tokens | awk '/IAM/{ print $3 " " $4; }')
+iam_token=`curl -k -X POST \
+  --header "Content-Type: application/x-www-form-urlencoded" \
+  --header "Accept: application/json" \
+  --data-urlencode "grant_type=urn:ibm:params:oauth:grant-type:apikey" \
+  --data-urlencode "apikey=$apikey" \
+  "https://iam.cloud.ibm.com/identity/token"  |jq -r '(.token_type + " " + .access_token)'`
 ```
 {: pre}
 
-To view your IAM token, run the command ``echo $iam_token``.
-
-The result should look like this:
+To view the IAM token, run `echo $iam_token`. The result should look like this:
 
 ```
 Bearer <your token>
 ```
-{: screen}
 
-The Authorization header expects the token to begin with "Bearer". If the result above does not include "Bearer", update the `iam_token` variable to include it. These examples assume that "Bearer" is included in the `iam_token`.
+The Authorization header expects the IAM token to begin with `Bearer`. If the result you receive does not include `Bearer`, update the `iam_token` variable to include it. These examples assume that `Bearer` is included in the `iam_token`.
 
 You must repeat the preceding step to refresh your IAM token every hour, because the token expires.
 {: important}
@@ -82,6 +80,7 @@ The API endpoints are per region and follow the convention `https://<region>.iaa
 
 * US-SOUTH: `https://us-south.iaas.cloud.ibm.com`
 * EU-DE: `https://eu-de.iaas.cloud.ibm.com`
+* JP-TOK: `https://jp-tok.iaas.cloud.ibm.com`
 
 Store the API endpoint in a variable so you can use it in API requests without having to type the full URL. For example, to store the us-south endpoint in a variable, run this command:
 
@@ -504,7 +503,8 @@ Your response will look like this:
 ```
 {: screen}
 
-Note that the status of the volume is pending when it first is created. Before you can proceed, the volume needs to move to available status, which takes a few minutes. 
+The status of the volume is pending when it first is created. Before you can proceed, the volume must move to available status, which takes a few minutes.
+{: note}
 
 For the rest of the calls, you'll need to know the ID of the newly created volume. Save the ID of the volume as a variable, for example:
 

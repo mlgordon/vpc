@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-04-10"
 
 keywords: region, zone, deploy, datacenter, data, center, federated, CLI, API, account
 
@@ -31,15 +31,16 @@ Virtual Private Cloud is being deployed to all {{site.data.keyword.cloud}}} regi
 | ------- | :------: | :------: |:------: |
 | Dallas | us-south | `us-south.iaas.cloud.ibm.com`| Available |
 | Frankfurt | eu-de | `eu-de.iaas.cloud.ibm.com`| Available |
-| Washington DC | us-east | `us-east.iaas.cloud.ibm.com`| Coming Soon |
-| Tokyo | jp-tok | `jp-tok.iaas.cloud.ibm.com`| Coming Soon |
+| Tokyo | jp-tok | `jp-tok.iaas.cloud.ibm.com`| Available |
 | London | eu-gb | `eu-gb.iaas.cloud.ibm.com`| Coming Soon |
 | Sydney | au-syd | `au-syd.iaas.cloud.ibm.com`| Coming Soon |
+| Washington DC | us-east | `us-east.iaas.cloud.ibm.com`| Coming Soon |
 
 The Regional API (VPC) endpoint is automatically set by the IBM Cloud CLI when you log in to a specific region.
 {: note}
 
 ## Log in to a specific region using the CLI
+{: #log-in-to-a-specific-region-using-the-cli}
 
 When you login to IBM Cloud, you can specify a region or choose it later. For example, to log in to the global API endpoint in the Dallas (`us-south`) region directly, run the following commands, depending whether you have a federated account (SSO) or not.
 
@@ -104,6 +105,7 @@ Space:
 {: screen}
 
 ## Switch regions using the CLI
+{: #switch-regions-using-the-cli}
 
 To get the latest status of the available VPC regions, run the following command:
 
@@ -127,6 +129,7 @@ ibmcloud target
 {: pre}
 
 ## Switch regions using the API  
+{: #switch-regions-using-the-api}
 
 To interact with the Regional API via REST, direct the request to the API endpoint of the region where you want to create resources. The region's API endpoint is shown above in the table. Additionally, you can find the available endpoint for the different regions by running the following command:
 
@@ -144,7 +147,8 @@ curl "https://us-south.iaas.cloud.ibm.com/v1/vpcs?version=2019-01-01&generation=
 {: pre}
 
 
-## Zones
+## Get zones
+{: #get-zones}
 
 To get the list of zones available for each region, run the `ibmcloud is zones <region>` command. For example, to get the list of zones in region `us-south`, run the following command:
 

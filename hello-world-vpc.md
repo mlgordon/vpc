@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-12"
 
 keywords: create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
@@ -28,6 +28,7 @@ subcollection: vpc
 This guide shows you how to create {{site.data.keyword.cloud}} Virtual Private Cloud resources using the IBM Cloud CLI.
 
 ## Pre-requisites:
+{: #cli-pre-requisites}
 
 1. Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html#overview).
 
@@ -67,6 +68,7 @@ To learn how to create a Virtual Private Cloud in different IBM Cloud regions, s
 
 
 ## Step 1: Log in to IBM Cloud.
+{: #step-1-log-in-to-ibm-cloud}
 
 If you have a federated account:
 ```
@@ -82,6 +84,7 @@ ibmcloud login
 {: pre}
 
 ## Step 2: Create a VPC and save the VPC ID.
+{: #step-2-create-a-vpc-and-save-the-vpc-id}
 
 Use the following command to create a VPC named _helloworld-vpc_.
 
@@ -111,6 +114,7 @@ vpc="ba9e785a-3e10-418a-811c-56cfe5669676"
 {: pre}
 
 ## Step 3: Create a subnet and save the subnet ID.
+{: #step-3-create-a-subnet-and-save-the-subnet-id}
 
 Let's pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_.
 
@@ -156,6 +160,7 @@ ibmcloud is subnet $subnet
 {: pre}
 
 ## Step 4: Attach a public gateway.
+{: #step-4-attach-a-public-gateway}
 
 Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet. 
 
@@ -205,6 +210,7 @@ VPC              helloworld-vpc(6dcd8188-f1e2-48ca-b872-d04cf54479c1)
 {: screen}
 
 ## Step 5: Create an SSH Key in IBM Public Cloud.
+{: #step-5-create-an-ssh-key-in-ibm-public-cloud}
 
 You'll use the key to provision a virtual server instance. You can use the same key to provision multiple virtual server instances.
 
@@ -248,6 +254,7 @@ key="859b4e97-7540-4337-9c64-384792b85653"
 ```
 
 ## Step 6: Select a profile and image for the virtual server instance.
+{: #step-6-select-a-profile-and-image-for-the-virtual-server-instance}
 
 To list all available instance profiles, run the following command:
 
@@ -271,6 +278,7 @@ image=$(ibmcloud is images | grep "ubuntu-16.04-amd64" | cut -d" " -f1)
 {: pre}
 
 ## Step 7: Provision a Virtual Server Instance.
+{ #step-7-provision-a-viretual-server-instance}
 
 ```
 ibmcloud is instance-create helloworld-vsi $vpc us-south-2 b-2x8 $subnet 1000 --image-id $image --key-ids $key
@@ -325,6 +333,7 @@ ibmcloud is instance $vsi
 {: pre}
 
 ## Step 8: Create a Floating IP address.
+{: #step-8-create-a-floating-ip-address}
 
 You need a Floating IP address so you can log in to the virtual server instance (VSI) from the internet.
 
@@ -358,6 +367,7 @@ address=169.61.181.53
 {: pre}
 
 ## Step 9: Add a rule to the default security group for SSH.
+{: #step-9-add-a-rule-to-the-default-security-grop-for-ssh}
 
 Find the security group for the VPC:
 
@@ -415,6 +425,7 @@ Remote      -
 {:screen}
 
 ## Step 10: Create a block storage data volume.
+{: #step-10-create-a-block-storage-data-volume}
 
 Run this command to create a block storage data volume. Specify a name for your volume, volume profile, and the zone where you are creating the volume. To attach a block storage data volume to an instance, the instance and the block storage data volume must be created in the same zone.
 
@@ -470,6 +481,7 @@ ibmcloud is volume $vol
 {: pre}
 
 ## Step 11: Attach a block storage data volume to an instance.
+{: #step-11-attach-a-block-storage-data-volume-to-an-instance}
 
 Use the following command to attach the volume to the virtual server instance, using the variables we created:
 
@@ -479,6 +491,7 @@ ibmcloud is instance-volume-attachment-add helloworld-vol-attachment $vsi $vol -
 {: pre}
 
 ## Step 12: Log in to your virtual server instance using your private SSH key.
+{: #step-12-log-in-to-your-virtual-server-instance-using-your-private-ssh-key}
 
 For example, you can use a command of this form:
 
@@ -519,6 +532,7 @@ root@helloworld-vsi:~#
 {:screen}
 
 ## Step 13: Hello, World!
+{: #step-13-hello-world}
 
 Run the following command in the terminal window:
 
@@ -535,6 +549,7 @@ helloworld-vsi says Hello, World!
 {:screen}
 
 ## Step 14: (Optional) Start using your block storage data volume
+{: #step-14-optional-start-using-your-block-storage-data-volume}
 
 To use your block storage volume as a filesystem, you'll need to partition the volume, format the volume, and then mount it as a filesystem.
 
@@ -620,6 +635,7 @@ touch hellovolume
 {:codeblock}
 
 ## Congratulations!
+{: #cli-congratulations}
 
 You've successfully provisioned and connected to your Virtual Private Cloud instance using the IBM Cloud CLI. To try out more CLI commands, explore the full reference:
 

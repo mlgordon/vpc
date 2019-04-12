@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-10"
 
 keywords: resource, storage, boot, block, volume, name, naming, best practices
 
@@ -27,6 +27,7 @@ subcollection: vpc
 {{site.data.keyword.cloud}} Virtual Private Cloud provides a boot storage volume and allows additional block storage volumes, which are hypervisor-mounted, high-performance data storage for your virtual server instances (VSIs). The VPC infrastructure provides rapid scaling of storage across multiple regions and zones, with extra performance and security.
 
 ## Summary of Characteristics
+{: #summary-of-characteristics}
 
 When you provision an {{site.data.keyword.vsi_is_full}} instance, a 100 GB, general purpose IOPS (3 IOPS/GB) block storage volume is created automatically as a primary boot volume, attached to the VSI. 
 During provisioning, you can rename the boot volume and change the volume size.
@@ -43,6 +44,7 @@ During provisioning, you can rename the boot volume and change the volume size.
 
 
 ## Block storage volumes
+{: #block-storage-volumes}
 
 More complete nformation about working with block storage volumes and VPC is available our [Block Storage for VPC documentation](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-getting-started).
 
@@ -53,6 +55,7 @@ To get started creating volumes independent of VSI provisioning, see [Getting St
 
 
 ## Best practices for creating and naming your VPC block storage volumes:
+{: #best-practices-for-creating-and-naming-your-vpc-block-storage-volumes}
 
 * Determine your storage requirements before provisioning a volume. Allow for adequate capacity and IOPS performance.
 * Decide whether a predefined IOPS profile best meets your capacity and performance needs, or whether specifying custom settings is better.

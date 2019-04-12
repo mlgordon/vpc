@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-10"
 
 keywords: pricing, billing, data, instance, VSI, block, storage, paygo, transfer, floating, server, VPC, allowance, gateway, egress, minimal charges, ARP, traffic
 
@@ -32,6 +32,7 @@ Separate pricing applies for [virtual server instances](/docs/infrastructure/vpc
 Pricing for block storage [is available](/docs/infrastructure/vpc?topic=vpc-block-storage-pricing).
 
 ## Free allowances for internet data transfer
+{: #free-allowances-for-internet-data-transfer}
 
 | Data transfer |  Cost for all IBM Cloud VPC Customers |
 |---------------|------------------|
@@ -40,11 +41,13 @@ Pricing for block storage [is available](/docs/infrastructure/vpc?topic=vpc-bloc
 | Use of public gateway | Free (Charged only for the floating IP used by the PGW) |
 
 ## Floating IP pricing
+{: #floating-ip-pricing}
 
 A floating IP is charged at the rate of $1 (U.S.) per month, starting when it is reserved. The fee is charged even if the floating IP is not associated to a VSI or not in use. The $1 for the monthly fee is charged even if the floating IP is reserved for only a few days.
 
 
 ## Basic PayGo pricing for internet data transfer
+{: #basic-paygo-pricing-for-internet-transfer}
 
 | Data transfer | Amount of data | PayGo pricing |
 |-----------|-----------|------------------|
@@ -60,5 +63,3 @@ When you create a new VPC, it may take up to an hour for initial billing charges
 
 If you have a public gateway or Floating IP, you may still see some minimal egress charges, even if you have not sent out any egress traffic during that time. These charges are for ARP traffic, which is necessary to operate your account.
 {: important}
-
-

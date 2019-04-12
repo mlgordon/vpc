@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-04"
+lastupdated: "2019-04-05"
 
 keywords: features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP
 
@@ -29,6 +29,8 @@ subcollection: vpc
 A Virtual Private Cloud (VPC) gives you a cost-effective entry point that provides cloud security and the ability to scale dynamically in a public cloud. It offers fine-grained control over your virtual infrastructure and your network traffic segmentation.
 
 ## Private space in a public cloud
+{: #private-space-in-a-public-cloud}
+
 IBM Cloud VPC offers an isolated, security-rich environment within the public cloud. It gives you the security of a private cloud, with the agility and ease of a public cloud.
 
  * You can manage key network services and launch Virtual Servers as needed to support your mission-critical, cloud-tolerant, and cloud-native applications.
@@ -36,15 +38,20 @@ IBM Cloud VPC offers an isolated, security-rich environment within the public cl
  * You can provision your resources and connect them to each other, or you can isolate them from one another.
 
 ### Logical isolation
+{: #logical-isolation}
+
 The IBM Cloud Virtual Private Cloud (VPC) gives your applications logical isolation from other networks in all regions, while providing scalability and security.
 
 To make this logical isolation possible, the VPC is divided into subnets, using a range of private IP addresses. However, by default, all resources (such as VSIs) within the same Virtual Private Cloud can communicate to each other, regardless of their subnet. Subnets are contained within a single zone, and they cannot span multiple zones, which helps with security, with reducing latency, and with disaster recovery.
 
 ### Quick instance provisioning and security
+{: #quick-instance-provisioning-and-security}
 
 Create virtual server instances (VSIs) quickly, using pre-defined profiles optimized for your specific workloads. Protect your instances with security groups.
 
 ### Networking capabilities
+{: #networking-capabilities}
+
 IBM Cloud VPC offers comprehensive networking capabilities, including IP address range selection, virtual firewalls (security groups and network ACLs), site-to-site virtual private networks (VPN), and load balancing (LBaaS) with elasticity.
 
  * You can configure your virtual topology automatically, using suggested prefix ranges and pre-configured network policies.
@@ -54,12 +61,17 @@ IBM Cloud VPC offers comprehensive networking capabilities, including IP address
  * Load balancing and VPN have multi-region control planes, which means that each region where the control plane is deployed can support all regions for a customer's virtual server instances. A failure in a single region will not impact the service in any other region.
 
 ### Global connectivity
+{: #global-connectivity}
+
 You can scope your applications and available resources to span across multiple regions. Using VPN, you can create private connections to other projects and other portions of your hybrid cloud deployments.
 
 ### Network security
+{: #network-security}
+
 Security is integrated into your IBM Cloud VPC, with security groups that act as virtual firewalls for instance-level protection, and with network access control lists (ACLs) for subnet-level protection.
 
 ### Load balancing
+{: #load-balancing}
 Within your IBM Cloud VPC, use load balancing to distribute your network traffic across a set of targets to improve performance and HA. Load Balancers also monitor the health of your applications and services. You can set up a load balancer to distribute incoming application traffic across instances in a single zone or across multiple zones within a region.
 
 ### Internet access
@@ -100,6 +112,7 @@ Here are some ways that VPC supports your hybrid, cloud-tolerant, and cloud-nati
  * Give support for GPUs
 
 ## Summary of benefits
+{: #summary-of-benefits}
 
  * Quick to get started using predefined configurations for your instances, called profiles
  * Flexible geographic scope with zones and regions available globally
@@ -108,6 +121,7 @@ Here are some ways that VPC supports your hybrid, cloud-tolerant, and cloud-nati
  * Monitor your workloads for optimal performance and efficiency
 
 ## Summary of features
+{: #summary-of-features}
 
   * Create subnets, and bring your own IP range
   * Create and manage Virtual Server Instances (VSIs) using Ubuntu 16.04, CentOS 7.x, Windows, or Debian
@@ -122,6 +136,7 @@ Here are some ways that VPC supports your hybrid, cloud-tolerant, and cloud-nati
   * Load Balancing (LB) that's native to VPC
 
 ## BYOIP Caveats
+{: #byoip-caveats}
 
 You can bring your own public IPv4 address range (BYOIP) to your IBM Cloud VPC account. When you use BYOIP, IBM Cloud must configure those IPv4 addresses on IBM Cloud resources, which will send packets to and from the addresses you've provided. Therefore, as a result of using your supplied IPv4 range on IBM Cloud, these IP addresses may be exposed to IBM's support staff and third parties as part of your use of this service.
 {: important}
@@ -132,6 +147,7 @@ You must use the API or the CLI to use BYOIP. This advanced capability is not av
 For a full list of known limitations and features not currently supported, please refer to the [Known Limitations](/docs/infrastructure/vpc?topic=vpc-known-limitations) document.
 
 ## Learn more
+{: #vpc-learn-more}
 
 * [**IBM VPC terminology**](/docs/infrastructure/vpc?topic=vpc-vpc-glossary)
 * [**IBM VPC security**](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-security-in-your-ibm-cloud-vpc#security-in-your-ibm-cloud-vpc)

@@ -28,5 +28,6 @@ After you've created your {{site.data.keyword.vpc_full}}, you'll want to add som
 2. To start creating {{site.data.keyword.vsi_is_short}}, see [Creating virtual server instances](/docs/vsi-is?topic=virtual-servers-is-creating-virtual-servers).
 
 ## Next steps
+{: #next-managing-virtual-server-instances}
 
 When your instances are created, you can start [Managing virtual server instances](/docs/vsi-is?topic=virtual-servers-is-managing-virtual-server-instances).

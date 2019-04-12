@@ -3,8 +3,8 @@
 copyright:
 
   years: 2018, 2019
-
-lastupdated: "2019-04-03"
+  
+lastupdated: "2019-04-09"
 
 keywords: error, message, API, limitations, rias, support
 
@@ -28,7 +28,11 @@ When you receive an error message from the {{site.data.keyword.cloud}} Virtual P
 ## acl_in_use
 **Message**: The network ACL cannot be deleted because it is attached to resources.
 
-The network ACL cannot be deleted because it is attached to resources. Try checking your subnets.
+The network ACL cannot be deleted because it is attached to a subnet or VPC. 
+
+To see if a subnet is using the network ACL, use the `GET /v1/subnets?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-01-01&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API or `ibmcloud is subnet-update` CLI. 
+
+To see if a VPC is using the network ACL, use the `GET /v1/vpcs?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is vpcs`. It is not possible to update or delete the default network ACL used by a VPC. The default network ACL is deleted automatically when the VPC gets deleted.
 
 ## address_prefix_conflict
 **Message**: The address prefix with this CIDR is in use.
@@ -41,7 +45,7 @@ Equivalent CLI command: `ibmcloud is vpc-address-prefix`
 ## address_prefix_in_use
 **Message**: Cannot delete an address prefix in use.
 
-One or more subnets are using the address prefix. You must detach all the subnets before you can delete a prefix.
+One or more subnets are using the address prefix.  To determine which subnets are using the address prefix, use the `GET /v1/subnets?version=2019-01-01&generation=1` API command and  check the `ipv4_cidr_block` field.  Equivalent CLI command:  `ibmcloud is subnets` and check the `Subnet CIDR` column. You must delete all the subnets using the address prefix before the address prefix can be deleted.
 
 ## backend_service_unavailable
 **Message**: The backend service is unavailable.
@@ -136,7 +140,7 @@ Provide a valid value for the health monitor protocol. Acceptable values are `ht
 ## health_monitor_missing_protocol
 **Message**:  Health monitor protocol is missing
 
-Health monitor protocol is a required field. In your request, specify the health monitor protocol. The acceptable values are `http` and `tcp`.
+Health monitor protocol is a required field. In your request, specify the health monitor protocol. The acceptable values are `http` and `tcp`.
 
 ## health_monitor_missing_url_path
 **Message**:  Health monitor URL path is missing. It is required for a HTTP type health monitor.
@@ -191,6 +195,43 @@ A valid IKE policy name starts with a letter, followed by letters, digits, under
 
 You referenced an IKE policy that does not exist. Please review your request to ensure that you specified the proper IKE policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
+## instance_delete_conflict
+**Message**: The instance cannot be deleted in the current status.
+
+You cannot delete an instance when it is in `deleting`, `pending`, `starting`, `stopping`, or `restarting` status. The instance must be in `running` or `stopped` status. If the status does not change, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
+## instance_invalid_hostname
+**Message**: The instance cannot be created because the hostname is not valid.
+
+The instance hostname must meet the following requirements:
+* The hostname must contain only alphanumeric characters and dashes
+* Uppercase characters are not allowed
+* Leading and trailing dashes are not allowed
+* Leading numbers are not allowed
+* Consecutive dashes are not allowed
+* Maximum length is 15 characters for Windows
+* Maximum length is 40 characters for other operating systems
+
+## instance_invalid_port_speed
+**Message**: The instance cannot be created because the specified network interface port speed is not valid.
+
+The network interface port speed must be `100` or `1000` Mbps.
+
+## instance_name_exists
+**Message**: The same instance name already exists.
+
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
+## instance_sec_volume_over_quota
+**Message**: The instance cannot be created because the number of volume attachments would exceed the quota.
+
+The VPC quotas per resource are specified on the [Quotas](/docs/infrastructure/vpc?topic=vpc-quotas){: new_window} page.
+
+## instance_too_many_keys
+**Message**: The Windows instance cannot be created because the request contains multiple keys.
+
+Windows instances only support one key. 
+
 ## insufficient_space_for_subnet
 **Message**: Insufficient space for subnet in address prefix.
 
@@ -219,12 +260,22 @@ Make sure that the ID you provided does not contain any malformed data.
 You may get this error message if a malformed start query is used when making a pagination request. For example,
 `GET /v1/network_acls?start=23fbba08-ceb3-4cbe-a951-84ff20a06069?version=2019-01-01&generation=1` contains two `?`s. Fix the query and try again.
 
+## invalid_route
+**Message**: The requested route does not exist.
+
+The requested route on the API URL you provided does not exist. Verify that the URL you specified to call the API endpoint is correct.
+
 ## invalid_state
-**Message**: None
+**Message**: An action was requested on a resource which is not supported at the current status of the resource.
 
-An action was requested on a resource which is not supported at the current state of the resource. For example, a reboot operation may already be in progress for an instance. Refer to [actions allowed](/docs/infrastructure/vpc?topic=vpc-troubleshooting-your-ibm-cloud-vpc#error-409-conflict-when-invoking-an-action-on-an-instance) depending on the state of the instance.
+1. A reboot operation may already be in progress for the instance. Refer to [actions allowed](/docs/infrastructure/vpc?topic=vpc-troubleshooting-your-ibm-cloud-vpc#error-409-conflict-when-invoking-an-action-on-an-instance) depending on the status of the instance.
+2. While the status of the instance is `pending`, you cannot perform the following actions:
+* delete the instance
+* attach a volume to the instance
+* detach a volume from the instance
+* update the instance
 
-If the state of the resource does not change in a timely manner, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+Try your action again later. If the status of the resource does not change, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
 ## invalid_version
 **Message**: The `version` parameter is invalid, it must be of the form `YYYY-MM-DD`.
@@ -239,7 +290,7 @@ The date given in the version parameter must be later than 2019-01-01 but before
 ## invalid_zone
 **Message**: Please check whether the resources you are requesting are in the same zone.
 
-You may see this message if the resource you requested is not in a valid zone.
+You may see this message attempting to attach a public gateway in zone-1 to a subnet in zone-2. 
 
 ## ipsec_policies_quota_exceeded
 **Message**: The quota for IPsec policies is exceeded for the account.
@@ -272,10 +323,28 @@ A valid IPsec policy name starts with a letter, followed by letters, digits, und
 
 You referenced an IPsec policy that does not exist. Please review your request and specify a valid IPsec policy ID. If you are sure the policy exists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
-## key_exists
+## key_content_exists
 **Message**: The same key content already exists.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
+## key_name_exists
+**Message**: The same key name already exists.
+
+If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
+## key_invalid_name
+**Message**: The key cannot be created because the name is not valid.
+
+The key name must meet the following requirements:
+* must begin with alphabetical character, [A-Za-z]
+* must contain only alphanumeric characters, dashes or underscores, [-A-Za-z0-9_]
+* the length must not exceed 65 characters
+
+## key_invalid_type
+**Message**: The key cannot be created because the type is not valid.
+
+The only supported key type is `rsa`.
 
 ## listener_certificate_not_found
 **Message**: Certificate instance with CRN `<listener_certificate_crn>` cannot be found or no permission to access the certificate instance.
@@ -544,7 +613,7 @@ Please choose a different pool name.
 ## pool_invalid_name
 **Message**:  Name <pool_name> is invalid.
 
-Please provide a valid pool name.  A valid load balancer name starts with a letter followed by letters, digits, hyphens and  the length of the name should not exceed 40 characters.
+Please provide a valid pool name.  A valid load balancer name starts with a letter followed by letters, digits, hyphens and  the length of the name should not exceed 40 characters.
 
 ## pool_invalid_session_persistence
 **Message**: Pool session persistence value is not valid.
@@ -591,7 +660,7 @@ The quotas per resource are specified in [Quotas and limits for VPC](https://{Do
 
 The public gateway currently is attached to one or more subnets. You must detach the public gateway from all subnets before you can delete it.
 
-To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-01-01&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`. 
+To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-01-01&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`. 
 
 ## rate_limit_exceeded
 **Message**: Too many requests within a short time.
@@ -1004,129 +1073,33 @@ You might have specified a name that is already in use. Please try a different v
 
 Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/rias){: new_window}. If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
 
-## volume_quota_reached
-**Message**: The volume quota has been reached.
+## volume_attachment_delete_invalid_request
+**Message**: The volume attachment cannot be deleted.
 
-You are out of quota for the current account. Try deleting some volumes or contact [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) to increase your quota. See the documentation for information about [quotas for the Virtual Private Cloud infrastructure](/docs/infrastructure/vpc?topic=vpc-quotas).
+This operation is not allowed. The boot volume's volume attachment cannot be deleted because the boot volume is required by the instance.
 
-## volume_template_invalid
-**Message**: Invalid volume template provided.
+## volume_attachment_update_invalid_request
+**Message**: The volume attachment could not be updated because the request is invalid.
 
-You provided an invalid volume template for creating a volume. See the [Regional Infrastructure Service API Reference](https://{DomainName}/apidocs/rias){: new_window} to verify that you are providing the correct parameters in the request body.
+The volume attachment could not be updated for either of these reasons:
 
-## volume_profile_name_missing
-**Message**: The required volume profile name is missing in the request.
-
-The volume profile name is missing in the request body when creating a volume or in the request parameter when getting a volume. Provide a volume profile name in your request and try again. If you don't know the volume profile name, specify `ibmcloud is volume-profiles` in the CLI or use `GET $rias_endpoint/v1/volume/profiles/?version=YYYY-MM-DD` in the API request and search the list.
-
-## volume_profile_not_found
-**Message**: A volume profile with the specified name is not found.
-
-A volume profile with that name could not be found. Verify that you provided the correct volume profile name. If you don't know the volume profile name, specify `ibmcloud is volume-profiles` in the CLI or use `GET $rias_endpoint/v1/volume/profiles/?version=YYYY-MM-DD` in the API request and search the list.
-
-## volume_iops_zero_or_negative
-**Message**: The volume IOPS should be greater than zero.
-
-When creating a volume, the IOPS value specified in the request must be a positive number. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for supported IOPS values.
-
-## volume_capacity_zero_or_negative
-**Message**: The volume capacity should be greater than zero.
-
-When creating a volume, the capacity value specified in the request must be a positive number between 10 GB and 2000 GB. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for supported volume capacity values.
-
-## volume_profile_iops_invalid
-**Message**: The volume profile specified in the request cannot accept custom IOPS.
-
-Your volume profile does not accept a Custom IOPS value. You might have specified a Tiered IOPS profile, which does not require that you specify an IOPS value. If you want to provide a specific IOPS value, use the Custom IOPS profile.
+* The boot volume's volume attachment cannot be renamed
+* The boot volume's volume attachment `delete_volume_on_instance_delete` field cannot be set to `true`
 
 ## volume_capacity_max
 **Message**: The maximum volume capacity allowed is 2000 GB.
 
 The volume capacity you specified exceeds the maximum volume capacity. Specify a value between 10 and 2000 GB. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for accepted capacity ranges for a Custom profile.
 
-## volume_profile_capacity_iops_invalid
-**Message**: The volume profile specified in the request is not valid for the provided capacity and/or IOPS.
-
-The volume capacity and/or IOPS value that you specified in the request is not allowed by the volume profile. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for valid minimum and maximum capacity and IOPS values for a Custom profile.
-
-## volume_encryption_key_not_authorized
-**Message**: You are not authorized to access the provided volume encryption key.
-
-Provide another encryption key for which you have access or contact your system administator to obtain access to the current key.
-
-## volume_encryption_key_not_active
-**Message**: The volume encryption key specified in the request is not active.
-
-Activate the exising key or provide a new key. If you cannot activate your own key, contact your system administrator or [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
-
-## volume_encryption_key_not_implemented
-
-The volume encryption key feature is not supported.
-
-A volume could not be created using your encryption key. This version supports volumes with provider-managed encryption only. To use your own encryption key, use a version of Block Storage for VPC that supports customer-managed encryption.
-Contact [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) for more information.
-
-## volume_update_invalid_request
-**Message**: The volume update request is not valid.
-
-The update request body property that you specified is not valid. See the [Regional Infrastructure Service API Reference](https://{DomainName}/apidocs/rias){: new_window} for information and correct API request syntax.
-
-## volume_status_not_available
-**Message**: The volume with the specified ID is not available.
-
-The volume is not in an Available state; it's status might be in a Pending state. Wait for volume to become available and try again. If the volume is being deleted, use a different volume. To check the volume's status, specify `ibmcloud is volume VOLUME_ID` in the CLI or use `GET $rias_endpoint/v1/volumes/$volume_id?version=YYYY-MM-DD` in the API request.
-
-## volume_id_missing
-**Message**: The volume ID is missing in the request parameter.
-
-You must provide the volume ID in the request parameter when getting a specific volume.
-
-## volume_not_found
-**Message**: A volume with the specified ID is not found.
-
-Verify that the volume ID you entered is correct and try again. For a list of volumes, specify `ibmcloud is volumes` in the CLI or `GET volumes` in the API.
-
-## volume_not_implemented
-
-The requested operation is not supported in this release.
-
-Contact [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) for more information.
-
-## volume_resource_group_id_invalid
-**Message**: The resource group ID specified in the request is not valid.
-
-The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference#storage) for more information.
-
-## volume_resource_group_not_found
-**Message**: A resource group with the specified ID could not be found.
-
-The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference#storage) for more information.
-
-## volume_resource_group_not_authorized
-**Message**: The current action is not authorized on the specified resource group.
-
-You are not authorized to list or create volumes in the specified resource group. Use a different resource group for which you have permission or request permission from your administrator for list and create privileges on the resource group.
-
-## volume_id_invalid
-**Message**: The volume ID specified in the request parameter is not valid.
-
-The volume ID you specified is not in the correct format. Verify that you correctly entered the volume ID and try again. If you're not sure of the volume ID, specify `ibmcloud is volumes` in the CLI or `GET volumes` in the API and search the list of volumes.
-
-## volume_name_duplicate
-**Message**: The volume name specified in the request already exists.
-
-Specify a unique volume name.
-
 ## volume_capacity_missing
 **Message**: The required volume capacity value is missing in the request.
 
 When you create a volume, you must specify a volume capacity based on this profile definition. For more information, see the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation.
 
-## volume_encryption_key_crn_invalid
-**Message**: The volume encryption key CRN specified in the request is not valid.
+## volume_capacity_zero_or_negative
+**Message**: The volume capacity should be greater than zero.
 
-The Key Protect CRN you provided is not valid. Obtain the CRN of the root key in the
-Cloud Identity and Access Management service. For more information, see the  [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-encryption) documentation.
+When creating a volume, the capacity value specified in the request must be a positive number between 10 GB and 2000 GB. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for supported volume capacity values.
 
 ## volume_encryption_key_account_id_mismatch
 **Message**: The volume encryption key specified in the request does not belong to current user's account.
@@ -1138,23 +1111,124 @@ The Key Protect root key CRN does not match your IAM authorization account ID. S
 
 The volume encryption key that you specified in the request cannot be used in the current environment. Provide a root key CRN applicable to your environment.
 
-## volume_still_attached
-**Message**: The volume is still attached to an instance.
+## volume_encryption_key_crn_invalid
+**Message**: The volume encryption key CRN specified in the request is not valid.
 
-You cannot delete a volume that is still attached to a VSI. If you set automatic deletion for the volume, wait for the VSI to be deleted and volume will be detached and deleted. If you did not set automatic deletion, detach the volume manually.
+The Key Protect CRN you provided is not valid. Obtain the CRN of the root key in the
+Cloud Identity and Access Management service. For more information, see the  [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-encryption) documentation.
 
-## invalid_route
-**Message**: The requested route does not exist.
+## volume_encryption_key_not_active
+**Message**: The volume encryption key specified in the request is not active.
 
-The requested route on the API URL you provided does not exist. Verify that the URL you specified to call the API endpoint is correct.
+Activate the exising key or provide a new key. If you cannot activate your own key, contact your system administrator or [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
+
+## volume_encryption_key_not_authorized
+**Message**: You are not authorized to access the provided volume encryption key.
+
+Provide another encryption key for which you have access or contact your system administator to obtain access to the current key.
+
+## volume_encryption_key_not_implemented
+The volume encryption key feature is not supported.
+
+A volume could not be created using your encryption key. This version supports volumes with provider-managed encryption only. To use your own encryption key, use a version of Block Storage for VPC that supports customer-managed encryption.
+Contact [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) for more information.
+
+## volume_id_invalid
+**Message**: The volume ID specified in the request parameter is not valid.
+
+The volume ID you specified is not in the correct format. Verify that you correctly entered the volume ID and try again. If you're not sure of the volume ID, specify `ibmcloud is volumes` in the CLI or `GET volumes` in the API and search the list of volumes.
+
+## volume_id_missing
+**Message**: The volume ID is missing in the request parameter.
+
+You must provide the volume ID in the request parameter when getting a specific volume.
+
+## volume_iops_zero_or_negative
+**Message**: The volume IOPS should be greater than zero.
+
+When creating a volume, the IOPS value specified in the request must be a positive number. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for supported IOPS values.
+
+## volume_name_duplicate
+**Message**: The volume name specified in the request already exists.
+
+Specify a unique volume name.
+
+## volume_not_found
+**Message**: A volume with the specified ID is not found.
+
+Verify that the volume ID you entered is correct and try again. For a list of volumes, specify `ibmcloud is volumes` in the CLI or `GET volumes` in the API.
+
+## volume_not_implemented
+**Message**: The requested operation is not supported in this release.
+
+Contact [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) for more information.
+
+## volume_profile_capacity_iops_invalid
+**Message**: The volume profile specified in the request is not valid for the provided capacity and/or IOPS.
+
+The volume capacity and/or IOPS value that you specified in the request is not allowed by the volume profile. See the [IBM Cloud Block Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-about) documentation for valid minimum and maximum capacity and IOPS values for a Custom profile.
+
+## volume_profile_iops_invalid
+**Message**: The volume profile specified in the request cannot accept custom IOPS.
+
+Your volume profile does not accept a Custom IOPS value. You might have specified a Tiered IOPS profile, which does not require that you specify an IOPS value. If you want to provide a specific IOPS value, use the Custom IOPS profile.
+
+## volume_profile_name_missing
+**Message**: The required volume profile name is missing in the request.
+
+The volume profile name is missing in the request body when creating a volume or in the request parameter when getting a volume. Provide a volume profile name in your request and try again. If you don't know the volume profile name, specify `ibmcloud is volume-profiles` in the CLI or use `GET $rias_endpoint/v1/volume/profiles/?version=YYYY-MM-DD` in the API request and search the list.
+
+## volume_profile_not_found
+**Message**: A volume profile with the specified name is not found.
+
+A volume profile with that name could not be found. Verify that you provided the correct volume profile name. If you don't know the volume profile name, specify `ibmcloud is volume-profiles` in the CLI or use `GET $rias_endpoint/v1/volume/profiles/?version=YYYY-MM-DD` in the API request and search the list.
+
+## volume_quota_reached
+**Message**: The volume quota has been reached.
+
+You are out of quota for the current account. Try deleting some volumes or contact [customer support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support) to increase your quota. See the documentation for information about [quotas for the Virtual Private Cloud infrastructure](/docs/infrastructure/vpc?topic=vpc-quotas).
+
+## volume_resource_group_id_invalid
+**Message**: The resource group ID specified in the request is not valid.
+
+The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference#storage) for more information.
+
+## volume_resource_group_not_authorized
+**Message**: The current action is not authorized on the specified resource group.
+
+You are not authorized to list or create volumes in the specified resource group. Use a different resource group for which you have permission or request permission from your administrator for list and create privileges on the resource group.
+
+## volume_resource_group_not_found
+**Message**: A resource group with the specified ID could not be found.
+
+The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference#storage) for more information.
 
 ## volume_start_not_found
 **Message**: A volume with the ID specified as the page start parameter is not found.
 
 The volume ID that you specified in the start parameter of the list volume call could not be found. Verify that the volume ID is correct and whether you have access to the volume.
 
-## vpc_acl_conflict                           
+## volume_status_not_available
+**Message**: The volume with the specified ID is not available.
 
+The volume is not in an Available state; it's status might be in a Pending state. Wait for volume to become available and try again. If the volume is being deleted, use a different volume. To check the volume's status, specify `ibmcloud is volume VOLUME_ID` in the CLI or use `GET $rias_endpoint/v1/volumes/$volume_id?version=YYYY-MM-DD` in the API request.
+
+## volume_still_attached
+**Message**: The volume is still attached to an instance.
+
+You cannot delete a volume that is still attached to a VSI. If you set automatic deletion for the volume, wait for the VSI to be deleted and volume will be detached and deleted. If you did not set automatic deletion, detach the volume manually.
+
+## volume_template_invalid
+**Message**: Invalid volume template provided.
+
+You provided an invalid volume template for creating a volume. See the [Regional Infrastructure Service API Reference](https://{DomainName}/apidocs/rias){: new_window} to verify that you are providing the correct parameters in the request body.
+
+## volume_update_invalid_request
+**Message**: The volume update request is not valid.
+
+The update request body property that you specified is not valid. See the [Regional Infrastructure Service API Reference](https://{DomainName}/apidocs/rias){: new_window} for information and correct API request syntax.
+
+## vpc_acl_conflict
 **Message**: Cannot delete the default network ACL, it is attached to a VPC.
 
 If this problem persists, [contact support](/docs/infrastructure/vpc?topic=vpc-getting-help-and-support).
@@ -1348,3 +1422,9 @@ The quotas per resource are specified on the [Quotas](https://{DomainName}/docs/
 
 To view the current VPN gateways, use the `GET /vpn_gateways` API.
 Equivalent CLI command: `ibmcloud is vpn-gateways`
+
+## zone_inconsistency
+**Message**: The resources must belong to the same zone.
+
+* When you attach a volume, make sure the volume and the instance are in the same zone.
+* When you associate a floating IP, make sure the floating IP and the subnet are in the same zone.

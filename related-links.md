@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-03-14"
 
-keywords: LBaaS, VPN, VSI, Storage, adminstrator, SRE, network
+keywords: LBaaS, VPN, VSI, Storage, administrator, SRE, network
 
 subcollection: vpc
 
@@ -25,11 +25,11 @@ Learn more about the IBM® Cloud Platform and VPC Infrastructure with these link
 
 ## Related Documentation
 
-* [Networking for VPC](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-getting-started-with-networking-for-virtual-private-cloud#getting-started-with-networking-for-virtual-private-cloud)
+* [Networking for VPC](/docs/infrastructure/vpc-network?topic=vpc-network-getting-started)
 
-* [VSIs for VPC](https://{DomainName}/docs/vsi-is?topic=virtual-servers-is-gettingstartedvsigen#gettingstartedvsigen)
+* [VSIs for VPC](/docs/vsi-is?topic=virtual-servers-is-gettingstartedvsigen#gettingstartedvsigen)
 
-* [Storage for VPC](https://{DomainName}/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-getting-started#block-storage-getting-started)
+* [Storage for VPC](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-getting-started#block-storage-getting-started)
 
 * [(Beta) LBaaS for VPC](/docs/infrastructure/vpc-network?topic=vpc-network---beta-using-load-balancers-in-ibm-cloud-vpc#--beta-using-load-balancers-in-ibm-cloud-vpc)
 
@@ -42,4 +42,6 @@ Learn more about the IBM® Cloud Platform and VPC Infrastructure with these link
 
 ## Scripts
 
-Coming soon.
+* [Python script to make a graphical representation of your VPC](https://github.com/l2fprod/vpc-diagram-exporter)
+
+Use this tool to export a visual representation of the existing VPC resources in your IBM Cloud account.

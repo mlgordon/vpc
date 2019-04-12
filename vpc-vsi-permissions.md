@@ -129,4 +129,6 @@ Virtual Servers:
 </table>
 
 ## Next steps
+{: #next-manage-vpc-resource-permissions}
+
 For more information on how to change a user's permissions, see [Managing user permissions for VPC resources](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).

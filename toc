@@ -45,7 +45,9 @@ Virtual Private Cloud (VPC) Infrastructure
     Tutorials
         [Private and public subnets in a Virtual Private Cloud](/tutorials/solution-tutorials-vpc-public-app-private-backend)
         [Deploy isolated workloads across multiple locations and zones](/tutorials/solution-tutorials-vpc-multi-region)
+        [Use a VPC/VPN gateway for secure and private on-premises access to cloud resources](/tutorials/solution-tutorials-vpc-site2site-vpn)
         [Securely access remote instances with a bastion host](/tutorials/solution-tutorials-vpc-secure-management-bastion-server)
+        [Site to site VPC connection with VPN](/tutorials?topic=solution-tutorials-vpc-site2site-vpn#vpc-site2site-vpn
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

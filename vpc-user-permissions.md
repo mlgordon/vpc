@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-10"
 
 keywords: resource, access, role, role-based, authorization, policy, access group, resource group, permission, assign, administrator, operator, editor, viewer, user, team, scenario, manage, create, IAM
 
@@ -38,10 +38,12 @@ Changes to IAM access policies for VPC may take up to 10 minutes to take effect.
 {: note}
 
 ## Simple access scenario
+{: #simple-access-scenario}
 
 This scenario covers the basic steps needed to set up an individual user. We will cover two cases, inviting a new user to the account and modifying an existing user's permissions.
 
 ### Inviting a new user to create or manage VPC resources
+{: #inviting-a-new-user-to-create-or-manage-vpc-resources}
 
 Invite an IBM Cloud user to your account and give them access to `Infrastructure Service` so they can have access to view, create, and update VPC resources. This section gives a quick overview of the IAM steps. Further information is available through the links in the **Related Links** section near the end of this document.
 
@@ -57,6 +59,7 @@ Here are the basic steps in IAM needed to invite users to VPC services and resou
   * Click **Invite users**.
 
 ### Giving an existing user permission to manage VPC resources
+{: #giving-an-existing-user-permission-to-manage-vpc-resources}
 
 This scenario covers the basic steps needed to give an existing user in your account permission to edit VPC resources.
 
@@ -79,6 +82,7 @@ When you're creating IAM policies, keep in mind that some accounts must be grant
 {: tip}
 
 ## Viewing your user's permissions
+{: #viewing-your-user-s-permissions}
 
 Policies can be viewed in the user's **Access policies** tab.
 
@@ -97,6 +101,7 @@ Changes to IAM access policies for VPC may take up to 10 minutes to take effect.
 {: note}
 
 ## Team access scenario
+{: #team-access-scenario}
 
 This scenario covers how an account administrator can assign authorization so that different teams have access to separate VPC resources. The example uses _resource groups_ to set up separate resource access for two teams. For the purposes of this example, resources are not shared across teams.
 
@@ -111,6 +116,7 @@ This strategy can be used to assign separate VPC resources to any number of team
 {: tip}
 
 ### Step 1: Create resource groups
+{: #step-1-create-resource-groups}
 
 By default, account administrators have access to create new resource groups. Other users first must be assigned the **Editor** role for **All Account Management Services**, which allows them to create resource groups.
 
@@ -122,6 +128,7 @@ Your first task is to create resource groups that will contain each of your team
 For more information on how to create resource groups, see [Managing resource groups](/docs/resources/resourcegroups.html#rgs).
 
 ### Step 2: Create access groups
+{: #step-2-create-access-groups}
 
 Resource access can be assigned to individual users, or to groups of users. Groups of users with the same access permissions are called _access groups_. In this scenario, you'll create an access group to represent each grouping of team members who require a specific type of VPC access, a total of 4 unique access groups.
 
@@ -130,6 +137,7 @@ Resource access can be assigned to individual users, or to groups of users. Grou
 For help creating access groups, see [Create access groups](/docs/iam?topic=iam-groups#create_ag).
 
 ### Step 3: Add IAM policies to the access groups you just created
+{: #step-3-add-iam-policies-to-the-access-groups-you-just-created}
 
 Add the necessary VPC access policies so that the `test_team` access group can manage (create, update and delete) VPC resources.  
 
@@ -157,6 +165,7 @@ Repeat the previous steps for the remaining three access groups. You'll accompli
 Users with **Editor** access to VPC resources also can view them. It isn't necessary to add members to the **Editor** AND **Viewer** access groups.
 
 #### Setting up Viewer access
+{: #setting-up-viewer-access)
 
 Infrastructure service `Floating IP` resources are created in the account's default resource group. Therefore, users who need to manage `Floating IPs` need **Viewer** access to the account's default resource group.
 {: tip}
@@ -174,6 +183,7 @@ Here's how to create that **Viewer** access:
 Repeat the previous steps to assign the `production_team_manage_vpcs` access group the **Viewer** role to **All Account Management Services**.
 
 ### Step 4: Add users to the access groups
+{: #step-4-add-users-to-the-access-groups}
 
 Now you can assign team members (users) to the appropriate access groups. Follow these steps to add each member of the test team to the access group that allows test team VPC management:
 
@@ -192,11 +202,13 @@ It isn't necessary to assign users **Viewer** access to VPC resources if they ha
 {: tip}
 
 ## Next steps
+{: #permissions-next-steps}
 
 The two example teams are now set up to use VPCs. At this point, members of the `test_team_manage_vpcs` and `production_team_manage_vpcs` access groups can create VPCs in their assigned resource groups.
 
 
 ## Related links
+{: #permissions-related-links}
 
 * [Managing identity and access](/docs/iam/quickstart.html)
 * [Managing users and access](/docs/iam/iamusermanage.html)

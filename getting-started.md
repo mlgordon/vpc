@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-11"
 
 keywords: permissions, infrastructure, VPC, SSH, CLI, API, console
 
@@ -58,7 +58,7 @@ If you're new to IBM Cloud Virtual Private Cloud, choose any of the links below,
 ## Next steps
 If you're ready to dig in, go directly to the detailed documentation about **VPC Networking**,  **VSIs for VPC**, and **Block Storage for VPC**:
 
-* [**IBM Virtual Private Cloud Networking**](/docs/infrastructure/vpc-network?topic=vpc-network-getting-started-with-networking-for-virtual-private-cloud)
+* [**IBM Virtual Private Cloud Networking**](/docs/infrastructure/vpc-network?topic=vpc-network-getting-started)
 * [**IBM Virtual Servers for Virtual Private Cloud**](/docs/vsi-is?topic=virtual-servers-is-gettingstartedvsigen)
 * [**IBM Block Storage for Virtual Private Cloud**](/docs/infrastructure/block-storage-is?topic=block-storage-is-block-storage-getting-started)
 

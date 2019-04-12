@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-11"
 
 keywords: storage, capacity, billing, volume
 
@@ -37,12 +37,14 @@ Pricing for {{site.data.keyword.block_storage_is_short}} is based on the capacit
 {{site.data.keyword.block_storage_is_short}} is billed hourly based on the total number of hours that the block storage volume exists on the account until the volume is deleted or the end of a billing cycle, which ever comes first. Hourly billing is calculated differently for a predefined IOPS tier and custom IOPS. See the following examples.
 
 ### Billing calculation for a volume with the general-purpose IOPS tier
+{: #billing-calculation-for-a-volume-with-the-general-purpose-IOPS-tier}
 
 You provision a 1000-GB volume with the general-purpose 3 IOPS/GB tier, then use the volume for 72 hours before you delete it. The total price for the volume is billed by the hour, as follows:
 
 ((1000 GB x 0.13 USD/GB)/730 hrs) x 72 hrs = $12.82
 
 ### Billing calculation for a volume with custom IOPS
+{: #billing-calculation-for-a-volume-with-custom-IOPS}
 
 You provision a 1000-GB volume with 2500 IOPS, then use the volume for 72 hours before you delete it. The total price for the volume is billed by the hour, as follows:
 

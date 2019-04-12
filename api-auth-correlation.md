@@ -40,7 +40,7 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | VPC address prefixes |  Create, Update, Delete | Update authorization on VPC |
 | VPC address prefixes |  View, List | View authorization on VPC  |
 |—————|——————|———————|
-| Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Click [here](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
+| Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Click [here](/docs/infrastructure/vpc?topic=vpc-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
 | Floating IP (unassociated) | View, List | Account user |
 | Floating IP (associated) | Update | Update authorization for the associated subnet and its VPC (you cannot Create or Delete a floating IP after it is associated) |
 | Floating IP (associated) | View, List | View authorization for the floating IP’s subnet | 
@@ -65,7 +65,7 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 |——————|—————————|————————|
 | Security group | Get     | View authorization on the security group.
 | Security group | List    | View authorization on the security group (or else the group is omitted from the response.)
-| Security group | Create  | Edit authorization on the security group that will be created (eg. Edit authorization on all security groups, or Edit authorization on the resource group in which the security group will be created.)<br />View authorization on the VPC in which the group will be created.
+| Security group | Create  | Edit authorization on the security group that will be created (for example, Edit authorization on all security groups, or Edit authorization on the resource group in which the security group will be created.)<br />View authorization on the VPC in which the group will be created.
 | Security group | Update / Delete  | Edit authorization on the security group.
 | Security group rule | Get / List | View authorization on the security group.
 | Security group rule | Create / Update / Delete | Edit authorization on the security group.

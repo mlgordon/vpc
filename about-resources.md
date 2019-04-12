@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-03-03"
+lastupdated: "2019-04-10"
 
 keywords: resource, policies, authorization, resource type, resource groups, roles, load balancer, VPN, operator, editor, viewer, admin
 
@@ -46,6 +46,7 @@ An exception is that the `loadbalancer` and `vpn` resource types maintain their 
 {: note}
 
 ## Resource policies
+{: #resource-policies}
 
 Generally, access to resources in a VPC is controlled by _policies_. If you want to customize access to resources for your VPC, you can create customized policies. A resource policy can target:
 
@@ -55,6 +56,8 @@ Generally, access to resources in a VPC is controlled by _policies_. If you want
 * an individual resource
 
 ## Resources and resource groups
+{: #resources-and-resource-groups}
+
 A _resource group_ is a collection of resources, say an entire VPC, or a single subnet and its ACL, that are associated for the purpose of establishing authorization and usage. You could think of a resource group as a collection of infrastructure that might be used by a project, a department, or a team.
 
 Large enterprises may wish to divide a VPC into resource groups. Smaller companies may not need to divide their VPC into resource groups, because all of their team would be using the entire VPC. If you are familiar with _OpenStack_, a resource group is similar in concept to a _Project_ in _OpenStack Keystone_.
@@ -68,10 +71,12 @@ When you're setting up your IBM Cloud VPC, if you want to use resource groups, i
 {: tip}
 
 ## Specifics for VPC
+{: #specifics-for-vpc}
 
 Currently, VPC assigns roles and access at the VPC boundary only, for any or all resources within that particular VPC. For instance, you cannot assign access to individual subnets within that VPC. Instead, the authorizations for all of the types of resources with the VPC--subnets, instances, floating IP, security groups, ACLs, and so forth--are inherited from the VPC "parent" of that resource. Certain resources, such as **load balancers** and **vpn**, maintain authorization separately from the VPC to which they are attached.
 
 ### VPC resource authorization by resource type
+{: #vpc-resource-authorization-by-resource-type}
 
 The table summarizes how VPC resources are authorized by default.
 
@@ -94,6 +99,7 @@ Floating IP and ACLs can be created with scoping at the account level, if unassi
 {: note}
 
 ### VPC coverage of roles and authorized actions on resources
+{: #vpc-coverage-of-roles-and-authorized-actions-on-resources}
 
 In a scenario with 2 VPCs, here are some examples of what happens when any user with certain roles attempts to perform certain actions:
 
@@ -119,6 +125,7 @@ In a scenario with 2 VPCs, here are some examples of what happens when any user 
   * Reads `vpc1`: denied
 
 ### VPC coverage summary table
+{: #vpc-coverage-summary-table}
 
 For any policy that grants access by role (Administrator, Editor, Operator, Viewer), the following actions are given (X=denied, o=OK)
 
@@ -132,6 +139,7 @@ Delete      | X    | X      | X     | o      | o
 
 
 ## Resource authorization of VPN for VPC
+{: #resource-authorizations-of-vpn-for-vpc}
 
 Resource authorization of **VPN for VPC** is set up separately from other types of VPC resource authorization, but in a similar manner.
 
@@ -146,6 +154,7 @@ VPN usage is billed separately as well.
 {: note}
 
 ### VPN for VPC coverage of roles and authorized actions on resources
+{: #vpn-for-vpc-coverage-of-roles-and-authorized-actions-on-resources}
 
 The same user roles are supported as are supported in VPC resource authorization, but with different actions enabled for each role.
 
@@ -184,6 +193,7 @@ Here are some examples of what happens when users with certain roles attempt to 
   * Reads, Lists IPSec Policies: denied - sees empty data
 
 ### VPN for VPC coverage summary table
+{: #vpn-for-vpc-coverage-summary-table}
 
 The action role mapping in VPN for VPC can be visualized by the following table (X=denied, o=OK):
 
@@ -195,7 +205,8 @@ Read        | X    | o      | o     | o      | o
 Update      | X    | X      | X     | o      | o
 Delete      | X    | X      | X     | o      | o
 
-## Resource authorization of Load Balancer for VPC
+## Resource authorization for Load Balancer for VPC
+{: #resource-autorization-for-load-balancer-for-vpc}
 
 Resource authorization for **Load Balancer for VPC** usage is set up separately from other resource authorization in your VPC, but in a similar manner.
 
@@ -203,6 +214,7 @@ Load Balancer usage is billed separately as well.
 {: note}
 
 ### Load Balancer coverage of roles and authorized actions on resources
+{: #load-balancer-coverage-of-roles-and-authorized-actions-on-resources}
 
 Here are some examples of what happens when users with certain roles attempt to perform certain actions related to the VPC Load Balancer:
 
@@ -238,6 +250,7 @@ Here are some examples of what happens when users with certain roles attempt to 
   * Reads Load Balancer Statistics: denied
 
 ### Load Balancer coverage summary table
+{: #load-balancer-coverage-summary-table}
 
 The action role mapping in Load Balancer for VPC can be visualized by the following table (X=denied, o=OK):
 
