@@ -19,6 +19,7 @@ subcollection: vpc
 {:screen: .screen}
 {:tip: .tip}
 {:note: .note}
+{:important: .important}
 {:download: .download}
 
 
