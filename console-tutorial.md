@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-18"
 
 keywords: create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
 
@@ -217,9 +217,9 @@ To connect to a Windows image, log in using its decrypted password. To get the d
 
 ```
 # Decode the encrypted password
-cat ~/testpwd | base64 --decode > ~/testpwd64
+cat ~/examplepwd | base64 --decode > ~/examplepwd64
 # Decrypt the decoded password using the RSA private key
-openssl pkeyutl -in testpwd64 -decrypt -inkey private.pem -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
+openssl pkeyutl -in ~/examplepwd64 -decrypt -inkey private.pem -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
 -pkeyopt rsa_mgf1_md:sha256
 ```
 {:codeblock}

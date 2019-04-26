@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018-2019
-lastupdated: "2019-04-10"
+lastupdated: "2019-04-15"
 
 keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter
 
@@ -21,7 +21,7 @@ subcollection: vpc
 # Connecting to IBM Cloud Object Storage from a VPC
 {: #connecting-to-ibm-cloud-object-storage-from-a-vpc}
 
-This document tells how to connect to IBM® Cloud Object Storage from your Virtual Private Cloud.
+This document shows you how to connect to IBM® Cloud Object Storage from your Virtual Private Cloud. 
 
 ## What is IBM Cloud Object Storage (COS)?
 {: #what-is-ibm-cloud-object-storage-cos}
