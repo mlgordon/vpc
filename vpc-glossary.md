@@ -139,7 +139,7 @@ A Virtual Private Network (VPN) allows for a private connection between two endp
 A private connection between two endpoints, which remains private and can be encrypted even when the data is transferred across a public network.
 
 ## Zone
-{; #zone}
+{: #zone}
 
 An independent fault domain. A Zone is an abstraction designed to assist with improved fault tolerance and decreased latency. A Zone guarantees the following properties:
 
