@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-04-30"
 
 keywords: create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
@@ -296,7 +296,7 @@ Creating instance helloworld-vsi in resource group Default under account <Accoun
 ID                4562c5c0-9cf7-4406-bc90-ab4baea91057   
 Name              helloworld-vsi   
 Gen                  
-Profile           b-2x8   
+Profile           bc1-2x8   
 CPU Arch          amd64   
 CPU Cores         2   
 CPU Frequency     2000   
